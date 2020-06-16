@@ -24,6 +24,7 @@ html {
   box-sizing: border-box;
   background-color: black;
   color: white;
+  overflow-x: hidden;
 }
 
 canvas {

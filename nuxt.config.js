@@ -29,7 +29,8 @@ export default {
    */
   plugins: [
     { src: '~/plugins/vue-tippy', ssr: false },
-    { src: '~/plugins/vue-marquee', ssr: false }
+    { src: '~/plugins/vue-marquee', ssr: false },
+    { src: '~/plugins/vue-scroll-to', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules

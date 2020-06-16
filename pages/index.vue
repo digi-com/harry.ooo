@@ -5,34 +5,36 @@
       <video id="full-screen" autoplay muted loop>
         <source src="/meat-rack/video_1.mp4" type="video/mp4" />
       </video>
-      <marquee-text :repeat="10" class="ra-marquee">
-        <a
-          href="https://www.residentadvisor.net/"
-          rel="noopener"
-          target="blank"
-          class="ra-link"
-        >
-          <svg
-            width="936"
-            height="449"
-            viewBox="0 0 936 449"
-            xmlns="http://www.w3.org/2000/svg"
+      <client-only>
+        <marquee-text :repeat="6" class="ra-marquee">
+          <a
+            href="https://www.residentadvisor.net/"
+            rel="noopener"
+            target="blank"
+            class="ra-link"
           >
-            <path
-              d="M925.008 359.515c6.274-5.975 10.236-14.348 10.236-23.693 0-8.994-4.28-17.078-10.141-22.997L661.04 48.762l-79.702 79.702 207.901 207.901H494.688c-14.399-.431-25.81-5.262-35.465-14.619L327.056 189.579c-13.705-12.96-32.479-21.16-52.834-21.16-.072 0-.139.01-.201.01v-.01H112.72v-55.152h167.056v.011c33.099.016 62.631 13.563 84.278 35.303l98.584 98.583 79.702-79.702-100.5-100.5C399.832 25.594 343.1.551 279.491.551H0v280.583h236.379v.018c15.374.11 29.254 6.433 39.276 16.588l129.441 129.445c13.166 12.93 30.955 21.081 50.68 21.815h357.57c15.053-.198 28.648-6.361 38.57-16.254l73.147-73.14-.055-.091"
-              fill="#FFFFFF"
-              fill-rule="evenodd"
-            />
-          </svg>
-          Watch Meat Rack on Resident Advisor
-        </a>
-      </marquee-text>
+            <svg
+              width="936"
+              height="449"
+              viewBox="0 0 936 449"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M925.008 359.515c6.274-5.975 10.236-14.348 10.236-23.693 0-8.994-4.28-17.078-10.141-22.997L661.04 48.762l-79.702 79.702 207.901 207.901H494.688c-14.399-.431-25.81-5.262-35.465-14.619L327.056 189.579c-13.705-12.96-32.479-21.16-52.834-21.16-.072 0-.139.01-.201.01v-.01H112.72v-55.152h167.056v.011c33.099.016 62.631 13.563 84.278 35.303l98.584 98.583 79.702-79.702-100.5-100.5C399.832 25.594 343.1.551 279.491.551H0v280.583h236.379v.018c15.374.11 29.254 6.433 39.276 16.588l129.441 129.445c13.166 12.93 30.955 21.081 50.68 21.815h357.57c15.053-.198 28.648-6.361 38.57-16.254l73.147-73.14-.055-.091"
+                fill="#FFFFFF"
+                fill-rule="evenodd"
+              />
+            </svg>
+            Watch Meat Rack on Resident Advisor
+          </a>
+        </marquee-text>
+      </client-only>
     </div>
     <div class="image-array">
       <div class="image-array-header">
         <span>Meat Rack {{ imageCount }}/24</span>
         <div>
-          <a
+          <div
             v-scroll-to="{
               el: '#trailer',
               duration: 2500,
@@ -41,10 +43,10 @@
               x: false,
               y: true
             }"
-            href="#"
-            style="margin-right: 1rem;"
-            >Watch Trailer ↓</a
+            style="margin-right: 1rem; display: inline; cursor: pointer;"
           >
+            Watch Trailer ↓
+          </div>
           <nuxt-link to="/projects/meat-rack">View Project →</nuxt-link>
         </div>
       </div>
@@ -238,6 +240,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   z-index: 9999;
+  user-select: none;
 }
 .image-array .image-array-header a {
   color: white;
