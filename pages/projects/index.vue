@@ -15,17 +15,19 @@
       "
     > -->
     <ul>
-      <nuxt-link to="/projects/mundial">
-        <li
-          @mouseenter="mundialHoverSwitch()"
-          @mouseleave="mundialHoverSwitch()"
-        >
-          <span class="title">Mundial</span>
+      <div class="coming-soon">
+        <li>
+          <span class="title">
+            Mundial
+            <div class="coming-soon-badge">
+              Coming Soon
+            </div>
+          </span>
           <span class="medium">Video</span>
           <span class="type">Commission</span>
           <span class="year">2020</span>
         </li>
-      </nuxt-link>
+      </div>
       <nuxt-link to="/projects/meat-rack">
         <li
           @mouseenter="meatRackHoverSwitch()"
@@ -159,39 +161,39 @@ export default {
 
 .mundial-hover {
   position: absolute;
-  top: calc(50% - 141px + 40px);
-  left: calc(50% - 250px);
+  top: calc(30% - 141px + 40px);
+  left: calc(45% - 250px);
   width: 500px;
   height: auto;
   object-fit: fill;
-  z-index: 0;
+  z-index: 1;
 }
 .meat-rack-hover {
   position: absolute;
-  top: calc(50% - 183px + 40px);
-  left: calc(50% - 250px);
+  top: calc(40% - 183px + 40px);
+  left: calc(55% - 250px);
   width: 500px;
   height: auto;
   object-fit: fill;
-  z-index: 0;
+  z-index: 1;
 }
 .margaret-hover {
   position: absolute;
   top: calc(50% - 141px + 40px);
-  left: calc(50% - 250px);
+  left: calc(45% - 250px);
   width: 500px;
   height: auto;
   object-fit: fill;
-  z-index: 0;
+  z-index: 1;
 }
 .ochre-hover {
   position: absolute;
-  top: calc(50% - 141px + 40px);
-  left: calc(50% - 250px);
+  top: calc(60% - 141px + 40px);
+  left: calc(55% - 250px);
   width: 500px;
   height: auto;
   object-fit: fill;
-  z-index: 0;
+  z-index: 1;
 }
 
 #projects {
@@ -207,13 +209,33 @@ a {
 a:hover {
   color: blue;
 }
+.coming-soon li span {
+  color: #ddd;
+}
+.coming-soon {
+  position: relative;
+  cursor: default;
+  user-select: none;
+  z-index: 0;
+}
+.coming-soon-badge {
+  font-size: 0.75rem;
+  padding: 6px 11px 6px 11px;
+  background: white;
+  border: 1px solid #ddd;
+  color: #ccc;
+  display: inline-block;
+  margin-left: 0.5rem;
+  border-radius: 999px;
+  vertical-align: top;
+  transform: translateY(1px);
+}
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
   font-size: 1.5rem;
   position: relative;
-  z-index: 1;
 }
 li {
   max-width: 100%;
@@ -223,10 +245,14 @@ li {
   align-items: center;
   padding: 2rem 3rem 1rem 3rem;
   letter-spacing: -0.25px;
+  user-select: none;
+  position: relative;
+  z-index: 2;
 }
 .header {
   font-size: 0.875rem;
   letter-spacing: 0;
+  line-height: 1.4;
 }
 .title {
   grid-column: 1 / 4;

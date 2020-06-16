@@ -33,7 +33,6 @@ export default {
 h2 {
   font-size: 0.875rem;
   font-weight: 400;
-  /* max-width: 23rem; */
   line-height: 1.4;
 }
 .information-container {

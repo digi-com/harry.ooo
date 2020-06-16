@@ -12,16 +12,16 @@
         grassroots football in London.
       </p>
     </div>
-    <MundialImages />
+    <!-- <MundialImages /> -->
   </div>
 </template>
 
 <script>
-import MundialImages from '~/components/MundialImages.vue'
+// import MundialImages from '~/components/MundialImages.vue'
 
 export default {
   components: {
-    MundialImages
+    // MundialImages
   },
   head() {
     return {

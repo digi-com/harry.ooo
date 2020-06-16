@@ -1,7 +1,7 @@
 <template>
   <section class="ochre-canvas-item">
     <div class="canvas-caption-header">
-      <h2>Ochre 1/47</h2>
+      <h2>Ochre 1/24</h2>
     </div>
     <canvas id="ochre-canvas"></canvas>
   </section>
@@ -59,13 +59,7 @@ export default {
     const draw = function() {
       if (currentX) {
         if (images[i].complete) {
-          context.drawImage(
-            images[i],
-            currentX - 180,
-            currentY - window.innerHeight * 3 - 144,
-            360,
-            288
-          )
+          context.drawImage(images[i], currentX - 180, currentY - 144, 360, 288)
         }
 
         currentX = currentX + (aimX - currentX) * 0.1
@@ -83,7 +77,6 @@ export default {
 <style>
 .ochre-canvas-item {
   position: relative;
-  transform: translateY(-9px);
   background-color: white;
 }
 .ochre-canvas-item .canvas-caption-header {

@@ -1,7 +1,7 @@
 <template>
   <section class="meat-rack-canvas-item">
     <div class="canvas-caption-header">
-      <h2>Meat Rack 1/38</h2>
+      <h2>Meat Rack 1/24</h2>
     </div>
     <canvas id="meat-rack-canvas"></canvas>
   </section>
@@ -59,13 +59,7 @@ export default {
     const draw = function() {
       if (currentX) {
         if (images[i].complete) {
-          context.drawImage(
-            images[i],
-            currentX - 180,
-            currentY - window.innerHeight - 144,
-            360,
-            288
-          )
+          context.drawImage(images[i], currentX - 180, currentY - 144, 360, 288)
         }
 
         currentX = currentX + (aimX - currentX) * 0.1
@@ -83,7 +77,6 @@ export default {
 <style>
 .meat-rack-canvas-item {
   position: relative;
-  transform: translateY(-3px);
 }
 .canvas-caption-header {
   position: absolute;

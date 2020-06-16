@@ -26,6 +26,15 @@ html {
   color: white;
 }
 
+canvas {
+  background-color: black;
+  color: white;
+}
+.daylight canvas {
+  background-color: white;
+  color: black;
+}
+
 *,
 *:before,
 *:after {

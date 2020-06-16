@@ -27,7 +27,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/vue-tippy', ssr: false }],
+  plugins: [
+    { src: '~/plugins/vue-tippy', ssr: false },
+    { src: '~/plugins/vue-marquee', ssr: false }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -38,7 +41,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['vue-scrollto/nuxt'],
   /*
    ** Build configuration
    */
