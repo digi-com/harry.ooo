@@ -235,6 +235,8 @@ export default {
 .ra-marquee {
   position: absolute;
   bottom: 2rem;
+  max-width: 100vw;
+  overflow-x: hidden;
   /* mix-blend-mode: difference; */
 }
 .ra-link {
