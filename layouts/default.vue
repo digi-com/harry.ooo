@@ -27,6 +27,10 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 canvas {
   background-color: black;
   color: white;
