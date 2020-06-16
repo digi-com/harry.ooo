@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [{ src: '~/assets/union.css', lang: 'css' }],
   /*
    ** Plugins to load before mounting the App
    */

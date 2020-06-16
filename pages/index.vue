@@ -45,9 +45,36 @@
             }"
             style="margin-right: 1rem; display: inline; cursor: pointer;"
           >
-            Watch Trailer ↓
+            Watch Trailer
+            <svg
+              width="13"
+              height="16"
+              viewBox="0 0 13 16"
+              xmlns="http://www.w3.org/2000/svg"
+              style="margin-left: 0.5rem; transform: translateY(3px)"
+            >
+              <path
+                d="M12.163962 10.34711l-5.656854 5.65685h-.000253L.850001 10.34711 1.557108 9.64l4.447854 4.447L6.003962 0h1l.001 14.092 4.451893-4.452.707107.70711z"
+                fill="#FFFFFF"
+                fill-rule="nonzero"
+              />
+            </svg>
           </div>
-          <nuxt-link to="/projects/meat-rack">View Project →</nuxt-link>
+          <nuxt-link to="/projects/meat-rack"
+            >View Project
+            <svg
+              width="18"
+              height="13"
+              viewBox="0 0 18 13"
+              xmlns="http://www.w3.org/2000/svg"
+              style="margin-left: 0.5rem; transform: translateY(2px)"
+            >
+              <path
+                d="M12.34711.84l5.65685 5.656854v.000253l-5.65685 5.656854-.70711-.707107L16.087 6.999 0 7V6l16.092-.001-4.452-4.451893L12.34711.84z"
+                fill="#FFFFFF"
+                fill-rule="nonzero"
+              /></svg
+          ></nuxt-link>
         </div>
       </div>
       <div class="sticky-paragraph">
