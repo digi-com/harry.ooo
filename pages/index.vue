@@ -25,7 +25,7 @@
                 fill-rule="evenodd"
               />
             </svg>
-            Watch Meat Rack on Resident Advisor
+            Click here to Watch Meat Rack on Resident Advisor
           </a>
         </marquee-text>
       </client-only>
@@ -82,7 +82,7 @@
       <div class="sticky-paragraph">
         <p>
           THE NYC DOWNLOW exists in the space where art and music collide, an
-          ever-changing artwork/club created to fill a gaping void in the
+          ever-changing artwork / club created to fill a gaping void in the
           British music and festival scenes. Temporary, counter-cultural,
           in-your face, and unapologetically LGBTQ-specific, The NYC Downlow is
           a phenomenon with a cult following.
@@ -118,17 +118,21 @@
         allowfullscreen
       ></iframe>
     </div>
+    <!-- Footer -->
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navigation from '~/components/Navigation.vue'
 import Observer from '~/components/Observer.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
     Navigation,
-    Observer
+    Observer,
+    Footer
   },
   data() {
     return {
@@ -136,76 +140,76 @@ export default {
       imageCount: 1,
       homeImages: [
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_10_21_20.Still406.png'
+          url: '/meat-rack/1.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_10_47_20.Still443.png'
+          url: '/meat-rack/2.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_11_00_11.Still461.png'
+          url: '/meat-rack/3.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_11_21_04.Still489.png'
+          url: '/meat-rack/4.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_11_25_13.Still508.png'
+          url: '/meat-rack/5.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_11_29_13.Still513.png'
+          url: '/meat-rack/6.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_11_30_00.Still518.png'
+          url: '/meat-rack/7.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_11_30_07.Still520.png'
+          url: '/meat-rack/8.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_11_31_05.Still526.png'
+          url: '/meat-rack/9.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_11_47_08.Still549.png'
+          url: '/meat-rack/10.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_11_51_11.Still561.png'
+          url: '/meat-rack/11.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_12_03_24.Still575.png'
+          url: '/meat-rack/12.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_12_47_17.Still626.png'
+          url: '/meat-rack/13.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_12_48_10.Still632.png'
+          url: '/meat-rack/14.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_12_48_17.Still636.png'
+          url: '/meat-rack/15.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_12_49_22.Still634.png'
+          url: '/meat-rack/16.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_12_52_22.Still639.png'
+          url: '/meat-rack/17.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_12_53_17.Still644.png'
+          url: '/meat-rack/18.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_12_54_14.Still646.png'
+          url: '/meat-rack/19.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_12_55_18.Still647.png'
+          url: '/meat-rack/20.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_15_19_20.Still852.png'
+          url: '/meat-rack/21.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_15_20_06.Still857.png'
+          url: '/meat-rack/22.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_15_32_14.Still864.png'
+          url: '/meat-rack/23.png'
         },
         {
-          url: '/meat-rack/FINAL IMAGE one sound file.00_15_39_21.Still867.png'
+          url: '/meat-rack/24.png'
         }
       ]
     }
@@ -245,9 +249,9 @@ export default {
   right: 3rem; */
   margin-left: 2rem;
   cursor: pointer;
-  font-size: 1.875rem;
   display: flex;
   align-items: center;
+  font-size: 1.875rem;
   user-select: none;
   -webkit-font-smoothing: none;
   text-transform: uppercase;
@@ -305,9 +309,9 @@ export default {
   height: 100vh;
   display: flex;
   align-items: center;
-  max-width: 32.5rem;
+  max-width: 32rem;
   margin: 0 auto;
-  line-height: 1.45;
+  line-height: 1.4;
   -webkit-font-smoothing: none;
   /* z-index: 9;
   mix-blend-mode: difference; */

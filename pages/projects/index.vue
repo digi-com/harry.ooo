@@ -7,13 +7,6 @@
       <span class="type">Type</span>
       <span class="year">Year</span>
     </li>
-    <!-- <ul
-      :style="
-        mundialHover || meatRackHover || margaretHover || ochreHover
-          ? 'mix-blend-mode: difference;'
-          : ''
-      "
-    > -->
     <ul>
       <div class="coming-soon">
         <li>
@@ -156,12 +149,12 @@ export default {
   width: 100%;
   height: 100vh;
   object-fit: fill;
-  z-index: 0;
+  z-index: 1;
 } */
 
 .mundial-hover {
   position: absolute;
-  top: calc(30% - 141px + 40px);
+  top: calc(240px - 141px + 40px);
   left: calc(45% - 250px);
   width: 500px;
   height: auto;
@@ -170,7 +163,7 @@ export default {
 }
 .meat-rack-hover {
   position: absolute;
-  top: calc(40% - 183px + 40px);
+  top: calc(288px - 183px + 40px);
   left: calc(55% - 250px);
   width: 500px;
   height: auto;
@@ -179,7 +172,7 @@ export default {
 }
 .margaret-hover {
   position: absolute;
-  top: calc(50% - 141px + 40px);
+  top: calc(360px - 141px + 40px);
   left: calc(45% - 250px);
   width: 500px;
   height: auto;
@@ -188,7 +181,7 @@ export default {
 }
 .ochre-hover {
   position: absolute;
-  top: calc(60% - 141px + 40px);
+  top: calc(432px - 141px + 40px);
   left: calc(55% - 250px);
   width: 500px;
   height: auto;

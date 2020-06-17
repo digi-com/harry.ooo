@@ -1,8 +1,5 @@
 <template>
   <section class="meat-rack-canvas-item">
-    <div class="canvas-caption-header">
-      <h2>Meat Rack 1/24</h2>
-    </div>
     <canvas id="meat-rack-canvas"></canvas>
   </section>
 </template>
@@ -77,6 +74,7 @@ export default {
 <style>
 .meat-rack-canvas-item {
   position: relative;
+  height: 100vh;
 }
 .canvas-caption-header {
   position: absolute;
@@ -85,7 +83,6 @@ export default {
   background: transparent;
   user-select: none;
   color: white;
-  mix-blend-mode: difference;
 }
 .canvas-caption-header h2 {
   font-weight: 400;
