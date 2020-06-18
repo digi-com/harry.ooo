@@ -27,7 +27,7 @@
           x: false,
           y: true
         }"
-        style="padding-right: calc(13px + 7px); cursor: pointer;"
+        style="padding-right: calc(13px + 7px);"
       >
         Watch Trailer
         <svg
@@ -55,7 +55,7 @@
         x: false,
         y: true
       }"
-      style="cursor: pointer; position: absolute; bottom: 0; left: calc(50% - 55px); z-index: 99; padding: 2rem 3rem; font-size: 0.875rem;"
+      style="position: absolute; bottom: 0; left: calc(50% - 55px); z-index: 99; padding: 2rem 3rem; font-size: 0.875rem;"
     >
       <svg
         width="13"
@@ -115,12 +115,16 @@
     <div id="feature" class="feature">
       <h2>Meat Rack (2020)</h2>
       <p class="paragraph">
-        Meat Rack is an experimental documentary film about The NYC Downlow, the
-        infamous queer club/roaming art exhibition created by Block9. The
-        Downlow first appeared at Glastonbury Festival in 2007 as a film-set
+        The NYC Downlow exists in the space where art and music collide, an
+        ever-changing artwork / club created to fill a gaping void in the
+        British music and festival scenes. Temporary, counter-cultural, in-your
+        face, and unapologetically LGBTQ-specific, The Downlow is a queer
+        phenomenon with a worldwide cult following.
+        <br /><br />
+        The Downlow first appeared at Glastonbury Festival in 2007 as a film-set
         replica of a dilapidated 1970s Lower East Side tenement with an X-rated
-        gay nightclub inside. Now appearing as a warehouse at the heart of the
-        Meatpacking District in New York City (circa 1982), The Downlow
+        gay nightclub inside. Having since evolved into a warehouse at the heart
+        of the Meatpacking District in New York City (circa 1982), The Downlow
         celebrated their 10th Anniversary at Glastonbury in 2017. MEAT RACK
         works as a document of the celebrations, featuring interviews
         <br /><br />
@@ -307,14 +311,13 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-.project-navigation .back-link {
-  cursor: pointer;
-}
 .absolute-logo {
   position: absolute;
   top: calc(50% - 144px);
   left: calc(50% - 180px);
   z-index: 9999;
+  user-select: none;
+  pointer-events: none;
 }
 .feature h2 {
   grid-column: 3 / 7;

@@ -43,7 +43,7 @@
               x: false,
               y: true
             }"
-            style="padding-right: calc(13px + 32px + 8px); display: inline; cursor: pointer;"
+            style="padding-right: calc(13px + 8px); display: inline;"
           >
             Watch Trailer
             <svg
@@ -60,7 +60,7 @@
               />
             </svg>
           </div>
-          <nuxt-link
+          <!-- <nuxt-link
             to="/projects/meat-rack"
             style="padding-right: calc(18px + 11px);"
             >View Project
@@ -76,7 +76,7 @@
                 fill="#FFFFFF"
                 fill-rule="nonzero"
               /></svg
-          ></nuxt-link>
+          ></nuxt-link> -->
         </div>
       </div>
       <div class="sticky-paragraph">
@@ -111,7 +111,7 @@
     <!-- Vimeo -->
     <div id="trailer" class="video-container">
       <iframe
-        src="https://player.vimeo.com/video/370058381?autoplay=1&loop=1"
+        src="https://player.vimeo.com/video/429754603?autoplay=1&loop=1"
         width="960"
         height="540"
         frameborder="0"
@@ -249,7 +249,6 @@ export default {
   bottom: 2rem;
   right: 3rem; */
   margin-left: 2rem;
-  cursor: pointer;
   display: flex;
   align-items: center;
   font-size: 1.875rem;

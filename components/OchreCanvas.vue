@@ -1,8 +1,5 @@
 <template>
   <section class="ochre-canvas-item">
-    <div class="canvas-caption-header">
-      <h2>Ochre 1/24</h2>
-    </div>
     <canvas id="ochre-canvas"></canvas>
   </section>
 </template>
@@ -78,18 +75,6 @@ export default {
 .ochre-canvas-item {
   position: relative;
   background-color: white;
-}
-.ochre-canvas-item .canvas-caption-header {
-  position: absolute;
-  top: 0;
-  padding: 2rem 3rem;
-  background: transparent;
-  user-select: none;
-  color: white;
-  mix-blend-mode: difference;
-}
-.canvas-caption-header h2 {
-  font-weight: 400;
-  font-size: 0.875rem;
+  height: 100vh;
 }
 </style>

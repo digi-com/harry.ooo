@@ -198,6 +198,7 @@ a {
   text-decoration: none;
   color: black;
   display: block;
+  position: relative;
 }
 a:hover {
   color: blue;
@@ -207,7 +208,6 @@ a:hover {
 }
 .coming-soon {
   position: relative;
-  cursor: default;
   user-select: none;
 }
 .coming-soon-badge {
@@ -239,7 +239,7 @@ li {
   letter-spacing: -0.25px;
   user-select: none;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 .header {
   font-size: 0.875rem;

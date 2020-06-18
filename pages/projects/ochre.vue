@@ -1,6 +1,6 @@
 <template>
   <div id="ochre">
-    <!-- <OchreCanvas
+    <OchreCanvas
       :images="[
         '/ochre/CHEZ MOUNIR VISUAL ONLY.00_00_10_07.Still002.png',
         '/ochre/CHEZ MOUNIR VISUAL ONLY.00_00_26_02.Still004.png',
@@ -76,7 +76,13 @@
         '/ochre/OCHRE website grabs.00_02_15_09.Still116.png',
         '/ochre/OCHRE website grabs.00_02_29_06.Still117.png'
       ]"
-    /> -->
+    />
+    <!-- Absolute Logo -->
+    <img
+      class="ochre-absolute-logo"
+      src="/ochre/ochre-title.png"
+      style="max-width: 357px;"
+    />
     <div class="feature">
       <h2>Ochre</h2>
       <p class="paragraph">
@@ -226,11 +232,11 @@
 </template>
 
 <script>
-// import OchreCanvas from '~/components/OchreCanvas.vue'
+import OchreCanvas from '~/components/OchreCanvas.vue'
 
 export default {
   components: {
-    // OchreCanvas
+    OchreCanvas
   },
   head() {
     return {
@@ -269,9 +275,6 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-.project-navigation .back-link {
-  cursor: pointer;
-}
 .feature h2 {
   grid-column: 3 / 7;
   font-weight: 400;
@@ -299,6 +302,14 @@ export default {
 }
 .feature-grid img {
   max-width: 100%;
+}
+.ochre-absolute-logo {
+  position: absolute;
+  top: calc(50% - 22px);
+  left: calc(50% - 178px);
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
 }
 /* Video container */
 .video-container {
