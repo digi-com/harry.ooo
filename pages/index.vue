@@ -5,7 +5,7 @@
       <video id="full-screen" autoplay muted loop>
         <source src="/meat-rack/video_1.mp4" type="video/mp4" />
       </video>
-      <client-only>
+      <!-- <client-only>
         <marquee-text :repeat="6" class="ra-marquee">
           <a
             href="https://www.residentadvisor.net/"
@@ -28,7 +28,7 @@
             Click here to Watch Meat Rack on Resident Advisor
           </a>
         </marquee-text>
-      </client-only>
+      </client-only> -->
     </div>
     <div class="image-array">
       <div class="image-array-header">
@@ -80,7 +80,8 @@
         </div>
       </div>
       <div class="sticky-paragraph">
-        <p>
+        <img src="/meat-rack/meat-rack-title.png" style="max-width: 360px;" />
+        <!-- <p>
           THE NYC DOWNLOW exists in the space where art and music collide, an
           ever-changing artwork / club created to fill a gaping void in the
           British music and festival scenes. Temporary, counter-cultural,
@@ -90,7 +91,7 @@
           Set in a warehouse at the heart of New York City's Meatpacking
           District, MEAT RACK celebrates the 10th Anniversary of a
           counter-cultural icon.
-        </p>
+        </p> -->
       </div>
       <div
         v-for="(image, index) in homeImages"
@@ -119,20 +120,20 @@
       ></iframe>
     </div>
     <!-- Footer -->
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
 <script>
 import Navigation from '~/components/Navigation.vue'
 import Observer from '~/components/Observer.vue'
-import Footer from '~/components/Footer.vue'
+// import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
     Navigation,
-    Observer,
-    Footer
+    Observer
+    // Footer
   },
   data() {
     return {
@@ -304,12 +305,13 @@ export default {
   top: 0;
   font-family: 'Union';
   font-weight: 400;
-  font-size: 1.375rem;
+  font-size: 1.75rem;
   font-style: italic;
   height: 100vh;
   display: flex;
   align-items: center;
-  max-width: 32rem;
+  justify-content: center;
+  max-width: 41rem;
   margin: 0 auto;
   line-height: 1.4;
   -webkit-font-smoothing: none;

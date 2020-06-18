@@ -45,6 +45,37 @@
         </svg>
       </div>
     </nav>
+    <!-- Scroll -->
+    <div
+      v-scroll-to="{
+        el: '#feature',
+        duration: 1000,
+        easing: [0.0, 0.0, 0.58, 1.0],
+        cancelable: true,
+        x: false,
+        y: true
+      }"
+      style="cursor: pointer; position: absolute; bottom: 0; left: calc(50% - 55px); z-index: 99; padding: 2rem 3rem; font-size: 0.875rem;"
+    >
+      <svg
+        width="13"
+        height="15"
+        viewBox="0 0 13 15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12.163962 9.34711l-5.656854 5.65685h-.000253L.850001 9.34711 1.557108 8.64l4.447854 4.447L6.003962 0h1l.001 13.092 4.451893-4.452.707107.70711z"
+          fill="#FFFFFF"
+          fill-rule="nonzero"
+        />
+      </svg>
+    </div>
+    <!-- Absolute Logo -->
+    <img
+      class="absolute-logo"
+      src="/meat-rack/meat-rack-title.png"
+      style="max-width: 360px;"
+    />
     <!-- Canvas -->
     <MeatRackCanvas
       :images="[
@@ -81,7 +112,7 @@
         '/meat-rack/38.png'
       ]"
     />
-    <div class="feature">
+    <div id="feature" class="feature">
       <h2>Meat Rack (2020)</h2>
       <p class="paragraph">
         Meat Rack is an experimental documentary film about The NYC Downlow, the
@@ -262,6 +293,7 @@ export default {
   user-select: none;
   max-width: 1280px;
   margin: 0 auto;
+  text-align: left;
 }
 .project-navigation {
   position: fixed;
@@ -278,10 +310,16 @@ export default {
 .project-navigation .back-link {
   cursor: pointer;
 }
+.absolute-logo {
+  position: absolute;
+  top: calc(50% - 144px);
+  left: calc(50% - 180px);
+  z-index: 9999;
+}
 .feature h2 {
   grid-column: 3 / 7;
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 3rem;
   line-height: 1;
   margin-bottom: 2rem;
 }

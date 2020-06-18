@@ -72,7 +72,7 @@
       muted
       loop
     >
-      <source src="/meat-rack/video_1.mp4" type="video/mp4" />
+      <source src="/meat-rack/supercut_o.mp4" type="video/mp4" />
     </video>
     <!-- Margaret -->
     <video
@@ -83,7 +83,7 @@
       muted
       loop
     >
-      <source src="/margaret/margaret_1.mp4" type="video/mp4" />
+      <source src="/margaret/supercut.mp4" type="video/mp4" />
     </video>
     <!-- Ochre -->
     <video
@@ -94,7 +94,7 @@
       muted
       loop
     >
-      <source src="/ochre/ochre_1.mp4" type="video/mp4" />
+      <source src="/ochre/supercut.mp4" type="video/mp4" />
     </video>
   </section>
 </template>
@@ -203,20 +203,19 @@ a:hover {
   color: blue;
 }
 .coming-soon li span {
-  color: #ddd;
+  color: rgba(0, 0, 0, 0.2);
 }
 .coming-soon {
   position: relative;
   cursor: default;
   user-select: none;
-  z-index: 0;
 }
 .coming-soon-badge {
   font-size: 0.75rem;
   padding: 6px 11px 6px 11px;
-  background: white;
-  border: 1px solid #ddd;
-  color: #ccc;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  color: rgba(0, 0, 0, 0.22);
   display: inline-block;
   margin-left: 0.5rem;
   border-radius: 999px;

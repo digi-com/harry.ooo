@@ -1,17 +1,5 @@
 <template>
-  <div>
-    <div class="feature">
-      <h2>Ochre</h2>
-      <p>
-        Ochre follows a twelve-day journey through Marrakech that comes to a
-        close at Atlas Electronic on the outskirts of the city. The film was
-        shot on three small format cameras; a Krasnagorsk 3, a Braun Nizo
-        Professional and an Eumig Nautica (underwater sequences). The music in
-        the film was provided by Tapan, a Serbian band who performed at the
-        festival. The sound was designed and edited by Goran Simonoski who is a
-        member of the band.
-      </p>
-    </div>
+  <div id="ochre">
     <!-- <OchreCanvas
       :images="[
         '/ochre/CHEZ MOUNIR VISUAL ONLY.00_00_10_07.Still002.png',
@@ -89,18 +77,160 @@
         '/ochre/OCHRE website grabs.00_02_29_06.Still117.png'
       ]"
     /> -->
-    <!-- <OchreImages /> -->
+    <div class="feature">
+      <h2>Ochre</h2>
+      <p class="paragraph">
+        Ochre follows a twelve-day journey through Marrakech that comes to a
+        close at Atlas Electronic on the outskirts of the city. The film was
+        shot on three small format cameras; a Krasnagorsk 3, a Braun Nizo
+        Professional and an Eumig Nautica (underwater sequences). The music in
+        the film was provided by Tapan, a Serbian band who performed at the
+        festival. The sound was designed and edited by Goran Simonoski who is a
+        member of the band.
+        <br /><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+      <p class="footnotes">
+        1. The NYC Downlow (https://thenycdownlow.com/)
+        <br />
+        2. Block9 (https://www.block9.com/)
+        <br />
+        3. Glastonbury Festival (https://www.glastonburyfestivals.co.uk/)
+        <br />
+        4. Resident Advisor (https://www.residentadvisor.net/)
+      </p>
+    </div>
+    <!-- Feature Grid -->
+    <div class="feature-grid">
+      <img src="/meat-rack/sequence1_1.png" />
+      <img src="/meat-rack/sequence1_2.png" />
+      <img src="/meat-rack/sequence1_3.png" />
+      <img src="/meat-rack/sequence1_4.png" />
+      <img src="/meat-rack/sequence1_5.png" />
+      <img src="/meat-rack/sequence2_1.png" />
+      <img src="/meat-rack/sequence2_2.png" />
+      <img src="/meat-rack/sequence3_1.png" />
+      <img src="/meat-rack/sequence3_2.png" />
+      <img src="/meat-rack/1.png" />
+      <img src="/meat-rack/2.png" />
+      <img src="/meat-rack/3.png" />
+      <img src="/meat-rack/4.png" />
+      <img src="/meat-rack/5.png" />
+      <img src="/meat-rack/6.png" />
+      <img src="/meat-rack/7.png" />
+      <img src="/meat-rack/8.png" />
+      <img src="/meat-rack/9.png" />
+      <img src="/meat-rack/10.png" />
+      <img src="/meat-rack/11.png" />
+      <img src="/meat-rack/12.png" />
+      <img src="/meat-rack/13.png" />
+      <img src="/meat-rack/14.png" />
+      <img src="/meat-rack/15.png" />
+      <img src="/meat-rack/16.png" />
+      <img src="/meat-rack/17.png" />
+      <img src="/meat-rack/18.png" />
+      <img src="/meat-rack/19.png" />
+      <img src="/meat-rack/20.png" />
+      <img src="/meat-rack/21.png" />
+      <img src="/meat-rack/22.png" />
+      <img src="/meat-rack/23.png" />
+      <img src="/meat-rack/24.png" />
+      <img src="/meat-rack/25.png" />
+      <img src="/meat-rack/26.png" />
+      <img src="/meat-rack/27.png" />
+      <img src="/meat-rack/28.png" />
+      <img src="/meat-rack/29.png" />
+      <img src="/meat-rack/30.png" />
+      <img src="/meat-rack/31.png" />
+      <img src="/meat-rack/32.png" />
+      <img src="/meat-rack/33.png" />
+      <img src="/meat-rack/34.png" />
+      <img src="/meat-rack/35.png" />
+      <img src="/meat-rack/36.png" />
+      <img src="/meat-rack/37.png" />
+      <img src="/meat-rack/38.png" />
+      <img src="/meat-rack/39.png" />
+      <img src="/meat-rack/40.png" />
+      <img src="/meat-rack/41.png" />
+      <img src="/meat-rack/42.png" />
+      <img src="/meat-rack/43.png" />
+      <img src="/meat-rack/44.png" />
+    </div>
+    <!-- Vimeo -->
+    <div id="film" class="video-container">
+      <iframe
+        src="https://player.vimeo.com/video/370058381?autoplay=1&loop=1"
+        width="960"
+        height="540"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <!-- Credits -->
+    <div class="credits">
+      <div class="column-1">
+        <div class="item">
+          <span class="credit">Directed by</span>
+          <span class="name">Harry Lawson</span>
+        </div>
+        <div class="item">
+          <span class="credit">In collaboration with</span>
+          <span class="name">Gideon Berger, Stephen Gallagher</span>
+        </div>
+        <div class="item">
+          <span class="credit">Cinematography</span>
+          <span class="name">Saul Pankhurst</span>
+        </div>
+        <div class="item">
+          <span class="credit">Camera</span>
+          <span class="name">Saul Pankhurst, Liam Healy</span>
+        </div>
+      </div>
+      <div class="column-2">
+        <div class="item">
+          <span class="credit">Sound Recording</span>
+          <span class="name">Emma Barnaby</span>
+        </div>
+        <div class="item">
+          <span class="credit">Sound Design</span>
+          <span class="name">Harry Lawson</span>
+        </div>
+        <div class="item">
+          <span class="credit">Edited by</span>
+          <span class="name">Harry Lawson</span>
+        </div>
+      </div>
+      <div class="column-3">
+        <div class="item">
+          <span class="credit">Special thanks</span>
+          <span class="name">Andrew Kötting</span>
+        </div>
+        <div class="item">
+          <span class="credit">Titles</span>
+          <span class="name">Dennis McInnes</span>
+        </div>
+        <div class="item">
+          <span class="credit">Commissioned by</span>
+          <span class="name">Block9</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 // import OchreCanvas from '~/components/OchreCanvas.vue'
-// import OchreImages from '~/components/OchreImages.vue'
 
 export default {
   components: {
     // OchreCanvas
-    // OchreImages
   },
   head() {
     return {
@@ -116,23 +246,97 @@ export default {
 </script>
 
 <style>
-.feature {
+#ochre .feature {
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-gap: 1rem;
-  padding: 12rem 3rem;
+  padding: 10rem 3rem;
+  user-select: none;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: left;
+}
+.project-navigation {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  color: white;
+  z-index: 9999;
+  padding: 2rem 3rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.project-navigation .back-link {
+  cursor: pointer;
 }
 .feature h2 {
-  grid-column: 4 / 8;
+  grid-column: 3 / 7;
   font-weight: 400;
   font-size: 2.5rem;
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
-.feature p {
-  grid-column: 4 / 8;
+.feature .paragraph {
+  grid-column: 3 / 7;
   line-height: 1.5;
   font-size: 1.25rem;
+}
+.feature .footnotes {
+  grid-column: 3 / 7;
+  line-height: 1.5;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+/* Feature grid */
+.feature-grid {
+  margin-bottom: calc(10.25rem - (100vh - 540px) / 2);
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 1rem;
+}
+.feature-grid img {
+  max-width: 100%;
+}
+/* Video container */
+.video-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+/* Credits */
+.credits {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 1rem;
+  margin-top: calc(10.25rem - (100vh - 540px) / 2);
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+.credits .item {
+  margin-bottom: 1.25rem;
+}
+.credits .credit {
+  margin-bottom: 0.125rem;
+}
+.credits .name,
+.credits .credit {
+  display: block;
+}
+.credits .column-1 {
+  grid-column: 1 / 4;
+}
+.credits .column-2 {
+  grid-column: 4 / 6;
+}
+.credits .column-3 {
+  grid-column: 6 / 8;
 }
 </style>
