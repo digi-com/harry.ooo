@@ -1,9 +1,44 @@
 <template>
   <div id="ochre">
-    <OchreCanvas
-      :images="[
-        '/ochre/CHEZ MOUNIR VISUAL ONLY.00_00_10_07.Still002.png',
-        '/ochre/CHEZ MOUNIR VISUAL ONLY.00_00_26_02.Still004.png',
+    <!-- Navigation -->
+    <Navigation />
+    <!-- Canvas -->
+    <ProjectCanvas :images="canvasImages" logo="/ochre/ochre-title.png" />
+    <!-- Video -->
+    <ProjectFilm :film-link="filmLink" />
+    <!-- Feature -->
+    <ProjectFeature :content="projectFeatureContent" />
+    <!-- Credits -->
+    <Credits :credits="credits" />
+    <!-- Image Grid -->
+    <ProjectImages :images="projectImages" />
+    <!-- Next Project -->
+    <NextProject :projects="projects" />
+  </div>
+</template>
+
+<script>
+import Navigation from '~/components/Navigation.vue'
+import ProjectCanvas from '~/components/ProjectCanvas.vue'
+import ProjectFilm from '~/components/ProjectFilm.vue'
+import ProjectFeature from '~/components/ProjectFeature.vue'
+import ProjectImages from '~/components/ProjectImages.vue'
+import Credits from '~/components/Credits.vue'
+import NextProject from '~/components/NextProject.vue'
+
+export default {
+  components: {
+    Navigation,
+    ProjectCanvas,
+    ProjectFilm,
+    ProjectFeature,
+    ProjectImages,
+    Credits,
+    NextProject
+  },
+  data() {
+    return {
+      canvasImages: [
         '/ochre/Instagram Edit.00_08_08_10.Still016.png',
         '/ochre/Instagram Edit.00_08_09_03.Still020.png',
         '/ochre/Instagram Edit.00_08_09_04.Still021.png',
@@ -75,279 +110,120 @@
         '/ochre/OCHRE website grabs.00_02_01_07.Still111.png',
         '/ochre/OCHRE website grabs.00_02_15_09.Still116.png',
         '/ochre/OCHRE website grabs.00_02_29_06.Still117.png'
-      ]"
-    />
-    <!-- Absolute Logo -->
-    <img
-      class="ochre-absolute-logo"
-      src="/ochre/ochre-title.png"
-      style="max-width: 357px;"
-    />
-    <div class="feature">
-      <h2>Ochre</h2>
-      <p class="paragraph">
-        Ochre follows a twelve-day journey through Marrakech that comes to a
-        close at Atlas Electronic on the outskirts of the city. The film was
-        shot on three small format cameras; a Krasnagorsk 3, a Braun Nizo
-        Professional and an Eumig Nautica (underwater sequences). The music in
-        the film was provided by Tapan, a Serbian band who performed at the
-        festival. The sound was designed and edited by Goran Simonoski who is a
-        member of the band.
+      ],
+      filmLink: '/ochre/supercut.mp4',
+      projectFeatureContent: {
+        title: 'Ochre (2019)',
+        paragraph: `Ochre follows a twelve-day journey through Marrakech that comes to a close at Atlas Electronic on the outskirts of the city. The film was shot on three small format cameras; a Krasnagorsk 3, a Braun Nizo Professional and an Eumig Nautica (underwater sequences). The music in the film was provided by Tapan, a Serbian band who performed at the festival. The sound was designed and edited by Goran Simonoski, a member of the band.
         <br /><br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <p class="footnotes">
-        1. The NYC Downlow (https://thenycdownlow.com/)
-        <br />
-        2. Block9 (https://www.block9.com/)
-        <br />
-        3. Glastonbury Festival (https://www.glastonburyfestivals.co.uk/)
-        <br />
-        4. Resident Advisor (https://www.residentadvisor.net/)
-      </p>
-    </div>
-    <!-- Feature Grid -->
-    <div class="feature-grid">
-      <img src="/meat-rack/sequence1_1.png" />
-      <img src="/meat-rack/sequence1_2.png" />
-      <img src="/meat-rack/sequence1_3.png" />
-      <img src="/meat-rack/sequence1_4.png" />
-      <img src="/meat-rack/sequence1_5.png" />
-      <img src="/meat-rack/sequence2_1.png" />
-      <img src="/meat-rack/sequence2_2.png" />
-      <img src="/meat-rack/sequence3_1.png" />
-      <img src="/meat-rack/sequence3_2.png" />
-      <img src="/meat-rack/1.png" />
-      <img src="/meat-rack/2.png" />
-      <img src="/meat-rack/3.png" />
-      <img src="/meat-rack/4.png" />
-      <img src="/meat-rack/5.png" />
-      <img src="/meat-rack/6.png" />
-      <img src="/meat-rack/7.png" />
-      <img src="/meat-rack/8.png" />
-      <img src="/meat-rack/9.png" />
-      <img src="/meat-rack/10.png" />
-      <img src="/meat-rack/11.png" />
-      <img src="/meat-rack/12.png" />
-      <img src="/meat-rack/13.png" />
-      <img src="/meat-rack/14.png" />
-      <img src="/meat-rack/15.png" />
-      <img src="/meat-rack/16.png" />
-      <img src="/meat-rack/17.png" />
-      <img src="/meat-rack/18.png" />
-      <img src="/meat-rack/19.png" />
-      <img src="/meat-rack/20.png" />
-      <img src="/meat-rack/21.png" />
-      <img src="/meat-rack/22.png" />
-      <img src="/meat-rack/23.png" />
-      <img src="/meat-rack/24.png" />
-      <img src="/meat-rack/25.png" />
-      <img src="/meat-rack/26.png" />
-      <img src="/meat-rack/27.png" />
-      <img src="/meat-rack/28.png" />
-      <img src="/meat-rack/29.png" />
-      <img src="/meat-rack/30.png" />
-      <img src="/meat-rack/31.png" />
-      <img src="/meat-rack/32.png" />
-      <img src="/meat-rack/33.png" />
-      <img src="/meat-rack/34.png" />
-      <img src="/meat-rack/35.png" />
-      <img src="/meat-rack/36.png" />
-      <img src="/meat-rack/37.png" />
-      <img src="/meat-rack/38.png" />
-      <img src="/meat-rack/39.png" />
-      <img src="/meat-rack/40.png" />
-      <img src="/meat-rack/41.png" />
-      <img src="/meat-rack/42.png" />
-      <img src="/meat-rack/43.png" />
-      <img src="/meat-rack/44.png" />
-    </div>
-    <!-- Vimeo -->
-    <div id="film" class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/370058381?autoplay=1&loop=1"
-        width="960"
-        height="540"
-        frameborder="0"
-        allow="autoplay; fullscreen"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <!-- Credits -->
-    <div class="credits">
-      <div class="column-1">
-        <div class="item">
-          <span class="credit">Directed by</span>
-          <span class="name">Harry Lawson</span>
-        </div>
-        <div class="item">
-          <span class="credit">In collaboration with</span>
-          <span class="name">Gideon Berger, Stephen Gallagher</span>
-        </div>
-        <div class="item">
-          <span class="credit">Cinematography</span>
-          <span class="name">Saul Pankhurst</span>
-        </div>
-        <div class="item">
-          <span class="credit">Camera</span>
-          <span class="name">Saul Pankhurst, Liam Healy</span>
-        </div>
-      </div>
-      <div class="column-2">
-        <div class="item">
-          <span class="credit">Sound Recording</span>
-          <span class="name">Emma Barnaby</span>
-        </div>
-        <div class="item">
-          <span class="credit">Sound Design</span>
-          <span class="name">Harry Lawson</span>
-        </div>
-        <div class="item">
-          <span class="credit">Edited by</span>
-          <span class="name">Harry Lawson</span>
-        </div>
-      </div>
-      <div class="column-3">
-        <div class="item">
-          <span class="credit">Special thanks</span>
-          <span class="name">Andrew Kötting</span>
-        </div>
-        <div class="item">
-          <span class="credit">Titles</span>
-          <span class="name">Dennis McInnes</span>
-        </div>
-        <div class="item">
-          <span class="credit">Commissioned by</span>
-          <span class="name">Block9</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script>
-import OchreCanvas from '~/components/OchreCanvas.vue'
-
-export default {
-  components: {
-    OchreCanvas
+        The Downlow first appeared at Glastonbury Festival in 2007 as a film-set
+        replica of a dilapidated 1970s Lower East Side tenement with an X-rated
+        gay nightclub inside. Having since evolved into a warehouse at the heart
+        of the Meatpacking District in New York City (circa 1982), The Downlow
+        celebrated their 10th Anniversary at Glastonbury in 2017. Meat Rack
+        works as a document of the celebrations, featuring interviews with
+        artists and dancers.
+        <br /><br />
+        Filmed at Glastonbury Festival in 2017. Exhibited online via Resident
+        Advisor and Block9 (15th → 25th June 2020).`,
+        featureImages: [
+          {
+            imageOne: '/ochre/Instagram Edit.00_08_08_10.Still016.png',
+            imageTwo: '/ochre/Instagram Edit.00_08_09_03.Still020.png'
+          },
+          {
+            imageOne: '/ochre/Instagram Edit.00_08_09_04.Still021.png',
+            imageTwo: '/ochre/Instagram Edit.00_08_09_05.Still022.png'
+          },
+          {
+            imageOne: '/ochre/Instagram Edit.00_08_10_06.Still028.png',
+            imageTwo: '/ochre/Instagram Edit.00_08_10_08.Still030.png'
+          }
+        ],
+        footnotes: [
+          '1. The NYC Downlow (https://thenycdownlow.com/)',
+          '2. Block9 (https://www.block9.com/)',
+          '3. Glastonbury Festival (https://www.glastonburyfestivals.co.uk/)',
+          '4. Resident Advisor (https://www.residentadvisor.net/)'
+        ]
+      },
+      credits: [
+        { credit: 'Directed by', name: 'Harry Lawson' },
+        {
+          credit: 'In collaboration with',
+          name: 'Gideon Berger, Stephen Gallagher'
+        },
+        { credit: 'Cinematography', name: 'Saul Pankhurst' },
+        { credit: 'Camera', name: 'Saul Pankhurst, Liam Healy' },
+        { credit: 'Sound Recording', name: 'Emma Barnaby' },
+        { credit: 'Sound Design', name: 'Harry Lawson' },
+        { credit: 'Edited by', name: 'Harry Lawson' },
+        { credit: 'Special thanks', name: 'Andrew Kötting' },
+        { credit: 'Titles', name: 'Dennis McInnes' },
+        { credit: 'Commissioned by', name: 'Block9' }
+      ],
+      projectImages: [
+        '/ochre/Instagram Edit.00_08_08_10.Still016.png',
+        '/ochre/Instagram Edit.00_08_09_03.Still020.png',
+        '/ochre/Instagram Edit.00_08_09_04.Still021.png',
+        '/ochre/Instagram Edit.00_08_09_05.Still022.png',
+        '/ochre/Instagram Edit.00_08_09_06.Still023.png',
+        '/ochre/Instagram Edit.00_08_09_07.Still024.png',
+        '/ochre/Instagram Edit.00_08_09_08.Still025.png',
+        '/ochre/Instagram Edit.00_08_09_09.Still026.png',
+        '/ochre/Instagram Edit.00_08_09_10.Still027.png',
+        '/ochre/Instagram Edit.00_08_10_06.Still028.png',
+        '/ochre/Instagram Edit.00_08_10_07.Still029.png',
+        '/ochre/Instagram Edit.00_08_10_08.Still030.png',
+        '/ochre/Maroque Timeline 1 (MASTER).00_00_10_13.Still003.png',
+        '/ochre/Maroque Timeline 1 (MASTER).00_00_22_18.Still002.png',
+        '/ochre/Maroque Timeline 1 (MASTER).00_00_23_19.Still004.png',
+        '/ochre/Maroque Timeline 1 (MASTER).00_08_00_13.Still006.png',
+        '/ochre/Maroque Timeline 1 (MASTER).00_08_06_24.Still007.png',
+        '/ochre/Maroque Timeline 1 (MASTER).00_08_09_15.Still012.png',
+        '/ochre/Maroque Timeline 1 (MASTER).00_08_10_22.Still011.png',
+        '/ochre/OCHRE website grabs.00_00_00_00.Still020.png',
+        '/ochre/OCHRE website grabs.00_00_07_07.Still021.png',
+        '/ochre/OCHRE website grabs.00_00_07_11.Still022.png',
+        '/ochre/OCHRE website grabs.00_00_10_20.Still024.png',
+        '/ochre/OCHRE website grabs.00_00_10_21.Still025.png'
+      ],
+      projects: [
+        {
+          title: 'Mundial',
+          medium: 'Video',
+          type: 'Commission',
+          year: '2020',
+          link: '/projects/mundial'
+        },
+        {
+          title: 'Margaret',
+          medium: 'Video + Installation',
+          type: 'Research',
+          year: '2020',
+          link: '/projects/margaret'
+        },
+        {
+          title: 'Ochre',
+          medium: 'Video',
+          type: 'Commission',
+          year: '2019',
+          link: '/projects/ochre'
+        }
+      ]
+    }
   },
   head() {
     return {
       htmlAttrs: {
-        class: 'daylight'
+        class: ['daylight', 'ochre']
       },
       bodyAttrs: {
-        class: 'daylight'
+        class: ['daylight', 'ochre']
       }
     }
   }
 }
 </script>
 
-<style>
-#ochre .feature {
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 1rem;
-  padding: 10rem 3rem;
-  user-select: none;
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: left;
-}
-.project-navigation {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  color: white;
-  z-index: 9999;
-  padding: 2rem 3rem;
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.feature h2 {
-  grid-column: 3 / 7;
-  font-weight: 400;
-  font-size: 2.5rem;
-  line-height: 1;
-  margin-bottom: 2rem;
-}
-.feature .paragraph {
-  grid-column: 3 / 7;
-  line-height: 1.5;
-  font-size: 1.25rem;
-}
-.feature .footnotes {
-  grid-column: 3 / 7;
-  line-height: 1.5;
-  font-size: 1rem;
-  margin-top: 2rem;
-}
-/* Feature grid */
-.feature-grid {
-  margin-bottom: calc(10.25rem - (100vh - 540px) / 2);
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 1rem;
-}
-.feature-grid img {
-  max-width: 100%;
-}
-.ochre-absolute-logo {
-  position: absolute;
-  top: calc(50% - 22px);
-  left: calc(50% - 178px);
-  z-index: 9999;
-  user-select: none;
-  pointer-events: none;
-}
-/* Video container */
-.video-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-/* Credits */
-.credits {
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 1rem;
-  margin-top: calc(10.25rem - (100vh - 540px) / 2);
-  margin-left: 3rem;
-  margin-right: 3rem;
-  margin-bottom: 2rem;
-  line-height: 1.3;
-}
-.credits .item {
-  margin-bottom: 1.25rem;
-}
-.credits .credit {
-  margin-bottom: 0.125rem;
-}
-.credits .name,
-.credits .credit {
-  display: block;
-}
-.credits .column-1 {
-  grid-column: 1 / 4;
-}
-.credits .column-2 {
-  grid-column: 4 / 6;
-}
-.credits .column-3 {
-  grid-column: 6 / 8;
-}
-</style>
+<style></style>

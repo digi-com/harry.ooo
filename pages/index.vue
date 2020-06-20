@@ -34,7 +34,7 @@
       <div class="image-array-header">
         <span>Meat Rack {{ imageCount }}/24</span>
         <div>
-          <div
+          <!-- <div
             v-scroll-to="{
               el: '#trailer',
               duration: 2500,
@@ -59,7 +59,7 @@
                 fill-rule="nonzero"
               />
             </svg>
-          </div>
+          </div> -->
           <!-- <nuxt-link
             to="/projects/meat-rack"
             style="padding-right: calc(18px + 11px);"
@@ -108,17 +108,8 @@
         <img :src="image.url" :class="'image-' + (index + 1)" />
       </div>
     </div>
-    <!-- Vimeo -->
-    <div id="trailer" class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/429754603?autoplay=1&loop=1"
-        width="960"
-        height="540"
-        frameborder="0"
-        allow="autoplay; fullscreen"
-        allowfullscreen
-      ></iframe>
-    </div>
+    <!-- Video -->
+    <ProjectFilm film-link="/meat-rack/supercut_o.mp4" />
     <!-- Footer -->
     <!-- <Footer /> -->
   </div>
@@ -127,12 +118,14 @@
 <script>
 import Navigation from '~/components/Navigation.vue'
 import Observer from '~/components/Observer.vue'
+import ProjectFilm from '~/components/ProjectFilm.vue'
 // import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
     Navigation,
-    Observer
+    Observer,
+    ProjectFilm
     // Footer
   },
   data() {
@@ -215,13 +208,23 @@ export default {
       ]
     }
   },
+  // mounted() {
+  //   document.querySelector('.name').addEventListener('mouseenter', function() {
+  //     const cursor = document.querySelector('div#cursor')
+  //     cursor.style.transform = 'scale(2.5)'
+  //   })
+  //   document.querySelector('.name').addEventListener('mouseleave', function() {
+  //     const cursor = document.querySelector('div#cursor')
+  //     cursor.style.transform = 'scale(1)'
+  //   })
+  // },
   methods: {
     intersected(payload) {
       // console.log('intersected', payload)
       this.imageCount = payload
     },
     exited(payload) {
-      console.log('exited', payload)
+      // console.log('exited', payload)
       // this.imageCount = payload
     }
   }

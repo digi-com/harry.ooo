@@ -3,7 +3,7 @@
     <nuxt-link to="/" class="name">Harry Lawson</nuxt-link>
     <nuxt-link to="/projects" class="projects">Projects</nuxt-link>
     <nuxt-link to="/information" class="information">Information</nuxt-link>
-    <nuxt-link to="/misc" class="misc">Misc.</nuxt-link>
+    <!-- <nuxt-link to="/misc" class="misc">Misc.</nuxt-link> -->
   </nav>
 </template>
 

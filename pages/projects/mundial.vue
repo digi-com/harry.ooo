@@ -36,24 +36,4 @@ export default {
 }
 </script>
 
-<style>
-.feature {
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 1rem;
-  padding: 12rem 3rem;
-}
-.feature h2 {
-  grid-column: 4 / 8;
-  font-weight: 400;
-  font-size: 2.5rem;
-  line-height: 1;
-  margin-bottom: 1rem;
-}
-.feature p {
-  grid-column: 4 / 8;
-  line-height: 1.5;
-  font-size: 1.25rem;
-}
-</style>
+<style></style>
