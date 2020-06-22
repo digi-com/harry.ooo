@@ -47,7 +47,7 @@ footer a,
 footer p {
   display: block;
   text-decoration: none;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.125rem;
 }
 footer .column-1 {
   grid-column: 1 / 2;

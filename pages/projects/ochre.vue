@@ -114,18 +114,12 @@ export default {
       filmLink: '/ochre/supercut.mp4',
       projectFeatureContent: {
         title: 'Ochre (2019)',
-        paragraph: `Ochre follows a twelve-day journey through Marrakech that comes to a close at Atlas Electronic on the outskirts of the city. The film was shot on three small format cameras; a Krasnagorsk 3, a Braun Nizo Professional and an Eumig Nautica (underwater sequences). The music in the film was provided by Tapan, a Serbian band who performed at the festival. The sound was designed and edited by Goran Simonoski, a member of the band.
+        paragraph: `Ochre is the result of a twelve-day journey through Marrakech and the surrounding area, coming to a conclusion at Atlas Electronic on the outskirts of the city. A collaboration with cinematographer Saul Pankhurst, the film focuses on the textures and atmosphere of the city, gradually revealing elements of live performance before transitioning to night-time.
         <br /><br />
-        The Downlow first appeared at Glastonbury Festival in 2007 as a film-set
-        replica of a dilapidated 1970s Lower East Side tenement with an X-rated
-        gay nightclub inside. Having since evolved into a warehouse at the heart
-        of the Meatpacking District in New York City (circa 1982), The Downlow
-        celebrated their 10th Anniversary at Glastonbury in 2017. Meat Rack
-        works as a document of the celebrations, featuring interviews with
-        artists and dancers.
+        Ochre was shot on three small format cameras; a Krasnagorsk 3, a Braun Nizo Professional and a Eumig Nautica for the underwater sequences. The music in the film was provided by Tapan, a band from Serbia booked to perform at the festival. The sound was designed and edited by Goran Simonoski, a member of the band.
         <br /><br />
-        Filmed at Glastonbury Festival in 2017. Exhibited online via Resident
-        Advisor and Block9 (15th → 25th June 2020).`,
+        Filmed at Atlas Electronic Festival in 2018. Exhibited online via Resident
+        Advisor and Atlas Electronic (15th → 25th June 2020).`,
         featureImages: [
           {
             imageOne: '/ochre/Instagram Edit.00_08_08_10.Still016.png',
@@ -141,26 +135,20 @@ export default {
           }
         ],
         footnotes: [
-          '1. The NYC Downlow (https://thenycdownlow.com/)',
-          '2. Block9 (https://www.block9.com/)',
-          '3. Glastonbury Festival (https://www.glastonburyfestivals.co.uk/)',
+          '1. Atlas Electronic (https://atlas-electronic.com/)',
+          '2. Saul Pankhurst (https://vimeo.com/saulpankhurst)',
+          '3. Tapan (https://tapan.bandcamp.com/)',
           '4. Resident Advisor (https://www.residentadvisor.net/)'
         ]
       },
       credits: [
         { credit: 'Directed by', name: 'Harry Lawson' },
-        {
-          credit: 'In collaboration with',
-          name: 'Gideon Berger, Stephen Gallagher'
-        },
         { credit: 'Cinematography', name: 'Saul Pankhurst' },
-        { credit: 'Camera', name: 'Saul Pankhurst, Liam Healy' },
-        { credit: 'Sound Recording', name: 'Emma Barnaby' },
-        { credit: 'Sound Design', name: 'Harry Lawson' },
+        { credit: 'Music by', name: 'Tapan' },
+        { credit: 'Sound Design', name: 'Goran Simonoski' },
         { credit: 'Edited by', name: 'Harry Lawson' },
-        { credit: 'Special thanks', name: 'Andrew Kötting' },
         { credit: 'Titles', name: 'Dennis McInnes' },
-        { credit: 'Commissioned by', name: 'Block9' }
+        { credit: 'Commissioned by', name: 'Atlas Electronic' }
       ],
       projectImages: [
         '/ochre/Instagram Edit.00_08_08_10.Still016.png',
@@ -197,18 +185,18 @@ export default {
           link: '/projects/mundial'
         },
         {
+          title: 'Meat Rack',
+          medium: 'Video',
+          type: 'Documentary',
+          year: '2020',
+          link: '/projects/meat-rack'
+        },
+        {
           title: 'Margaret',
           medium: 'Video + Installation',
           type: 'Research',
           year: '2020',
           link: '/projects/margaret'
-        },
-        {
-          title: 'Ochre',
-          medium: 'Video',
-          type: 'Commission',
-          year: '2019',
-          link: '/projects/ochre'
         }
       ]
     }

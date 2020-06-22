@@ -1,11 +1,14 @@
 <template>
   <div class="image-array-container">
-    <img
+    <div
       v-for="(image, index) in images"
       :key="'image-' + index"
       :class="'image-slot-' + (index + 1)"
-      :src="image"
-    />
+      class="image"
+    >
+      <img :src="image" />
+      <!-- <span>Caption</span> -->
+    </div>
   </div>
 </template>
 
@@ -29,9 +32,16 @@ export default {
   grid-gap: 1rem;
   margin: 0 3rem 0 3rem;
 }
-.image-array-container img {
-  max-width: 100%;
+.image-array-container .image {
   margin-bottom: 12.5rem;
+}
+.image-array-container .image img {
+  max-width: 100%;
+}
+.image-array-container .image span {
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  display: block;
 }
 .image-array-container .image-slot-1 {
   grid-column: 1 / 4;

@@ -1,6 +1,9 @@
 <template>
   <div id="film">
     <div id="film-scroll" />
+    <div class="play-button">
+      Watch Trailer
+    </div>
     <video id="project-feature-video" autoplay muted loop>
       <source :src="filmLink" type="video/mp4" />
     </video>
@@ -35,6 +38,7 @@ export default {
   position: absolute;
   background-color: rgba(255, 0, 0, 0);
   top: 0;
+  backdrop-filter: blur(50px);
 }
 #film #film-scroll {
   position: absolute;
@@ -48,5 +52,27 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: fill;
+}
+.play-button {
+  position: absolute;
+  top: calc(50% - 32px);
+  left: calc(50% - 152px);
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  z-index: 9999;
+  border-radius: 999px;
+  height: 64px;
+  width: 304px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.daylight .play-button {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
 }
 </style>

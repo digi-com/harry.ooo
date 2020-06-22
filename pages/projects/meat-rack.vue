@@ -77,22 +77,11 @@ export default {
       filmLink: '/meat-rack/supercut_o.mp4',
       projectFeatureContent: {
         title: 'Meat Rack (2020)',
-        paragraph: `The NYC Downlow exists in the space where art and music collide, an
-        ever-changing artwork/club created to fill a gaping void in the British
-        music and festival scenes. Temporary, counter-cultural, in-your face and
-        unapologetically LGBTQ-specific, NYC Downlow is a queer phenomenon with
-        a worldwide cult following.
+        paragraph: `The NYC Downlow is Block9’s legendary queer nightclub. It first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay club inside. Having since evolved into a warehouse at the heart of the New York’s Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary at Glastonbury Festival in 2017. 
         <br /><br />
-        The Downlow first appeared at Glastonbury Festival in 2007 as a film-set
-        replica of a dilapidated 1970s Lower East Side tenement with an X-rated
-        gay nightclub inside. Having since evolved into a warehouse at the heart
-        of the Meatpacking District in New York City (circa 1982), The Downlow
-        celebrated their 10th Anniversary at Glastonbury in 2017. Meat Rack
-        works as a document of the celebrations, featuring interviews with
-        artists and dancers.
+        Meat Rack works as a document of the celebrations, taking us from Somerset to New York over the course of 16 minutes. From construction site to dance floor, build crew to muscle boys, the film is a personal tribute to a cultural phenomenon. It works as an intimate, sometimes unsettling portrait that captures the fleeting nature of Glastonbury’s most notorious nightspot. Meat Rack was shot on a Betacam SP camcorder and features VHS-C inserts. Both formats were manufactured in 1982.
         <br /><br />
-        Filmed at Glastonbury Festival in 2017. Exhibited online via Resident
-        Advisor and Block9 (15th → 25th June 2020).`,
+        Exhibited online via Block9 (23rd → 30th June 2020).`,
         featureImages: [
           {
             imageOne: '/meat-rack/sequence1_1.png',
@@ -110,8 +99,7 @@ export default {
         footnotes: [
           '1. The NYC Downlow (https://thenycdownlow.com/)',
           '2. Block9 (https://www.block9.com/)',
-          '3. Glastonbury Festival (https://www.glastonburyfestivals.co.uk/)',
-          '4. Resident Advisor (https://www.residentadvisor.net/)'
+          '3. Glastonbury Festival (https://www.glastonburyfestivals.co.uk/)'
         ]
       },
       credits: [
