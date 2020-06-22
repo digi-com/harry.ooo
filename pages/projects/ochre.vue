@@ -1,5 +1,6 @@
 <template>
   <div id="ochre">
+    <Navigation />
     <!-- Canvas -->
     <ProjectCanvas :images="canvasImages" logo="/ochre/ochre-title.png" />
     <!-- Video -->
@@ -16,7 +17,7 @@
 </template>
 
 <script>
-// import Navigation from '~/components/Navigation.vue'
+import Navigation from '~/components/Navigation.vue'
 import ProjectCanvas from '~/components/ProjectCanvas.vue'
 import ProjectFilm from '~/components/ProjectFilm.vue'
 import ProjectFeature from '~/components/ProjectFeature.vue'
@@ -26,7 +27,7 @@ import NextProject from '~/components/NextProject.vue'
 
 export default {
   components: {
-    // Navigation,
+    Navigation,
     ProjectCanvas,
     ProjectFilm,
     ProjectFeature,
@@ -112,12 +113,11 @@ export default {
       filmLink: '/ochre/supercut.mp4',
       projectFeatureContent: {
         title: 'Ochre (2019)',
-        paragraph: `Ochre is the result of a twelve-day journey through Marrakech and the surrounding area, coming to a conclusion at Atlas Electronic on the outskirts of the city. A collaboration with cinematographer Saul Pankhurst, the film focuses on the textures and atmosphere of the city, gradually revealing elements of live performance before transitioning to night-time.
+        paragraph: `<i>Ochre</i> is the result of a twelve-day journey through Morocco, ending at Atlas Electronic Festival on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, the film focuses on the textures and atmosphere of the city, gradually revealing elements of live performance and location before transitioning to the night-time programme.
         <br /><br />
-        Ochre was shot on three small format cameras; a Krasnagorsk 3, a Braun Nizo Professional and a Eumig Nautica for the underwater sequences. The music in the film was provided by Tapan, a band from Serbia booked to perform at the festival. The sound was designed and edited by Goran Simonoski, a member of the band.
+        The film was photographed on three small format cameras; a Krasnagorsk 3, a Braun Nizo Professional and a Eumig Nautica for the underwater sequences. The music in <i>Ochre</i> was provided by Tapan, a Serbian band who performed at the festival. The sound was designed by Goran Simonoski, a member of the band.
         <br /><br />
-        Filmed at Atlas Electronic Festival in 2018. Exhibited online via Resident
-        Advisor and Atlas Electronic (15th → 25th June 2020).`,
+        Filmed at Atlas Electronic Festival in 2018.`,
         featureImages: [
           {
             imageOne: '/ochre/Instagram Edit.00_08_08_10.Still016.png',
@@ -135,8 +135,7 @@ export default {
         footnotes: [
           '1. Atlas Electronic (https://atlas-electronic.com/)',
           '2. Saul Pankhurst (https://vimeo.com/saulpankhurst)',
-          '3. Tapan (https://tapan.bandcamp.com/)',
-          '4. Resident Advisor (https://www.residentadvisor.net/)'
+          '3. Tapan (https://tapan.bandcamp.com/)'
         ]
       },
       credits: [
