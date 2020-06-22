@@ -1,6 +1,5 @@
 <template>
   <section id="projects">
-    <InternalNavigation />
     <li class="header">
       <span class="title">Title</span>
       <span class="medium">Medium</span>
@@ -8,24 +7,18 @@
       <span class="year">Year</span>
     </li>
     <ul>
-      <div class="coming-soon">
+      <nuxt-link to="/projects/mundial">
         <li>
           <span class="title">
             Mundial
-            <div class="coming-soon-badge">
-              Coming Soon
-            </div>
           </span>
           <span class="medium">Video</span>
           <span class="type">Commission</span>
           <span class="year">2020</span>
         </li>
-      </div>
+      </nuxt-link>
       <nuxt-link to="/projects/meat-rack">
-        <li
-          @mouseenter="meatRackHoverSwitch()"
-          @mouseleave="meatRackHoverSwitch()"
-        >
+        <li>
           <span class="title">Meat Rack</span>
           <span class="medium">Video</span>
           <span class="type">Documentary</span>
@@ -33,10 +26,7 @@
         </li>
       </nuxt-link>
       <nuxt-link to="/projects/margaret">
-        <li
-          @mouseenter="margaretHoverSwitch()"
-          @mouseleave="margaretHoverSwitch()"
-        >
+        <li>
           <span class="title">Margaret</span>
           <span class="medium">Video + Installation</span>
           <span class="type">Research</span>
@@ -44,7 +34,7 @@
         </li>
       </nuxt-link>
       <nuxt-link to="/projects/ochre">
-        <li @mouseenter="ochreHoverSwitch()" @mouseleave="ochreHoverSwitch()">
+        <li>
           <span class="title">Ochre</span>
           <span class="medium">Video</span>
           <span class="type">Commission</span>
@@ -100,33 +90,14 @@
 </template>
 
 <script>
-import InternalNavigation from '~/components/InternalNavigation.vue'
+// import InternalNavigation from '~/components/InternalNavigation.vue'
 
 export default {
   components: {
-    InternalNavigation
+    // InternalNavigation
   },
   data() {
-    return {
-      mundialHover: false,
-      meatRackHover: false,
-      margaretHover: false,
-      ochreHover: false
-    }
-  },
-  methods: {
-    mundialHoverSwitch() {
-      this.mundialHover = !this.mundialHover
-    },
-    meatRackHoverSwitch() {
-      this.meatRackHover = !this.meatRackHover
-    },
-    margaretHoverSwitch() {
-      this.margaretHover = !this.margaretHover
-    },
-    ochreHoverSwitch() {
-      this.ochreHover = !this.ochreHover
-    }
+    return {}
   },
   head() {
     return {
@@ -193,6 +164,7 @@ export default {
   background-color: white;
   color: black;
   min-height: 100vh;
+  padding-top: 5rem;
 }
 a {
   text-decoration: none;

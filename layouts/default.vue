@@ -1,6 +1,7 @@
 <template>
   <section>
     <div id="cursor" />
+    <!-- <Navigation /> -->
     <nuxt />
     <Footer />
   </section>
@@ -12,7 +13,7 @@ import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
-    // Navigation
+    // Navigation,
     Footer
   },
   mounted() {
@@ -83,6 +84,10 @@ div#cursor {
 
 .daylight.margaret div#cursor {
   background-color: #dd75a9;
+}
+
+.daylight.mundial div#cursor {
+  background-color: #209b57;
 }
 
 canvas {

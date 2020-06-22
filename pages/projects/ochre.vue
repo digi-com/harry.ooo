@@ -1,7 +1,5 @@
 <template>
   <div id="ochre">
-    <!-- Navigation -->
-    <Navigation />
     <!-- Canvas -->
     <ProjectCanvas :images="canvasImages" logo="/ochre/ochre-title.png" />
     <!-- Video -->
@@ -18,7 +16,7 @@
 </template>
 
 <script>
-import Navigation from '~/components/Navigation.vue'
+// import Navigation from '~/components/Navigation.vue'
 import ProjectCanvas from '~/components/ProjectCanvas.vue'
 import ProjectFilm from '~/components/ProjectFilm.vue'
 import ProjectFeature from '~/components/ProjectFeature.vue'
@@ -28,7 +26,7 @@ import NextProject from '~/components/NextProject.vue'
 
 export default {
   components: {
-    Navigation,
+    // Navigation,
     ProjectCanvas,
     ProjectFilm,
     ProjectFeature,

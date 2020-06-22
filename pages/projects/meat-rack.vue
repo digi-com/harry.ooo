@@ -1,7 +1,5 @@
 <template>
   <div id="meat-rack">
-    <!-- Navigation -->
-    <Navigation />
     <!-- Canvas -->
     <ProjectCanvas
       :images="canvasImages"
@@ -21,7 +19,7 @@
 </template>
 
 <script>
-import Navigation from '~/components/Navigation.vue'
+// import Navigation from '~/components/Navigation.vue'
 import ProjectCanvas from '~/components/ProjectCanvas.vue'
 import ProjectFilm from '~/components/ProjectFilm.vue'
 import ProjectFeature from '~/components/ProjectFeature.vue'
@@ -31,7 +29,7 @@ import NextProject from '~/components/NextProject.vue'
 
 export default {
   components: {
-    Navigation,
+    // Navigation,
     ProjectCanvas,
     ProjectFilm,
     ProjectFeature,
@@ -77,9 +75,9 @@ export default {
       filmLink: '/meat-rack/supercut_o.mp4',
       projectFeatureContent: {
         title: 'Meat Rack (2020)',
-        paragraph: `The NYC Downlow is Block9’s legendary queer nightclub. It first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay club inside. Having since evolved into a warehouse at the heart of the New York’s Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary at Glastonbury Festival in 2017. 
+        paragraph: `The NYC Downlow is Block9’s legendary queer nightclub. It first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay club inside. Having since evolved into a warehouse at the heart of New York City’s Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary at Glastonbury Festival in 2017. 
         <br /><br />
-        Meat Rack works as a document of the celebrations, taking us from Somerset to New York over the course of 16 minutes. From construction site to dance floor, build crew to muscle boys, the film is a personal tribute to a cultural phenomenon. It works as an intimate, sometimes unsettling portrait that captures the fleeting nature of Glastonbury’s most notorious nightspot. Meat Rack was shot on a Betacam SP camcorder and features VHS-C inserts. Both formats were manufactured in 1982.
+        <i>Meat Rack</i> works as a document of the celebrations, taking us from Somerset to New York over the course of 16 minutes. From construction site to dance floor, build crew to muscle boys, the film is a personal tribute to a cultural phenomenon. An intimate, sometimes unsettling portrait, <i>Meat Rack</i> captures the fleeting nature of Glastonbury’s most notorious nightspot. Shot on a Betacam SP camcorder with VHS-C inserts. Both formats were manufactured and publicly available in 1982.
         <br /><br />
         Exhibited online via Block9 (23rd → 30th June 2020).`,
         featureImages: [

@@ -86,6 +86,10 @@ export default {
   margin-bottom: 3.75rem;
   letter-spacing: -1px;
 }
+.feature .paragraph img {
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
 .feature .paragraph {
   font-family: 'Suisse Works';
   line-height: 1.5;

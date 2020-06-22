@@ -1,6 +1,6 @@
 <template>
   <section id="information">
-    <InternalNavigation />
+    <!-- <InternalNavigation /> -->
     <div class="information-container">
       <h2>
         Harry Lawson (b. 1994) is documentary filmmaker based in London.
@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import InternalNavigation from '~/components/InternalNavigation.vue'
+// import InternalNavigation from '~/components/InternalNavigation.vue'
 
 export default {
   components: {
-    InternalNavigation
+    // InternalNavigation
   },
   head() {
     return {
@@ -34,6 +34,9 @@ h2 {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.4;
+}
+#information {
+  padding-top: 5rem;
 }
 .information-container {
   max-width: 100%;

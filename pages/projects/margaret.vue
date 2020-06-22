@@ -1,6 +1,5 @@
 <template>
-  <div id="ochre">
-    <!-- Navigation -->
+  <div id="margaret">
     <Navigation />
     <!-- Canvas -->
     <ProjectCanvas :images="canvasImages" logo="/margaret/margaret-title.png" />
@@ -98,27 +97,12 @@ export default {
         vascular dementia, and the experiences of patients, families, carers,
         and health workers that deal with dementia.
         <br /><br />
+        <img src="/margaret/margaret-hand.png"/>
         <span class="caption">In 2009, Harry worked with his grandmother, Margaret, on a piece about memory loss. At the time, she was 89 and living with vascular dementia. As part of the project, Harry asked Margaret to draw around the fingers of her left hand with a pen. The drawing has been reproduced above.</span>
         <br /><br />
-        The project now exists as a body of work about Margaret and the place
-        she spent the last four years of her life — Glenholme House in
-        Sunderland. It is set loosely over a period during which she moved out
-        of her home and into residential care, and features a growing archive of
-        objects and images relating to themes of intimacy, care, and memory
-        loss.
+        The project now exists as a body of work about Margaret and the place she spent the last four years of her life — Glenholme House in Sunderland. It is set loosely over a period during which she moved out of her home and into residential care, and features a growing archive of objects and images relating to themes of intimacy, care, and memory loss.
         <br /><br />
-        This archive includes memory tests conducted by Harry’s aunt and
-        photographs she took when the family were trying to sell Margaret’s
-        house after moving her into the home. There are also pages taken from an
-        inventory of Margaret’s clothes and belongings and large scale prints of
-        the original photographs. The film component fuses archival home videos
-        with material Harry and his Dad, Geoff, shot at the care home over a
-        number of years before and after Margaret’s death in 2014.
-        <br /><br />
-        Integrating mundane, intimate and surreal aspects of everyday life at
-        the home, it is an observational portrait of Glenholme House and the
-        people who live there. Margaret was screened for the first time at
-        Testing Situations in February 2020.`,
+        This archive includes memory tests conducted by Harry’s aunt and photographs taken when the family were trying to sell Margaret’s house after moving her into the carehome. There are also pages taken from an inventory of Margaret’s clothes and belongings. The film component fuses archival home videos and footage recorded at Glenholme House over a number of years before and after Margaret's death in 2014. Integrating mundane and surreal aspects of everyday life at the home, it is an observational portrait of Glenholme House and the people who live there. Margaret was screened for the first time at Testing Situations in February 2020.`,
         featureImages: [
           {
             imageOne: '/margaret/CAREHOME MINI DV.01_17_51_14.Still002.png',

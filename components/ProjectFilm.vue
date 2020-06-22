@@ -57,7 +57,7 @@ export default {
   position: absolute;
   top: calc(50% - 32px);
   left: calc(50% - 152px);
-  background-color: black;
+  background-color: transparent;
   border: 2px solid white;
   color: white;
   font-size: 2rem;

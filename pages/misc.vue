@@ -1,6 +1,6 @@
 <template>
   <section id="misc">
-    <InternalNavigation />
+    <!-- <InternalNavigation /> -->
     <div class="misc-container">
       <h2>
         Archive
@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import InternalNavigation from '~/components/InternalNavigation.vue'
+// import InternalNavigation from '~/components/InternalNavigation.vue'
 
 export default {
   components: {
-    InternalNavigation
+    // InternalNavigation
   },
   head() {
     return {

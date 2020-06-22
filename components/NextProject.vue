@@ -75,7 +75,7 @@ export default {
 }
 .project-table p {
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
 }
 .project-table .title {
   grid-column: 1 / 3;
