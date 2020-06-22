@@ -81,6 +81,10 @@ div#cursor {
   background-color: #c38748;
 }
 
+.daylight.margaret div#cursor {
+  background-color: #dd75a9;
+}
+
 canvas {
   background-color: black;
   color: white;

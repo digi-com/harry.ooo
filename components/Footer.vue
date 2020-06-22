@@ -32,7 +32,8 @@
 
 <style>
 footer {
-  display: grid;
+  /* display: grid; */
+  display: none;
   grid-template-columns: repeat(8, 1fr);
   grid-gap: 1rem;
   font-size: 0.875rem;

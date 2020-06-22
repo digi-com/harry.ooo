@@ -92,6 +92,11 @@ export default {
   font-size: 1.5rem;
   letter-spacing: -0.125px;
 }
+.feature .paragraph .caption {
+  font-size: 1rem;
+  line-height: 1.5;
+  display: inline-block;
+}
 .daylight .feature .paragraph {
   -webkit-font-smoothing: subpixel-antialiased;
 }

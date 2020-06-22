@@ -69,6 +69,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 .daylight .play-button {
   background-color: white;
