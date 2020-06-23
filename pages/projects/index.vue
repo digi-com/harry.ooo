@@ -27,13 +27,14 @@
           @mouseenter="mundialHover = true"
           @mouseleave="mundialHover = false"
         >
-          <span class="title">
-            Mundial
-          </span>
+          <span class="title">Mundial</span>
           <span class="medium">Video</span>
           <span class="type">Commission</span>
           <span class="year">2020</span>
         </li>
+      </nuxt-link>
+      <nuxt-link to="/projects/mundial" class="mobile-nav-button nav-button">
+        Mundial
       </nuxt-link>
       <nuxt-link to="/projects/meat-rack">
         <li
@@ -46,6 +47,9 @@
           <span class="year">2020</span>
         </li>
       </nuxt-link>
+      <nuxt-link to="/projects/meat-rack" class="mobile-nav-button nav-button">
+        Meat Rack
+      </nuxt-link>
       <nuxt-link to="/projects/margaret">
         <li
           @mouseenter="margaretHover = true"
@@ -57,6 +61,9 @@
           <span class="year">2020</span>
         </li>
       </nuxt-link>
+      <nuxt-link to="/projects/margaret" class="mobile-nav-button nav-button">
+        Margaret
+      </nuxt-link>
       <nuxt-link to="/projects/ochre">
         <li @mouseenter="ochreHover = true" @mouseleave="ochreHover = false">
           <span class="title">Ochre</span>
@@ -64,6 +71,9 @@
           <span class="type">Commission</span>
           <span class="year">2019</span>
         </li>
+      </nuxt-link>
+      <nuxt-link to="/projects/ochre" class="mobile-nav-button nav-button">
+        Ochre
       </nuxt-link>
     </ul>
     <!-- Mundial -->
@@ -269,5 +279,77 @@ li {
 }
 .year {
   grid-column: 16 / 17;
+}
+
+.mobile-nav-button {
+  display: none;
+}
+
+/* Responsive */
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  #projects {
+    padding: 1.5rem;
+  }
+  li {
+    display: none;
+  }
+  .mundial-hover {
+    display: none;
+  }
+  .meat-rack-hover {
+    display: none;
+  }
+  .margaret-hover {
+    display: none;
+  }
+  .ochre-hover {
+    display: none;
+  }
+  .mobile-nav-button {
+    display: inline-flex;
+    margin-top: 1.5rem;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  #projects {
+    padding: 1.5rem;
+  }
+  li {
+    display: none;
+  }
+  .mundial-hover {
+    display: none;
+  }
+  .meat-rack-hover {
+    display: none;
+  }
+  .margaret-hover {
+    display: none;
+  }
+  .ochre-hover {
+    display: none;
+  }
+  .mobile-nav-button {
+    display: inline-flex;
+    margin-top: 1.5rem;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
 }
 </style>

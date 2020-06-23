@@ -2,97 +2,48 @@
   <div id="index">
     <Navigation />
     <div style="position: relative; height: 100vh;">
-      <video id="full-screen" autoplay muted loop>
+      <video id="full-screen" autoplay muted loop playsinline>
         <source src="/meat-rack/video_1.mp4" type="video/mp4" />
       </video>
-      <!-- <client-only>
-        <marquee-text :repeat="6" class="ra-marquee">
-          <a
-            href="https://www.residentadvisor.net/"
-            rel="noopener"
-            target="blank"
-            class="ra-link"
-          >
-            <svg
-              width="936"
-              height="449"
-              viewBox="0 0 936 449"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M925.008 359.515c6.274-5.975 10.236-14.348 10.236-23.693 0-8.994-4.28-17.078-10.141-22.997L661.04 48.762l-79.702 79.702 207.901 207.901H494.688c-14.399-.431-25.81-5.262-35.465-14.619L327.056 189.579c-13.705-12.96-32.479-21.16-52.834-21.16-.072 0-.139.01-.201.01v-.01H112.72v-55.152h167.056v.011c33.099.016 62.631 13.563 84.278 35.303l98.584 98.583 79.702-79.702-100.5-100.5C399.832 25.594 343.1.551 279.491.551H0v280.583h236.379v.018c15.374.11 29.254 6.433 39.276 16.588l129.441 129.445c13.166 12.93 30.955 21.081 50.68 21.815h357.57c15.053-.198 28.648-6.361 38.57-16.254l73.147-73.14-.055-.091"
-                fill="#FFFFFF"
-                fill-rule="evenodd"
-              />
-            </svg>
-            Click here to Watch Meat Rack on Resident Advisor
-          </a>
-        </marquee-text>
-      </client-only> -->
     </div>
     <div class="image-array">
+      <!-- Sticky header -->
       <div class="image-array-header">
+        <!-- Image array count -->
         <span>Meat Rack {{ imageCount }}/32</span>
-        <div>
-          <!-- <div
-            v-scroll-to="{
-              el: '#trailer',
-              duration: 2500,
-              easing: [0.0, 0.0, 0.58, 1.0],
-              cancelable: true,
-              x: false,
-              y: true
-            }"
-            style="padding-right: calc(13px + 8px); display: inline;"
+        <!-- Scroll-to link -->
+        <div
+          v-scroll-to="{
+            el: '#film',
+            duration: 2500,
+            easing: [0.0, 0.0, 0.58, 1.0],
+            cancelable: true,
+            x: false,
+            y: true
+          }"
+          style="padding-right: calc(13px + 8px); display: inline;"
+        >
+          Watch Trailer
+          <svg
+            width="13"
+            height="15"
+            viewBox="0 0 13 15"
+            xmlns="http://www.w3.org/2000/svg"
+            style="transform: translate(8px, 1px); position: absolute;"
           >
-            Watch Trailer
-            <svg
-              width="13"
-              height="15"
-              viewBox="0 0 13 15"
-              xmlns="http://www.w3.org/2000/svg"
-              style="transform: translate(8px, 1px); position: absolute;"
-            >
-              <path
-                d="M12.163962 9.34711l-5.656854 5.65685h-.000253L.850001 9.34711 1.557108 8.64l4.447854 4.447L6.003962 0h1l.001 13.092 4.451893-4.452.707107.70711z"
-                fill="#FFFFFF"
-                fill-rule="nonzero"
-              />
-            </svg>
-          </div> -->
-          <!-- <nuxt-link
-            to="/projects/meat-rack"
-            style="padding-right: calc(18px + 11px);"
-            >View Project
-            <svg
-              width="18"
-              height="13"
-              viewBox="0 0 18 13"
-              xmlns="http://www.w3.org/2000/svg"
-              style="transform: translate(11px, 2px); position: absolute;"
-            >
-              <path
-                d="M12.34711.84l5.65685 5.656854v.000253l-5.65685 5.656854-.70711-.707107L16.087 6.999 0 7V6l16.092-.001-4.452-4.451893L12.34711.84z"
-                fill="#FFFFFF"
-                fill-rule="nonzero"
-              /></svg
-          ></nuxt-link> -->
+            <path
+              d="M12.163962 9.34711l-5.656854 5.65685h-.000253L.850001 9.34711 1.557108 8.64l4.447854 4.447L6.003962 0h1l.001 13.092 4.451893-4.452.707107.70711z"
+              fill="#FFFFFF"
+              fill-rule="nonzero"
+            />
+          </svg>
         </div>
       </div>
+      <!-- Sticky logo -->
       <div class="sticky-paragraph">
         <img src="/meat-rack/meat-rack-title.png" style="max-width: 360px;" />
-        <!-- <p>
-          THE NYC DOWNLOW exists in the space where art and music collide, an
-          ever-changing artwork / club created to fill a gaping void in the
-          British music and festival scenes. Temporary, counter-cultural,
-          in-your face, and unapologetically LGBTQ-specific, The NYC Downlow is
-          a phenomenon with a cult following.
-          <br /><br />
-          Set in a warehouse at the heart of New York City's Meatpacking
-          District, MEAT RACK celebrates the 10th Anniversary of a
-          counter-cultural icon.
-        </p> -->
       </div>
+      <!-- Image array -->
       <div
         v-for="(image, index) in homeImages"
         :key="'image-' + index"
@@ -270,34 +221,6 @@ export default {
   height: 100vh;
   object-fit: fill;
 }
-.ra-marquee {
-  position: absolute;
-  bottom: 2rem;
-  max-width: 100vw;
-  overflow-x: hidden;
-  /* mix-blend-mode: difference; */
-}
-.ra-link {
-  /* position: absolute;
-  bottom: 2rem;
-  right: 3rem; */
-  margin-left: 2rem;
-  display: flex;
-  align-items: center;
-  font-size: 3rem;
-  user-select: none;
-  /* -webkit-font-smoothing: none; */
-  text-transform: uppercase;
-  font-weight: 400;
-  /* font-style: italic; */
-  text-decoration: none;
-  color: white;
-}
-.ra-link svg {
-  width: 40px;
-  height: 20px;
-  margin-right: 16px;
-}
 .image-array .image-array-header {
   color: white;
   position: sticky;
@@ -459,5 +382,41 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+/* Responsive */
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  .image-array .image-array-header {
+    color: white;
+    position: sticky;
+    top: 0;
+    padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .image-array .image-array-header {
+    color: white;
+    position: sticky;
+    top: 0;
+    padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
 }
 </style>

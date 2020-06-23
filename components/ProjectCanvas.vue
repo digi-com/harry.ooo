@@ -1,6 +1,6 @@
 <template>
-  <section class="meat-rack-canvas-item">
-    <canvas id="meat-rack-canvas"></canvas>
+  <section class="canvas-item">
+    <canvas id="project-canvas"></canvas>
     <div class="absolute-logo">
       <img :src="logo" style="max-width: 360px;" />
     </div>
@@ -20,7 +20,7 @@ export default {
     }
   },
   mounted() {
-    const canvasTag = document.querySelector('#meat-rack-canvas')
+    const canvasTag = document.querySelector('#project-canvas')
 
     canvasTag.width = window.innerWidth * 2
     canvasTag.height = window.innerHeight * 2
@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style>
-.meat-rack-canvas-item {
+.canvas-item {
   position: relative;
   height: 100vh;
   margin-bottom: 10rem;
@@ -107,5 +107,32 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Responsive */
+@media screen and (min-width: 0px) and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .canvas-item {
+    margin-bottom: 4rem;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
 }
 </style>

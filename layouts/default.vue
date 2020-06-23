@@ -17,15 +17,43 @@ export default {
     Footer
   },
   mounted() {
-    // Old way of replacing cursor
-    document.addEventListener('mousemove', function(event) {
-      const x = event.pageX
-      const y = event.pageY
-      const scrollTop = window.pageYOffset
-      const cursor = document.querySelector('div#cursor')
-      cursor.style.left = x + 'px'
-      cursor.style.top = y - scrollTop + 'px'
-    })
+    if (this.isTouchDevice()) {
+      document.getElementById('cursor').remove()
+    } else {
+      document.addEventListener('mousemove', function(event) {
+        const x = event.pageX
+        const y = event.pageY
+        const scrollTop = window.pageYOffset
+        const cursor = document.querySelector('div#cursor')
+        cursor.style.left = x + 'px'
+        cursor.style.top = y - scrollTop + 'px'
+      })
+    }
+  },
+  methods: {
+    isTouchDevice() {
+      const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')
+      const mq = function(query) {
+        return window.matchMedia(query).matches
+      }
+
+      if (
+        'ontouchstart' in window ||
+        (window.DocumentTouch && document instanceof window.DocumentTouch)
+      ) {
+        return true
+      }
+
+      // include the 'heartz' as a way to have a non matching MQ to help terminate the join
+      // https://git.io/vznFH
+      const query = [
+        '(',
+        prefixes.join('touch-enabled),('),
+        'heartz',
+        ')'
+      ].join('')
+      return mq(query)
+    }
   }
 }
 </script>
@@ -109,5 +137,28 @@ canvas {
 .daylight {
   background-color: white;
   color: black;
+}
+
+@media screen and (min-width: 0px) and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
 }
 </style>

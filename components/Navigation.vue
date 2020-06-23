@@ -48,12 +48,6 @@ nav {
 }
 nav a,
 .nav-button {
-  /* font-size: 0.875rem;
-  font-weight: 400;
-  width: auto;
-  display: inline-block;
-  text-decoration: none;
-  color: white; */
   background-color: transparent;
   border: 2px solid white;
   color: white;
@@ -76,19 +70,6 @@ nav a,
   background-color: white;
   border: 2px solid black;
 }
-.close-button {
-  background-color: transparent;
-  border: 2px solid black;
-  z-index: 9999;
-  border-radius: 999px;
-  height: 64px;
-  width: 64px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  text-decoration: none;
-}
 nav .name {
   grid-column: 1 / 4;
 }
@@ -102,68 +83,49 @@ nav .misc {
   grid-column: 8 / 9;
 }
 
-/* Projects Overlay */
-.projects-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 999999;
-  background-color: black;
-  color: white !important;
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  nav {
+    display: block;
+    padding: 1.5rem;
+  }
+  nav .name,
+  nav .projects {
+    margin-bottom: 1.5rem;
+  }
+  nav a,
+  .nav-button {
+    font-size: 1.5rem;
+    height: 48px;
+    width: auto;
+    padding: 0 1.3125rem;
+  }
 }
-.projects-overlay .nav-button {
-  color: white;
-  background-color: transparent;
-  border: 2px solid white;
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  nav {
+    display: block;
+    padding: 1.5rem;
+  }
+  nav .name,
+  nav .projects {
+    margin-bottom: 1.5rem;
+  }
 }
-.close-button {
-  position: absolute;
-  top: 2rem;
-  right: 3rem;
+@media screen and (min-width: 376px) and (max-width: 480px) {
 }
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 1.75rem;
-  position: relative;
+@media screen and (min-width: 481px) and (max-width: 767px) {
 }
-li {
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-gap: 1rem;
-  align-items: center;
-  padding: 2rem 3rem 1rem 3rem;
-  letter-spacing: -0.25px;
-  user-select: none;
-  position: relative;
-  z-index: 3;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 }
-.projects-overlay a {
-  text-decoration: none;
-  display: block;
-  position: relative;
-  color: white !important;
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
 }
-.header {
-  font-size: 0.875rem;
-  letter-spacing: 0;
-  line-height: 1.4;
-  opacity: 0.5;
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
 }
-.title {
-  grid-column: 1 / 6;
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
 }
-.medium {
-  grid-column: 6 / 11;
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
 }
-.type {
-  grid-column: 11 / 14;
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
 }
-.year {
-  grid-column: 16 / 17;
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
 }
 </style>
