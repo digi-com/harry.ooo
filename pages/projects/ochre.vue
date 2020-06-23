@@ -2,7 +2,12 @@
   <div id="ochre">
     <Navigation />
     <!-- Canvas -->
-    <ProjectCanvas :images="canvasImages" logo="/ochre/ochre-title.png" />
+    <ProjectCanvas
+      :images="canvasImages"
+      :image-width="360"
+      :image-height="203"
+      logo="/ochre/ochre-title.png"
+    />
     <!-- Video -->
     <ProjectFilm :film-link="filmLink" />
     <!-- Feature -->
@@ -12,7 +17,7 @@
     <!-- Image Grid -->
     <ProjectImages :images="projectImages" />
     <!-- Next Project -->
-    <NextProject :projects="projects" />
+    <BackToTop :projects="projects" />
   </div>
 </template>
 
@@ -23,7 +28,7 @@ import ProjectFilm from '~/components/ProjectFilm.vue'
 import ProjectFeature from '~/components/ProjectFeature.vue'
 import ProjectImages from '~/components/ProjectImages.vue'
 import Credits from '~/components/Credits.vue'
-import NextProject from '~/components/NextProject.vue'
+import BackToTop from '~/components/BackToTop.vue'
 
 export default {
   components: {
@@ -33,25 +38,11 @@ export default {
     ProjectFeature,
     ProjectImages,
     Credits,
-    NextProject
+    BackToTop
   },
   data() {
     return {
       canvasImages: [
-        '/ochre/Instagram Edit.00_08_08_10.Still016.png',
-        '/ochre/Instagram Edit.00_08_09_03.Still020.png',
-        '/ochre/Instagram Edit.00_08_09_04.Still021.png',
-        '/ochre/Instagram Edit.00_08_09_05.Still022.png',
-        '/ochre/Instagram Edit.00_08_09_06.Still023.png',
-        '/ochre/Instagram Edit.00_08_09_07.Still024.png',
-        '/ochre/Instagram Edit.00_08_09_08.Still025.png',
-        '/ochre/Instagram Edit.00_08_09_09.Still026.png',
-        '/ochre/Instagram Edit.00_08_09_10.Still027.png',
-        '/ochre/Instagram Edit.00_08_10_06.Still028.png',
-        '/ochre/Instagram Edit.00_08_10_07.Still029.png',
-        '/ochre/Instagram Edit.00_08_10_08.Still030.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_00_10_13.Still003.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_00_22_18.Still002.png',
         '/ochre/Maroque Timeline 1 (MASTER).00_00_23_19.Still004.png',
         '/ochre/Maroque Timeline 1 (MASTER).00_08_00_13.Still006.png',
         '/ochre/Maroque Timeline 1 (MASTER).00_08_06_24.Still007.png',
@@ -101,14 +92,20 @@ export default {
         '/ochre/OCHRE website grabs.00_01_44_04.Still090.png',
         '/ochre/OCHRE website grabs.00_01_44_13.Still091.png',
         '/ochre/OCHRE website grabs.00_01_45_08.Still092.png',
-        '',
         '/ochre/OCHRE website grabs.00_01_50_07.Still098.png',
         '/ochre/OCHRE website grabs.00_01_59_18.Still108.png',
         '/ochre/OCHRE website grabs.00_02_00_13.Still109.png',
         '/ochre/OCHRE website grabs.00_02_01_06.Still110.png',
         '/ochre/OCHRE website grabs.00_02_01_07.Still111.png',
         '/ochre/OCHRE website grabs.00_02_15_09.Still116.png',
-        '/ochre/OCHRE website grabs.00_02_29_06.Still117.png'
+        '/ochre/OCHRE website grabs.00_02_29_06.Still117.png',
+        '/ochre/OCHRE website grabs.00_02_58_07.Still141.png',
+        '/ochre/OCHRE website grabs.00_03_05_07.Still148.png',
+        '/ochre/OCHRE website grabs.00_03_09_12.Still155.png',
+        '/ochre/OCHRE website grabs.00_03_20_19.Still186.png',
+        '/ochre/OCHRE website grabs.00_03_22_17.Still190.png',
+        '/ochre/OCHRE website grabs.00_03_26_03.Still192.png',
+        '/ochre/CHEZ MOUNIR VISUAL ONLY.00_00_26_02.Still004.png'
       ],
       filmLink: '/ochre/supercut.mp4',
       projectFeatureContent: {

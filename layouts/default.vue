@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="app">
     <div id="cursor" />
     <!-- <Navigation /> -->
     <nuxt />

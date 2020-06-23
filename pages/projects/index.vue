@@ -85,7 +85,7 @@
       muted
       loop
     >
-      <source src="/mundial/mundial_1_o.mp4" type="video/mp4" />
+      <source src="/mundial/mundial-supercut-o.mp4" type="video/mp4" />
     </video>
     <!-- Meat Rack -->
     <video
@@ -247,7 +247,7 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 1.75rem;
+  font-size: 1.875rem;
   position: relative;
 }
 li {
@@ -257,7 +257,7 @@ li {
   grid-gap: 1rem;
   align-items: center;
   padding: 2rem 0 1rem 0;
-  letter-spacing: -0.25px;
+  letter-spacing: -0.32px;
   user-select: none;
   position: relative;
   z-index: 3;
@@ -272,7 +272,7 @@ li {
   grid-column: 1 / 4;
 }
 .medium {
-  grid-column: 6 / 11;
+  grid-column: 5 / 11;
 }
 .type {
   grid-column: 11 / 16;

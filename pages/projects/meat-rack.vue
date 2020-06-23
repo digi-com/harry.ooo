@@ -4,6 +4,8 @@
     <!-- Canvas -->
     <ProjectCanvas
       :images="canvasImages"
+      :image-width="360"
+      :image-height="288"
       logo="/meat-rack/meat-rack-title.png"
     />
     <!-- Video -->
@@ -15,7 +17,7 @@
     <!-- Image Grid -->
     <ProjectImages :images="projectImages" />
     <!-- Next Project -->
-    <NextProject :projects="projects" />
+    <BackToTop :projects="projects" />
   </div>
 </template>
 
@@ -26,7 +28,7 @@ import ProjectFilm from '~/components/ProjectFilm.vue'
 import ProjectFeature from '~/components/ProjectFeature.vue'
 import ProjectImages from '~/components/ProjectImages.vue'
 import Credits from '~/components/Credits.vue'
-import NextProject from '~/components/NextProject.vue'
+import BackToTop from '~/components/BackToTop.vue'
 
 export default {
   components: {
@@ -36,7 +38,7 @@ export default {
     ProjectFeature,
     ProjectImages,
     Credits,
-    NextProject
+    BackToTop
   },
   data() {
     return {
@@ -47,36 +49,43 @@ export default {
         '/meat-rack/4.png',
         '/meat-rack/5.png',
         '/meat-rack/6.png',
+        '/meat-rack/sequence2_1.png',
+        '/meat-rack/sequence2_2.png',
         '/meat-rack/7.png',
         '/meat-rack/8.png',
+        '/meat-rack/sequence1_1.png',
+        '/meat-rack/sequence1_2.png',
+        '/meat-rack/sequence1_3.png',
+        '/meat-rack/sequence1_4.png',
+        '/meat-rack/sequence1_5.png',
         '/meat-rack/9.png',
+        '/meat-rack/10.png',
+        '/meat-rack/11.png',
         '/meat-rack/12.png',
         '/meat-rack/13.png',
         '/meat-rack/14.png',
         '/meat-rack/15.png',
+        '/meat-rack/sequence3_1.png',
+        '/meat-rack/sequence3_2.png',
         '/meat-rack/16.png',
         '/meat-rack/17.png',
         '/meat-rack/18.png',
         '/meat-rack/19.png',
-        '/meat-rack/22.png',
-        '/meat-rack/24.png',
+        '/meat-rack/20.png',
+        '/meat-rack/21.png',
         '/meat-rack/25.png',
         '/meat-rack/26.png',
         '/meat-rack/27.png',
         '/meat-rack/28.png',
-        '/meat-rack/29.png',
-        '/meat-rack/31.png',
-        '/meat-rack/33.png',
-        '/meat-rack/34.png',
-        '/meat-rack/35.png',
-        '/meat-rack/36.png',
-        '/meat-rack/37.png',
-        '/meat-rack/38.png'
+        '/meat-rack/22.png',
+        '/meat-rack/23.png',
+        '/meat-rack/24.png',
+        '/meat-rack/29.png'
       ],
       filmLink: '/meat-rack/supercut_o.mp4',
       projectFeatureContent: {
         title: 'Meat Rack (2020)',
-        paragraph: `The NYC Downlow is Block9’s legendary queer nightclub. It first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay club inside. Having since evolved into a warehouse at the heart of New York City’s Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary at Glastonbury Festival in 2017. 
+        paragraph: `The NYC Downlow is Block9’s legendary queer nightclub. It first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay club inside. Having since evolved into a warehouse at the heart of New York City’s Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary at Glastonbury Festival in 2017.
         <br /><br />
         <i>Meat Rack</i> works as a document of the celebrations, taking us from Somerset to New York over the course of 16 minutes. From construction site to dance floor, build crew to muscle boys, the film is a personal tribute to a cultural phenomenon. An intimate, sometimes unsettling portrait, <i>Meat Rack</i> captures the fleeting nature of Glastonbury’s most notorious nightspot. Shot on a Betacam SP camcorder with VHS-C inserts. Both formats were manufactured and publicly available in 1982.
         <br /><br />
@@ -118,29 +127,44 @@ export default {
       ],
       projectImages: [
         '/meat-rack/meat-rack-poster.jpg',
-        '/meat-rack/2.png',
         '/meat-rack/1.png',
+        '/meat-rack/2.png',
+        '/meat-rack/3.png',
         '/meat-rack/4.png',
         '/meat-rack/5.png',
         '/meat-rack/6.png',
-        '/meat-rack/8.png',
         '/meat-rack/7.png',
+        '/meat-rack/8.png',
         '/meat-rack/9.png',
+        '/meat-rack/10.png',
+        '/meat-rack/11.png',
         '/meat-rack/12.png',
         '/meat-rack/13.png',
+        '/meat-rack/14.png',
         '/meat-rack/15.png',
         '/meat-rack/16.png',
         '/meat-rack/17.png',
-        '/meat-rack/20.png',
+        '/meat-rack/18.png',
+        '/meat-rack/19.png',
+        '/meat-rack/22.png',
+        '/meat-rack/23.png',
         '/meat-rack/24.png',
+        '/meat-rack/29.png',
+        '/meat-rack/20.png',
+        '/meat-rack/21.png',
+        '/meat-rack/25.png',
+        '/meat-rack/26.png',
+        '/meat-rack/27.png',
         '/meat-rack/28.png',
-        '/meat-rack/30.png',
-        '/meat-rack/38.png',
-        '/meat-rack/33.png',
-        '/meat-rack/34.png',
-        '/meat-rack/35.png',
-        '/meat-rack/36.png',
-        '/meat-rack/37.png'
+        '/meat-rack/sequence1_1.png',
+        '/meat-rack/sequence1_2.png',
+        '/meat-rack/sequence1_3.png',
+        '/meat-rack/sequence1_4.png',
+        '/meat-rack/sequence1_5.png',
+        '/meat-rack/sequence2_1.png',
+        '/meat-rack/sequence2_2.png',
+        '/meat-rack/sequence3_1.png',
+        '/meat-rack/sequence3_2.png'
       ],
       projects: [
         {

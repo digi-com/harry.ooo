@@ -54,7 +54,6 @@ export default {
 #film #film-scroll {
   position: absolute;
   top: -1.5rem;
-  z-index: 999999;
 }
 #film #project-feature-video {
   position: absolute;

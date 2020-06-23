@@ -53,7 +53,7 @@ export default {
   max-width: 47rem;
 }
 .feature-images {
-  display: block;
+  display: none;
   flex: 0 0 calc(27rem - 4rem);
   max-width: calc(27rem - 4rem);
   margin-left: 4rem;

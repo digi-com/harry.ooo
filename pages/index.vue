@@ -14,8 +14,8 @@
         <!-- Scroll-to link -->
         <div
           v-scroll-to="{
-            el: '#film',
-            duration: 2500,
+            el: '#film-scroll',
+            duration: 1500,
             easing: [0.0, 0.0, 0.58, 1.0],
             cancelable: true,
             x: false,
@@ -65,6 +65,8 @@
       external-link="https://www.youtube.com/watch?v=33ZEwRBQ75w"
       class="home-film"
     />
+    <!-- Back to top -->
+    <BackToTop />
     <!-- Footer -->
     <!-- <Footer /> -->
   </div>
@@ -74,13 +76,15 @@
 import Navigation from '~/components/Navigation.vue'
 import Observer from '~/components/Observer.vue'
 import ProjectFilm from '~/components/ProjectFilm.vue'
+import BackToTop from '~/components/BackToTop.vue'
 // import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
     Navigation,
     Observer,
-    ProjectFilm
+    ProjectFilm,
+    BackToTop
     // Footer
   },
   data() {
@@ -411,7 +415,10 @@ export default {
   }
   .home-film {
     margin-top: 35vh !important;
-    margin-bottom: 35vh !important;
+    margin-bottom: 0 !important;
+  }
+  .home-film #film-scroll {
+    top: -35vh !important;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {

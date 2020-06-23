@@ -2,7 +2,12 @@
   <div id="margaret">
     <Navigation />
     <!-- Canvas -->
-    <ProjectCanvas :images="canvasImages" logo="/margaret/margaret-title.png" />
+    <ProjectCanvas
+      :images="canvasImages"
+      :image-width="360"
+      :image-height="203"
+      logo="/margaret/margaret-title.png"
+    />
     <!-- Video -->
     <ProjectFilm :film-link="filmLink" />
     <!-- Feature -->
@@ -12,7 +17,7 @@
     <!-- Image Grid -->
     <ProjectImages :images="projectImages" />
     <!-- Next Project -->
-    <NextProject :projects="projects" />
+    <BackToTop :projects="projects" />
   </div>
 </template>
 
@@ -23,7 +28,7 @@ import ProjectFilm from '~/components/ProjectFilm.vue'
 import ProjectFeature from '~/components/ProjectFeature.vue'
 import ProjectImages from '~/components/ProjectImages.vue'
 import Credits from '~/components/Credits.vue'
-import NextProject from '~/components/NextProject.vue'
+import BackToTop from '~/components/BackToTop.vue'
 
 export default {
   components: {
@@ -33,62 +38,48 @@ export default {
     ProjectFeature,
     ProjectImages,
     Credits,
-    NextProject
+    BackToTop
   },
   data() {
     return {
       canvasImages: [
-        '/margaret/04 Living room.JPG',
-        '/margaret/CAREHOME MINI DV.01_17_51_14.Still002.png',
-        '/margaret/CAREHOME MINI DV.02_47_08_17.Still003.png',
-        '/margaret/DSC02835.jpg',
-        '/margaret/DSC02838.jpg',
-        '/margaret/IMG_3250.jpeg',
-        '/margaret/IMG_3305.jpg',
-        '/margaret/Memory test 07.02.07 p2.jpeg',
-        '/margaret/Memory tests 02.08.10 and 23.05.11 p3.jpeg',
-        '/margaret/P1000490.jpg',
-        '/margaret/TIMELINE 1.00_07_30_10.Still064.png',
-        '/margaret/TIMELINE 1.00_08_02_19.Still066.png',
-        '/margaret/TIMELINE 1.00_08_14_10.Still068.png',
-        '/margaret/TIMELINE 1.00_10_46_05.Still073.png',
-        '/margaret/TIMELINE 1.00_11_59_03.Still077.png',
-        '/margaret/TIMELINE 1.00_13_01_13.Still078.png',
-        '/margaret/TIMELINE 1.00_15_15_02.Still080.png',
-        '/margaret/TIMELINE 1.00_15_53_06.Still082.png',
-        '/margaret/TIMELINE 1.00_17_08_15.Still083.png',
-        '/margaret/TIMELINE 1.00_19_08_04.Still087.png',
-        '/margaret/TIMELINE 1.00_21_40_21.Still089.png',
-        '/margaret/TIMELINE 1.00_25_04_20.Still091.png',
-        '/margaret/TIMELINE 1.00_26_01_15.Still092.png',
-        '/margaret/TIMELINE 1.00_26_03_23.Still093.png',
-        '/margaret/TIMELINE 1.00_30_32_15.Still097.png',
-        '/margaret/TIMELINE 1.00_31_16_21.Still001.png',
-        '/margaret/TIMELINE 1.00_37_30_15.Still004.png',
-        '/margaret/TIMELINE 1.00_40_06_16.Still102.png',
-        '/margaret/TIMELINE 1.00_40_09_22.Still103.png',
-        '/margaret/TIMELINE 1.00_41_11_09.Still100.png',
-        '/margaret/TIMELINE 1.00_47_28_17.Still008.png',
-        '/margaret/TIMELINE 1.00_47_32_24.Still009.png',
-        '/margaret/TIMELINE 1.00_48_05_12.Still011.png',
-        '/margaret/TIMELINE 1.00_48_17_01.Still012.png',
-        '/margaret/TIMELINE 1.00_48_22_17.Still013.png',
-        '/margaret/TIMELINE 1.00_48_26_05.Still014.png',
-        '/margaret/TIMELINE 1.00_48_31_24.Still015.png',
-        '/margaret/TIMELINE 1.00_49_18_16.Still016.png',
-        '/margaret/TIMELINE 1.00_49_34_11.Still018.png',
-        '/margaret/TIMELINE 1.00_50_20_12.Still020.png',
-        '/margaret/TIMELINE 1.00_50_41_04.Still022.png',
-        '/margaret/TIMELINE 1.00_50_47_02.Still023.png',
-        '/margaret/TIMELINE 1.00_51_04_15.Still024.png',
-        '/margaret/TIMELINE 1.00_51_26_08.Still026.png',
-        '/margaret/TIMELINE 1.00_51_34_19.Still027.png',
-        '/margaret/TIMELINE 1.00_57_14_21.Still105.png',
-        '/margaret/TIMELINE 1.01_09_50_01.Still034.png',
-        '/margaret/TIMELINE 1.01_13_53_05.Still049.png',
+        '/margaret/TIMELINE 1.01_28_42_04.Still057.png',
         '/margaret/TIMELINE 1.01_17_48_11.Still052.png',
-        '/margaret/TIMELINE 1.01_23_14_10.Still056.png',
-        '/margaret/TIMELINE 1.01_28_42_04.Still057.png'
+        '/margaret/TIMELINE 1.01_13_53_05.Still049.png',
+        '/margaret/TIMELINE 1.00_57_14_21.Still105.png',
+        '/margaret/TIMELINE 1.00_51_34_19.Still027.png',
+        '/margaret/TIMELINE 1.00_51_26_08.Still026.png',
+        '/margaret/TIMELINE 1.00_51_04_15.Still024.png',
+        '/margaret/TIMELINE 1.00_50_47_02.Still023.png',
+        '/margaret/TIMELINE 1.00_50_41_04.Still022.png',
+        '/margaret/TIMELINE 1.00_50_20_12.Still020.png',
+        '/margaret/TIMELINE 1.00_49_34_11.Still018.png',
+        '/margaret/TIMELINE 1.00_49_18_16.Still016.png',
+        '/margaret/TIMELINE 1.00_48_31_24.Still015.png',
+        '/margaret/TIMELINE 1.00_48_26_05.Still014.png',
+        '/margaret/TIMELINE 1.00_48_22_17.Still013.png',
+        '/margaret/TIMELINE 1.00_48_17_01.Still012.png',
+        '/margaret/TIMELINE 1.00_48_05_12.Still011.png',
+        '/margaret/TIMELINE 1.00_47_32_24.Still009.png',
+        '/margaret/TIMELINE 1.00_47_28_17.Still008.png',
+        '/margaret/TIMELINE 1.00_41_11_09.Still100.png',
+        '/margaret/TIMELINE 1.00_40_09_22.Still103.png',
+        '/margaret/TIMELINE 1.00_40_06_16.Still102.png',
+        '/margaret/TIMELINE 1.00_37_30_15.Still004.png',
+        '/margaret/TIMELINE 1.00_31_16_21.Still001.png',
+        '/margaret/TIMELINE 1.00_30_32_15.Still097.png',
+        '/margaret/TIMELINE 1.00_26_03_23.Still093.png',
+        '/margaret/TIMELINE 1.00_26_01_15.Still092.png',
+        '/margaret/TIMELINE 1.00_25_04_20.Still091.png',
+        '/margaret/TIMELINE 1.00_21_40_21.Still089.png',
+        '/margaret/TIMELINE 1.00_19_08_04.Still087.png',
+        '/margaret/TIMELINE 1.00_17_08_15.Still083.png',
+        '/margaret/TIMELINE 1.00_15_53_06.Still082.png',
+        '/margaret/TIMELINE 1.00_15_15_02.Still080.png',
+        '/margaret/TIMELINE 1.00_13_01_13.Still078.png',
+        '/margaret/TIMELINE 1.00_11_59_03.Still077.png',
+        '/margaret/TIMELINE 1.00_10_46_05.Still073.png',
+        '/margaret/TIMELINE 1.00_08_14_10.Still068.png'
       ],
       filmLink: '/margaret/supercut.mp4',
       projectFeatureContent: {
@@ -186,7 +177,6 @@ export default {
         `/margaret/White tee Lands' End M 10 -12.jpg`,
         `/margaret/Turquoise viscose M&S blouse size 14.jpg`,
         `/margaret/Turquoise tee Lands' End M 10 - 12.jpg`,
-        `/margaret/Pink 100% polyester topM&S size 14.jpg`,
         `/margaret/Lilac viscose blouse M&S size 14.jpg`,
         `/margaret/Lilac (mid) tee Lands' End M 10 - 12.jpg`,
         `/margaret/IMG_3282.jpg`,

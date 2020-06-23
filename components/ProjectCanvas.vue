@@ -17,6 +17,14 @@ export default {
     logo: {
       type: String,
       required: true
+    },
+    imageWidth: {
+      type: Number,
+      required: true
+    },
+    imageHeight: {
+      type: Number,
+      required: true
     }
   },
   mounted() {
@@ -59,10 +67,19 @@ export default {
       }
     })
 
+    const imageWidth = this.imageWidth
+    const imageHeight = this.imageHeight
+
     const draw = function() {
       if (currentX) {
         if (images[i].complete) {
-          context.drawImage(images[i], currentX - 180, currentY - 144, 360, 288)
+          context.drawImage(
+            images[i],
+            currentX - imageWidth / 2,
+            currentY - imageHeight / 2,
+            imageWidth,
+            imageHeight
+          )
         }
 
         currentX = currentX + (aimX - currentX) * 0.1
@@ -115,6 +132,9 @@ export default {
 @media screen and (min-width: 321px) and (max-width: 375px) {
   .canvas-item {
     margin-bottom: 4rem;
+  }
+  .absolute-logo {
+    bottom: 0 !important;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
