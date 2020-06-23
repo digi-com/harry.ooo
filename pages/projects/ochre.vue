@@ -114,7 +114,7 @@ export default {
         <br /><br />
         The film was photographed on three small format cameras; a Krasnagorsk 3, a Braun Nizo Professional and a Eumig Nautica for the underwater sequences. The music in <i>Ochre</i> was provided by Tapan, a Serbian band who performed at the festival. The sound was designed by Goran Simonoski, a member of the band.
         <br /><br />
-        Filmed at Atlas Electronic Festival in 2018.`,
+        Filmed at Atlas Electronic in 2018.`,
         featureImages: [
           {
             imageOne: '/ochre/Instagram Edit.00_08_08_10.Still016.png',

@@ -4,17 +4,90 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Harry Lawson',
+    htmlAttrs: {
+      lang: 'en'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: `Harry Lawson (b. 1994) is a documentary filmmaker based in London.`
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: `Harry Lawson (b. 1994) is a documentary filmmaker based in London.`
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: `Harry Lawson (b. 1994) is a documentary filmmaker based in London.`
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://harry.ooo/'
+      },
+      {
+        hid: 'twitter:url',
+        name: 'twitter:url',
+        content: 'https://harry.ooo/'
+      },
+      {
+        hid: 'og:locale',
+        property: 'og:locale',
+        content: 'en_GB'
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'harry.ooo'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'harry.ooo'
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'harry.ooo'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://harry.ooo/og.png'
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://harry.ooo/og.png'
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'harry.ooo'
+      },
+      {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: 'harry.ooo'
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
   },
   /*
    ** Customize the progress-bar color
