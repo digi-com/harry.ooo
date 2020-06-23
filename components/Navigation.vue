@@ -18,13 +18,7 @@
 <script>
 export default {
   data() {
-    return {
-      projectsHover: false,
-      mundialHover: false,
-      meatRackHover: false,
-      margaretHover: false,
-      ochreHover: false
-    }
+    return {}
   },
   methods: {
     toggleProjects() {
@@ -84,8 +78,7 @@ nav a,
 }
 .close-button {
   background-color: transparent;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid black;
   z-index: 9999;
   border-radius: 999px;
   height: 64px;

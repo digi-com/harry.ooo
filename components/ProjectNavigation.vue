@@ -58,15 +58,7 @@
   </nav>
 </template>
 
-<script>
-export default {
-  methods: {
-    goBack() {
-      this.$router.back()
-    }
-  }
-}
-</script>
+<script></script>
 
 <style>
 .project-navigation {

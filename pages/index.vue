@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="index">
     <Navigation />
     <div style="position: relative; height: 100vh;">
       <video id="full-screen" autoplay muted loop>
@@ -32,7 +32,7 @@
     </div>
     <div class="image-array">
       <div class="image-array-header">
-        <span>Meat Rack {{ imageCount }}/24</span>
+        <span>Meat Rack {{ imageCount }}/32</span>
         <div>
           <!-- <div
             v-scroll-to="{
@@ -149,6 +149,9 @@ export default {
           url: '/meat-rack/5.png'
         },
         {
+          url: '/meat-rack/sequence2_2.png'
+        },
+        {
           url: '/meat-rack/6.png'
         },
         {
@@ -204,6 +207,27 @@ export default {
         },
         {
           url: '/meat-rack/24.png'
+        },
+        {
+          url: '/meat-rack/25.png'
+        },
+        {
+          url: '/meat-rack/26.png'
+        },
+        {
+          url: '/meat-rack/27.png'
+        },
+        {
+          url: '/meat-rack/28.png'
+        },
+        {
+          url: '/meat-rack/sequence1_4.png'
+        },
+        {
+          url: '/meat-rack/sequence3_2.png'
+        },
+        {
+          url: '/meat-rack/29.png'
         }
       ]
     }
@@ -232,6 +256,12 @@ export default {
 </script>
 
 <style>
+#index .nav-button,
+#index nav a {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
 #full-screen {
   position: relative;
   top: 0;
@@ -254,12 +284,12 @@ export default {
   margin-left: 2rem;
   display: flex;
   align-items: center;
-  font-size: 1.875rem;
+  font-size: 3rem;
   user-select: none;
-  -webkit-font-smoothing: none;
+  /* -webkit-font-smoothing: none; */
   text-transform: uppercase;
-  font-weight: 600;
-  font-style: italic;
+  font-weight: 400;
+  /* font-style: italic; */
   text-decoration: none;
   color: white;
 }
@@ -396,6 +426,30 @@ export default {
   grid-column: 6 / 8;
 }
 .image-array > .image-container:nth-child(26) img {
+  grid-column: 1 / 3;
+}
+.image-array > .image-container:nth-child(27) img {
+  grid-column: 6 / 8;
+}
+.image-array > .image-container:nth-child(28) img {
+  grid-column: 2 / 4;
+}
+.image-array > .image-container:nth-child(29) img {
+  grid-column: 6 / 8;
+}
+.image-array > .image-container:nth-child(30) img {
+  grid-column: 2 / 4;
+}
+.image-array > .image-container:nth-child(31) img {
+  grid-column: 6 / 8;
+}
+.image-array > .image-container:nth-child(32) img {
+  grid-column: 1 / 3;
+}
+.image-array > .image-container:nth-child(33) img {
+  grid-column: 6 / 8;
+}
+.image-array > .image-container:nth-child(34) img {
   grid-column: 1 / 3;
 }
 

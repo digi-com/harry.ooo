@@ -114,7 +114,7 @@ export default {
         '/mundial/website grabs.00_03_05_16.Still034.png',
         '/mundial/clean [with titles only].00_00_09_17.Still001.png'
       ],
-      filmLink: '/margaret/supercut.mp4',
+      filmLink: '/mundial/mundial_1_o.mp4',
       projectFeatureContent: {
         title: 'Mundial (2020)',
         paragraph: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. <i>Mundial</i> follows the SCdM men's first team through their inaugural season,

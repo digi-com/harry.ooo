@@ -1,5 +1,6 @@
 <template>
   <div id="meat-rack">
+    <Navigation />
     <!-- Canvas -->
     <ProjectCanvas
       :images="canvasImages"
@@ -19,7 +20,7 @@
 </template>
 
 <script>
-// import Navigation from '~/components/Navigation.vue'
+import Navigation from '~/components/Navigation.vue'
 import ProjectCanvas from '~/components/ProjectCanvas.vue'
 import ProjectFilm from '~/components/ProjectFilm.vue'
 import ProjectFeature from '~/components/ProjectFeature.vue'
@@ -29,7 +30,7 @@ import NextProject from '~/components/NextProject.vue'
 
 export default {
   components: {
-    // Navigation,
+    Navigation,
     ProjectCanvas,
     ProjectFilm,
     ProjectFeature,
@@ -169,4 +170,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+#meat-rack .nav-button,
+#meat-rack nav a {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+</style>

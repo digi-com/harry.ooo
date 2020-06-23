@@ -104,16 +104,15 @@ export default {
         The archive includes memory tests conducted by Harry’s aunt and photographs taken when the family were trying to sell Margaret’s house after moving her into the care home. There are also pages taken from an inventory of Margaret’s clothes and belongings. The film component fuses archival home videos and footage recorded at Glenholme House over a number of years before and after her death in 2014. Integrating mundane and surreal aspects of everyday life at the home, it is an observational portrait of Glenholme House and the people who live there. <i>Margaret</i> was screened for the first time at Testing Situations in February 2020.`,
         featureImages: [
           {
-            imageOne: '/margaret/CAREHOME MINI DV.01_17_51_14.Still002.png',
-            imageTwo: '/margaret/CAREHOME MINI DV.02_47_08_17.Still003.png'
+            imageOne: '/margaret/DSC02835.jpg',
+            imageTwo: '/margaret/04 Living room.JPG'
           },
           {
-            imageOne: '/margaret/DSC02838.jpg',
-            imageTwo: '/margaret/DSC02835.jpg'
+            imageOne: '/margaret/03.png',
+            imageTwo: '/margaret/02.png'
           },
           {
-            imageOne: '/margaret/04 Living room.JPG',
-            imageTwo: '/margaret/IMG_3305.jpg'
+            imageOne: '/margaret/66.png'
           }
         ],
         footnotes: [
@@ -133,9 +132,10 @@ export default {
         { credit: 'Commissioned by', name: 'Wellcome Trust' }
       ],
       projectImages: [
+        '/margaret/02.png',
+        '/margaret/03.png',
         '/margaret/04 Living room.JPG',
-        '/margaret/CAREHOME MINI DV.01_17_51_14.Still002.png',
-        '/margaret/CAREHOME MINI DV.02_47_08_17.Still003.png',
+        '/margaret/66.png',
         '/margaret/DSC02835.jpg',
         '/margaret/DSC02838.jpg',
         '/margaret/IMG_3250.jpeg',
@@ -144,7 +144,6 @@ export default {
         '/margaret/Memory tests 02.08.10 and 23.05.11 p3.jpeg',
         '/margaret/P1000490.jpg',
         '/margaret/TIMELINE 1.00_07_30_10.Still064.png',
-        '/margaret/TIMELINE 1.00_08_02_19.Still066.png',
         '/margaret/TIMELINE 1.00_08_14_10.Still068.png',
         '/margaret/TIMELINE 1.00_10_46_05.Still073.png',
         '/margaret/TIMELINE 1.00_11_59_03.Still077.png',
@@ -183,7 +182,19 @@ export default {
         '/margaret/TIMELINE 1.01_13_53_05.Still049.png',
         '/margaret/TIMELINE 1.01_17_48_11.Still052.png',
         '/margaret/TIMELINE 1.01_23_14_10.Still056.png',
-        '/margaret/TIMELINE 1.01_28_42_04.Still057.png'
+        '/margaret/TIMELINE 1.01_28_42_04.Still057.png',
+        `/margaret/White tee Lands' End M 10 -12.jpg`,
+        `/margaret/Turquoise viscose M&S blouse size 14.jpg`,
+        `/margaret/Turquoise tee Lands' End M 10 - 12.jpg`,
+        `/margaret/Pink 100% polyester topM&S size 14.jpg`,
+        `/margaret/Lilac viscose blouse M&S size 14.jpg`,
+        `/margaret/Lilac (mid) tee Lands' End M 10 - 12.jpg`,
+        `/margaret/IMG_3282.jpg`,
+        `/margaret/IMG_3249.jpeg`,
+        `/margaret/Green silky M&S blouse with mandarin collar size 14.jpg`,
+        `/margaret/Green (pale) silky blouse (old) Country Casuals 36 bust.jpg`,
+        `/margaret/Cream thick silky blouse (old) M&S 36 bust.jpg`,
+        `/margaret/Cream silky blouse with lace collar M&S size 16.jpg`
       ],
       projects: [
         {

@@ -33,7 +33,8 @@ export default {
   plugins: [
     { src: '~/plugins/vue-tippy', ssr: false },
     { src: '~/plugins/vue-marquee', ssr: false },
-    { src: '~/plugins/vue-scroll-to', ssr: false }
+    { src: '~/plugins/vue-scroll-to', ssr: false },
+    { src: '~/plugins/intersection-observer-polyfill', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
