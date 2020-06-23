@@ -56,4 +56,43 @@ export default {
 .credits .name {
   grid-column: 3 / 9;
 }
+
+/* Responsive */
+@media screen and (min-width: 0px) and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .credits {
+    font-size: 0.875rem;
+    line-height: 1.3;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 12.5rem;
+    border-top: 2px solid white;
+  }
+  .credits .credit {
+    grid-column: 1 / 5;
+    opacity: 0.48;
+  }
+  .credits .name {
+    grid-column: 5 / 9;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
+}
 </style>

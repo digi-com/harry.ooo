@@ -101,7 +101,7 @@ export default {
         <br /><br />
         The project now exists as a body of work about Margaret and the place she spent the last four years of her life — Glenholme House in Sunderland. It is set loosely over a period during which she moved out of her home and into residential care, and features a growing archive of objects and images relating to this time.
         <br /><br />
-        The archive includes memory tests conducted by Harry’s aunt and photographs taken when the family were trying to sell Margaret’s house after moving her into the care home. There are also pages taken from an inventory of Margaret’s clothes and belongings. The film component fuses archival home videos and footage recorded at Glenholme House over a number of years before and after her death in 2014. Integrating mundane and surreal aspects of everyday life at the home, it is an observational portrait of Glenholme House and the people who live there. <i>Margaret</i> was screened for the first time at Testing Situations in February 2020.`,
+        The archive includes memory tests conducted by Harry’s aunt and photographs taken when the family were trying to sell Margaret’s house after moving her into the care home. There are also pages taken from an inventory of Margaret’s clothes and belongings. The film fuses archival home videos and footage recorded at Glenholme House over a number of years before and after her death in 2014. Integrating mundane and surreal aspects of everyday life at the home, it is an observational portrait of Glenholme House and the people who live there. <i>Margaret</i> was screened for the first time at Testing Situations in February 2020.`,
         featureImages: [
           {
             imageOne: '/margaret/DSC02835.jpg',

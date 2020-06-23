@@ -23,7 +23,7 @@
           }"
           style="padding-right: calc(13px + 8px); display: inline;"
         >
-          Watch Trailer
+          Watch Film
           <svg
             width="13"
             height="15"
@@ -60,7 +60,11 @@
       </div>
     </div>
     <!-- Video -->
-    <ProjectFilm film-link="/meat-rack/supercut_o.mp4" />
+    <ProjectFilm
+      film-link="/meat-rack/supercut_o.mp4"
+      external-link="https://www.youtube.com/watch?v=33ZEwRBQ75w"
+      class="home-film"
+    />
     <!-- Footer -->
     <!-- <Footer /> -->
   </div>
@@ -384,6 +388,11 @@ export default {
   height: 100vh;
 }
 
+.home-film {
+  margin-top: 3vh !important;
+  margin-bottom: 3vh !important;
+}
+
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
   .image-array .image-array-header {
@@ -399,6 +408,10 @@ export default {
     position: sticky;
     top: 0;
     padding: 1.5rem;
+  }
+  .home-film {
+    margin-top: 35vh !important;
+    margin-bottom: 35vh !important;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {

@@ -110,4 +110,50 @@ export default {
   margin-top: 5rem;
   margin-bottom: 12.5rem;
 }
+
+/* Responsive */
+@media screen and (min-width: 0px) and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .feature {
+    display: block;
+    margin: 0 1.5rem;
+  }
+  .feature h2 {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 3.75rem;
+    letter-spacing: -0.5px;
+  }
+  .feature .paragraph {
+    line-height: 1.4;
+    font-size: 1.125rem;
+    letter-spacing: -0.1px;
+  }
+  .feature .paragraph .caption {
+    font-size: 0.9375rem;
+  }
+  .feature .footnotes {
+    margin-bottom: 6rem;
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
+}
 </style>

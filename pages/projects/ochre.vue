@@ -113,7 +113,7 @@ export default {
       filmLink: '/ochre/supercut.mp4',
       projectFeatureContent: {
         title: 'Ochre (2019)',
-        paragraph: `<i>Ochre</i> is the result of a twelve-day journey through Morocco, ending at Atlas Electronic Festival on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, the film focuses on the textures and atmosphere of the city, gradually revealing elements of live performance and location before transitioning to the night-time programme.
+        paragraph: `<i>Ochre</i> is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, the film focuses on the textures and atmosphere of the city, gradually revealing elements of live performance and location before transitioning to the night-time programme.
         <br /><br />
         The film was photographed on three small format cameras; a Krasnagorsk 3, a Braun Nizo Professional and a Eumig Nautica for the underwater sequences. The music in <i>Ochre</i> was provided by Tapan, a Serbian band who performed at the festival. The sound was designed by Goran Simonoski, a member of the band.
         <br /><br />

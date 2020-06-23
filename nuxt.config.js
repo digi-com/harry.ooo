@@ -25,6 +25,7 @@ export default {
    */
   css: [
     { src: '~/assets/union.css', lang: 'css' },
+    { src: '~/assets/suisse-works.css', lang: 'css' },
     { src: '~/assets/style.css', lang: 'css' }
   ],
   /*

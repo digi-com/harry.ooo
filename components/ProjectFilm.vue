@@ -1,10 +1,15 @@
 <template>
   <div id="film">
     <div id="film-scroll" />
-    <div class="play-button">
+    <a v-if="externalLink" :href="externalLink" target="_blank" rel="noopener">
+      <div class="watch-film play-button">
+        Watch Film
+      </div>
+    </a>
+    <div v-else class="play-button">
       Watch Trailer
     </div>
-    <video id="project-feature-video" autoplay muted loop>
+    <video id="project-feature-video" autoplay muted loop playsinline>
       <source :src="filmLink" type="video/mp4" />
     </video>
   </div>
@@ -16,6 +21,11 @@ export default {
     filmLink: {
       type: String,
       required: true
+    },
+    externalLink: {
+      type: String,
+      default: '',
+      required: false
     }
   }
 }
@@ -39,6 +49,7 @@ export default {
   background-color: rgba(255, 0, 0, 0);
   top: 0;
   backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
 }
 #film #film-scroll {
   position: absolute;
@@ -71,6 +82,10 @@ export default {
   justify-content: center;
   user-select: none;
 }
+.watch-film.play-button {
+  width: 250px;
+  left: calc(50% - 125px);
+}
 .daylight .play-button {
   background-color: white;
   border: 2px solid black;
@@ -82,8 +97,7 @@ export default {
 @media screen and (min-width: 321px) and (max-width: 375px) {
   #film {
     margin: 0 1.5rem;
-    height: 32vh;
-    margin-top: 0;
+    height: 30vh;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {

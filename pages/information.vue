@@ -17,7 +17,7 @@
     </div>
     <div class="information-container">
       <h2>
-        Harry Lawson (b. 1994) is documentary filmmaker based in London.
+        Harry Lawson (b. 1994) is a documentary filmmaker based in London.
       </h2>
     </div>
   </section>
@@ -54,6 +54,11 @@ h2 {
   padding: 2rem 3rem;
   min-height: 100vh;
   background-color: white;
+}
+#information .nav-button {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
 }
 .information-container {
   max-width: 100%;

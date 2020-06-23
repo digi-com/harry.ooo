@@ -1,0 +1,119 @@
+@font-face {
+  font-family: 'Suisse Works';
+  src: url('/fonts/suisse-works/SuisseWorks-Medium.eot');
+  src: url('/fonts/suisse-works/SuisseWorks-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/suisse-works/SuisseWorks-Medium.woff2') format('woff2'),
+    url('/fonts/suisse-works/SuisseWorks-Medium.woff') format('woff'),
+    url('/fonts/suisse-works/SuisseWorks-Medium.ttf') format('truetype'),
+    url('/fonts/suisse-works/SuisseWorks-Medium.svg#SuisseWorks-Medium')
+      format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Works';
+  src: url('/fonts/suisse-works/SuisseWorks-RegularItalic.eot');
+  src: url('/fonts/suisse-works/SuisseWorks-RegularItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/suisse-works/SuisseWorks-RegularItalic.woff2') format('woff2'),
+    url('/fonts/suisse-works/SuisseWorks-RegularItalic.woff') format('woff'),
+    url('/fonts/suisse-works/SuisseWorks-RegularItalic.ttf') format('truetype'),
+    url('/fonts/suisse-works/SuisseWorks-RegularItalic.svg#SuisseWorks-RegularItalic')
+      format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Works';
+  src: url('/fonts/suisse-works/SuisseWorks-Regular.eot');
+  src: url('/fonts/suisse-works/SuisseWorks-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/suisse-works/SuisseWorks-Regular.woff2') format('woff2'),
+    url('/fonts/suisse-works/SuisseWorks-Regular.woff') format('woff'),
+    url('/fonts/suisse-works/SuisseWorks-Regular.ttf') format('truetype'),
+    url('/fonts/suisse-works/SuisseWorks-Regular.svg#SuisseWorks-Regular')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Works';
+  src: url('/fonts/suisse-works/SuisseWorks-MediumItalic.eot');
+  src: url('/fonts/suisse-works/SuisseWorks-MediumItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/suisse-works/SuisseWorks-MediumItalic.woff2') format('woff2'),
+    url('/fonts/suisse-works/SuisseWorks-MediumItalic.woff') format('woff'),
+    url('/fonts/suisse-works/SuisseWorks-MediumItalic.ttf') format('truetype'),
+    url('/fonts/suisse-works/SuisseWorks-MediumItalic.svg#SuisseWorks-MediumItalic')
+      format('svg');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Works';
+  src: url('/fonts/suisse-works/SuisseWorks-Bold.eot');
+  src: url('/fonts/suisse-works/SuisseWorks-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/suisse-works/SuisseWorks-Bold.woff2') format('woff2'),
+    url('/fonts/suisse-works/SuisseWorks-Bold.woff') format('woff'),
+    url('/fonts/suisse-works/SuisseWorks-Bold.ttf') format('truetype'),
+    url('/fonts/suisse-works/SuisseWorks-Bold.svg#SuisseWorks-Bold')
+      format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Works';
+  src: url('/fonts/suisse-works/SuisseWorks-BookItalic.eot');
+  src: url('/fonts/suisse-works/SuisseWorks-BookItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/suisse-works/SuisseWorks-BookItalic.woff2') format('woff2'),
+    url('/fonts/suisse-works/SuisseWorks-BookItalic.woff') format('woff'),
+    url('/fonts/suisse-works/SuisseWorks-BookItalic.ttf') format('truetype'),
+    url('/fonts/suisse-works/SuisseWorks-BookItalic.svg#SuisseWorks-BookItalic')
+      format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Works';
+  src: url('/fonts/suisse-works/SuisseWorks-BoldItalic.eot');
+  src: url('/fonts/suisse-works/SuisseWorks-BoldItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/suisse-works/SuisseWorks-BoldItalic.woff2') format('woff2'),
+    url('/fonts/suisse-works/SuisseWorks-BoldItalic.woff') format('woff'),
+    url('/fonts/suisse-works/SuisseWorks-BoldItalic.ttf') format('truetype'),
+    url('/fonts/suisse-works/SuisseWorks-BoldItalic.svg#SuisseWorks-BoldItalic')
+      format('svg');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Works';
+  src: url('/fonts/suisse-works/SuisseWorks-Book.eot');
+  src: url('/fonts/suisse-works/SuisseWorks-Book.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/suisse-works/SuisseWorks-Book.woff2') format('woff2'),
+    url('/fonts/suisse-works/SuisseWorks-Book.woff') format('woff'),
+    url('/fonts/suisse-works/SuisseWorks-Book.ttf') format('truetype'),
+    url('/fonts/suisse-works/SuisseWorks-Book.svg#SuisseWorks-Book')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
