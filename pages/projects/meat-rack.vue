@@ -26,16 +26,6 @@
 
 <script>
 export default {
-  head() {
-    return {
-      htmlAttrs: {
-        class: ['night']
-      },
-      bodyAttrs: {
-        class: ['night']
-      }
-    }
-  },
   data() {
     return {
       canvasImages: [
@@ -408,6 +398,74 @@ export default {
           placeholder: '/meat-rack/placeholders/48.png',
           width: 720,
           height: 576
+        }
+      ]
+    }
+  },
+  head() {
+    return {
+      htmlAttrs: {
+        class: ['night']
+      },
+      bodyAttrs: {
+        class: ['night']
+      },
+      title: 'Harry Lawson | Meat Rack (2020)',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside. Having since evolved into a warehouse at the heart of the Meatpacking District in New York City circa 1982, The Downlow celebrated its 10th anniversary in 2017.`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside. Having since evolved into a warehouse at the heart of the Meatpacking District in New York City circa 1982, The Downlow celebrated its 10th anniversary in 2017.`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside. Having since evolved into a warehouse at the heart of the Meatpacking District in New York City circa 1982, The Downlow celebrated its 10th anniversary in 2017.`
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://harry.ooo/projects/meat-rack'
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://harry.ooo/projects/meat-rack'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Harry Lawson | Meat Rack (2020)'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Harry Lawson | Meat Rack (2020)'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://harry.ooo/og.png'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://harry.ooo/og.png'
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: 'Meat Rack (2020)'
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: 'Meat Rack (2020)'
         }
       ]
     }
