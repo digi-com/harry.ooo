@@ -422,6 +422,7 @@ export default {
   },
   head() {
     return {
+      title: 'Harry Lawson | Mundial (2020)',
       meta: [
         {
           hid: 'description',

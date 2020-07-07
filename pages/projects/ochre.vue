@@ -392,6 +392,68 @@ export default {
         }
       ]
     }
+  },
+  head() {
+    return {
+      title: 'Harry Lawson | Ochre (2019)',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Ochre is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, the film focuses on the textures and atmosphere of the location, gradually revealing elements of live performance before making the transition to the night programme.`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `Ochre is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, the film focuses on the textures and atmosphere of the location, gradually revealing elements of live performance before making the transition to the night programme.`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: `Ochre is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, the film focuses on the textures and atmosphere of the location, gradually revealing elements of live performance before making the transition to the night programme.`
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://harry.ooo/projects/ochre'
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://harry.ooo/projects/ochre'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Harry Lawson | Ochre (2019)'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Harry Lawson | Ochre (2019)'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://harry.ooo/ochre/1.png'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://harry.ooo/ochre/1.png'
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: 'Ochre (2019)'
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: 'Ochre (2019)'
+        }
+      ]
+    }
   }
 }
 </script>
