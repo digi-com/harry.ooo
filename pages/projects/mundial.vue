@@ -419,6 +419,67 @@ export default {
         }
       ]
     }
+  },
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Mundial follows the SCdM men's first team through their inaugural season, providing an intimate portrait of a team from the perspective of a teammate on the sidelines recovering from a long-term injury. Featuring footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, Mundial works as a collage of grassroots football in London.`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Mundial follows the SCdM men's first team through their inaugural season, providing an intimate portrait of a team from the perspective of a teammate on the sidelines recovering from a long-term injury. Featuring footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, Mundial works as a collage of grassroots football in London.`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Mundial follows the SCdM men's first team through their inaugural season, providing an intimate portrait of a team from the perspective of a teammate on the sidelines recovering from a long-term injury. Featuring footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, Mundial works as a collage of grassroots football in London.`
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://harry.ooo/projects/mundial'
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://harry.ooo/projects/mundial'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Harry Lawson | Mundial (2020)'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Harry Lawson | Mundial (2020)'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://harry.ooo/mundial/mundial-41.png'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://harry.ooo/mundial/mundial-41.png'
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: 'Mundial (2020)'
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: 'Mundial (2020)'
+        }
+      ]
+    }
   }
 }
 </script>

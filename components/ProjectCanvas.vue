@@ -51,7 +51,7 @@ export default {
       return image
     })
 
-    document.addEventListener('mousemove', function(event) {
+    canvasTag.addEventListener('mousemove', function(event) {
       aimX = event.pageX
       aimY = event.pageY
       if (currentX === null) {
