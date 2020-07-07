@@ -82,6 +82,10 @@ nav a:hover,
   color: white;
 }
 
+.cursor-hidden {
+  display: none;
+}
+
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
   .close-button {

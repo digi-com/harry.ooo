@@ -53,6 +53,7 @@
         id="video-hover"
         v-show="project.videoHover"
         :class="project.id"
+        :poster="project.videoPoster"
         autoplay
         muted
         loop
@@ -60,41 +61,6 @@
         <source :src="project.supercut" type="video/mp4" />
       </video>
     </div>
-    <!-- Mundial -->
-
-    <!-- Meat Rack -->
-    <!-- <video
-      id="video-hover"
-      v-show="meatRackHover"
-      class="meat-rack-hover"
-      autoplay
-      muted
-      loop
-    >
-      <source src="/meat-rack/supercut_o.mp4" type="video/mp4" />
-    </video> -->
-    <!-- Margaret -->
-    <!-- <video
-      id="video-hover"
-      v-show="margaretHover"
-      class="margaret-hover"
-      autoplay
-      muted
-      loop
-    >
-      <source src="/margaret/supercut.mp4" type="video/mp4" />
-    </video> -->
-    <!-- Ochre -->
-    <!-- <video
-      id="video-hover"
-      v-show="ochreHover"
-      class="ochre-hover"
-      autoplay
-      muted
-      loop
-    >
-      <source src="/ochre/supercut.mp4" type="video/mp4" />
-    </video> -->
   </vue100vh>
 </template>
 
@@ -119,7 +85,8 @@ export default {
           year: '2020',
           slug: '/projects/mundial',
           supercut: '/mundial/mundial-supercut-o.mp4',
-          videoHover: false
+          videoHover: false,
+          videoPoster: '/mundial/mundial-supercut-poster.png'
         },
         {
           title: 'Meat Rack',
@@ -129,7 +96,8 @@ export default {
           year: '2020',
           slug: '/projects/meat-rack',
           supercut: '/meat-rack/supercut_o.mp4',
-          videoHover: false
+          videoHover: false,
+          videoPoster: '/meat-rack/meat-rack-supercut-poster.png'
         },
         {
           title: 'Margaret',
@@ -139,7 +107,8 @@ export default {
           year: '2020',
           slug: '/projects/margaret',
           supercut: '/margaret/supercut.mp4',
-          videoHover: false
+          videoHover: false,
+          videoPoster: '/margaret/margaret-supercut-poster.png'
         },
         {
           title: 'Ochre',
@@ -149,7 +118,8 @@ export default {
           year: '2019',
           slug: '/projects/ochre',
           supercut: '/ochre/supercut.mp4',
-          videoHover: false
+          videoHover: false,
+          videoPoster: '/ochre/ochre-supercut-poster.png'
         }
       ]
     }

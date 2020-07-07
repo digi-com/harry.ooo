@@ -61,6 +61,14 @@ export default {
         cursor.style.left = x + 'px'
         cursor.style.top = y - scrollTop + 'px'
       })
+      document.addEventListener('mouseleave', function(event) {
+        const cursor = document.querySelector('div#cursor')
+        cursor.classList.add('cursor-hidden')
+      })
+      document.addEventListener('mouseenter', function(event) {
+        const cursor = document.querySelector('div#cursor')
+        cursor.classList.remove('cursor-hidden')
+      })
     }
     this.preload()
   },
