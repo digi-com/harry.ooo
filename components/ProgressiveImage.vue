@@ -106,6 +106,7 @@ export default {
       if (entry.isIntersecting) {
         // Element is in viewport
         $el.classList.add(`${NAME}--loading`)
+        $el.classList.add(`${NAME}--animate`)
         this.loadImg()
         this.observer.disconnect()
       }
@@ -166,7 +167,7 @@ export default {
   transform: translate3d(0, 3rem, 0);
   transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.progressive-image--loaded {
+.progressive-image--animate {
   transform: translate3d(0, 0, 0);
 }
 </style>
