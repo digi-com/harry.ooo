@@ -40,6 +40,8 @@ export default {
   height: 94vh;
   position: relative;
   margin-top: calc(11rem - (100vh - 94vh) / 2);
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 #film::after {
   content: '';
@@ -50,6 +52,8 @@ export default {
   top: 0;
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 #film #film-scroll {
   position: absolute;
@@ -67,9 +71,9 @@ export default {
   position: absolute;
   top: calc(50% - 32px);
   left: calc(50% - 152px);
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
   font-size: 2rem;
   text-transform: uppercase;
   z-index: 9999;
@@ -84,11 +88,6 @@ export default {
 .watch-film.play-button {
   width: 250px;
   left: calc(50% - 125px);
-}
-.daylight .play-button {
-  background-color: white;
-  border: 2px solid black;
-  color: black;
 }
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {

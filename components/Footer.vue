@@ -1,67 +1,82 @@
 <template>
-  <!-- Footer -->
-  <footer>
-    <div class="column-1">
-      <nuxt-link to="/">Index</nuxt-link>
-      <nuxt-link to="/projects">Projects</nuxt-link>
-      <nuxt-link to="/information">Information</nuxt-link>
-      <nuxt-link to="/archive">Archive</nuxt-link>
+  <!-- Next Project -->
+  <div class="top-container">
+    <nav>
+      <div class="name">
+        <nuxt-link to="/">Harry Lawson</nuxt-link>
+      </div>
+      <div class="projects">
+        <div @click="toggleProjects()" class="nav-button">Projects</div>
+      </div>
+      <div class="information">
+        <div @click="toggleInfo()" class="nav-button">Info</div>
+      </div>
+    </nav>
+    <div
+      v-scroll-to="{
+        el: '#app',
+        duration: 1500,
+        easing: [0.0, 0.0, 0.58, 1.0],
+        cancelable: true,
+        x: false,
+        y: true
+      }"
+      class="nav-button back-to-top"
+    >
+      Back to Top
     </div>
-    <div class="column-2">
-      <a href="https://www.instagram.com/" rel="noopener" target="_blank">
-        Instagram
-      </a>
-      <a href="https://www.are.na/" rel="noopener" target="_blank">
-        Are.na
-      </a>
-      <a href="https://vimeo.com/harrylawsonnn" rel="noopener" target="_blank">
-        Vimeo
-      </a>
-    </div>
-    <div class="column-3">
-      <p>harry@harry.ooo</p>
-      <p>+44 (0) 7773 456255</p>
-    </div>
-    <div class="copyright">
-      © Harry Lawson, 2019 — 2020. All rights reserved.
-    </div>
-  </footer>
+    <NavigationProjectsOverlay
+      v-if="projectsVisible"
+      @close-modal="toggleProjects()"
+    />
+    <NavigationInfoOverlay v-if="infoVisible" @close-modal="toggleInfo()" />
+  </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      projectsVisible: false,
+      infoVisible: false
+    }
+  },
+  methods: {
+    toggleProjects() {
+      this.projectsVisible = !this.projectsVisible
+    },
+    toggleInfo() {
+      this.infoVisible = !this.infoVisible
+    }
+  }
+  // head() {
+  //   return {
+  //     htmlAttrs: {
+  //       class: this.projectsVisible || this.infoVisible ? 'modal-open' : ''
+  //     },
+  //     bodyAttrs: {
+  //       class: this.projectsVisible || this.infoVisible ? 'modal-open' : ''
+  //     }
+  //   }
+  // }
+}
+</script>
 
-<style>
-footer {
-  /* display: grid; */
-  display: none;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 1rem;
-  font-size: 0.875rem;
-  padding: 1.5rem 0 3.75rem 0;
-  margin: 12.5rem 3rem 0 3rem;
-  border-top: 2px solid white;
+<style scoped>
+.top-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0;
 }
-.daylight footer {
-  border-top: 2px solid black;
+#index .top-container {
+  margin-top: 12.5rem !important;
+  height: 2rem;
 }
-footer a,
-footer p {
-  display: block;
-  text-decoration: none;
-  margin-bottom: 1.125rem;
-}
-footer .column-1 {
-  grid-column: 1 / 2;
-}
-footer .column-2 {
-  grid-column: 2 / 3;
-}
-footer .column-3 {
-  grid-column: 3 / 4;
-}
-
-footer .copyright {
-  grid-column: 5 / 9;
-  justify-self: end;
+.back-to-top {
+  position: absolute;
+  right: 3rem;
+  z-index: 999999;
 }
 </style>

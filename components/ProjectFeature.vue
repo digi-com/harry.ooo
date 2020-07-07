@@ -9,7 +9,10 @@
           v-for="(footnote, index) in content.footnotes"
           :key="'footnote-' + index"
         >
-          {{ footnote }}
+          <a :href="footnote.link" target="_blank" rel="noopener">
+            <span class="footnote-number">{{ index + 1 }}</span>
+            {{ footnote.title }} ({{ footnote.link }})
+          </a>
         </p>
       </div>
     </div>
@@ -40,17 +43,16 @@ export default {
 
 <style>
 .feature {
-  padding-top: 10rem;
-  margin: 0 3rem;
   text-align: left;
-  user-select: none;
   position: relative;
-  display: flex;
-  align-items: flex-start;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1rem;
+  padding: 10rem 3rem 0 3rem;
 }
 .feature-content {
-  flex: 0 0 47rem;
-  max-width: 47rem;
+  grid-column: 3 / 11;
 }
 .feature-images {
   display: none;
@@ -97,8 +99,8 @@ export default {
   letter-spacing: -0.125px;
 }
 .feature .paragraph .caption {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.0625rem;
+  line-height: 1.6;
   display: inline-block;
 }
 .daylight .feature .paragraph {
@@ -106,9 +108,32 @@ export default {
 }
 .feature .footnotes {
   line-height: 1.5;
-  font-size: 1rem;
-  margin-top: 5rem;
-  margin-bottom: 12.5rem;
+  font-size: 1.3125rem;
+  letter-spacing: -0.08px;
+  margin-top: 3.75rem;
+}
+
+.feature .footnotes p {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.feature .footnotes p a {
+  text-decoration: none;
+}
+
+.feature .footnote-number {
+  border: 2px solid black;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 99999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3125rem;
+  margin-right: 0.75rem;
+  text-decoration: none;
 }
 
 /* Responsive */

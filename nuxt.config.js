@@ -1,5 +1,6 @@
 export default {
   mode: 'universal',
+  components: true,
   /*
    ** Headers of the page
    */
@@ -74,12 +75,12 @@ export default {
       {
         hid: 'og:image:alt',
         property: 'og:image:alt',
-        content: 'harry.ooo'
+        content: 'Harry Lawson'
       },
       {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
-        content: 'harry.ooo'
+        content: 'Harry Lawson'
       },
       {
         hid: 'twitter:card',
@@ -92,7 +93,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: false,
   /*
    ** Global CSS
    */
@@ -115,7 +116,8 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxt/components'
   ],
   /*
    ** Nuxt.js modules
@@ -125,6 +127,6 @@ export default {
    ** Build configuration
    */
   build: {
-    transpile: ['three']
+    transpile: ['vue-100vh']
   }
 }

@@ -1,62 +1,34 @@
 <template>
   <div id="index">
+    <!-- Preloader -->
+    <PageLoader />
+    <!-- Page -->
     <Navigation />
-    <div style="position: relative; height: 100vh;">
-      <video id="full-screen" autoplay muted loop playsinline>
-        <source src="/meat-rack/video_1.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="image-array">
-      <!-- Sticky header -->
-      <div class="image-array-header">
-        <!-- Image array count -->
-        <span>Meat Rack {{ imageCount }}/32</span>
-        <!-- Scroll-to link -->
-        <div
-          v-scroll-to="{
-            el: '#film-scroll',
-            duration: 1500,
-            easing: [0.0, 0.0, 0.58, 1.0],
-            cancelable: true,
-            x: false,
-            y: true
-          }"
-          style="padding-right: calc(13px + 8px); display: inline;"
+    <!-- Hero -->
+    <Hero />
+    <div class="index-container">
+      <!-- Content -->
+      <div class="content">
+        <h2>{{ homeContent.title }}</h2>
+        <p v-html="homeContent.paragraph" />
+        <nuxt-link to="/projects/meat-rack" class="nav-button"
+          >View Project</nuxt-link
         >
-          Watch Film
-          <svg
-            width="13"
-            height="15"
-            viewBox="0 0 13 15"
-            xmlns="http://www.w3.org/2000/svg"
-            style="transform: translate(8px, 1px); position: absolute;"
-          >
-            <path
-              d="M12.163962 9.34711l-5.656854 5.65685h-.000253L.850001 9.34711 1.557108 8.64l4.447854 4.447L6.003962 0h1l.001 13.092 4.451893-4.452.707107.70711z"
-              fill="#FFFFFF"
-              fill-rule="nonzero"
-            />
-          </svg>
-        </div>
       </div>
-      <!-- Sticky logo -->
-      <div class="sticky-paragraph">
-        <img src="/meat-rack/meat-rack-title.png" style="max-width: 360px;" />
-      </div>
-      <!-- Image array -->
+      <!-- Images -->
       <div
         v-for="(image, index) in homeImages"
         :key="'image-' + index"
-        class="image-container"
+        :class="'image-' + (index + 1)"
       >
-        <!-- intersectionObserver -->
-        <Observer
-          @intersect="intersected(index + 1)"
-          @exit="exited(index + 1)"
-          :options="options"
-          style="position: absolute; top: calc(50% + 144px);"
-        />
-        <img :src="image.url" :class="'image-' + (index + 1)" />
+        <client-only>
+          <ProgressiveImage
+            :src="image.url"
+            :placeholder="image.placeholderUrl"
+            :width="image.width"
+            :height="image.height"
+          />
+        </client-only>
       </div>
     </div>
     <!-- Video -->
@@ -65,332 +37,200 @@
       external-link="https://www.youtube.com/watch?v=33ZEwRBQ75w"
       class="home-film"
     />
-    <!-- Back to top -->
-    <BackToTop />
     <!-- Footer -->
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
 <script>
-import Navigation from '~/components/Navigation.vue'
-import Observer from '~/components/Observer.vue'
-import ProjectFilm from '~/components/ProjectFilm.vue'
-import BackToTop from '~/components/BackToTop.vue'
-// import Footer from '~/components/Footer.vue'
-
 export default {
-  components: {
-    Navigation,
-    Observer,
-    ProjectFilm,
-    BackToTop
-    // Footer
-  },
   data() {
     return {
-      options: null,
-      imageCount: 1,
+      homeContent: {
+        title: 'Meat Rack (2020)',
+        paragraph: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s LES tenement with an X-rated gay nightclub inside. Having since evolved into a seedy warehouse at the heart of New York City's Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary in 2017.
+        <br /><br />
+        <i>Meat Rack</i> works as a document of the celebrations, taking us all the way from Somerset to New York over the course of 16 minutes. From construction site to dance floor, build crew to muscle boys, the film is a personal tribute to a cultural phenomenon. Intimate, expressive and occasionally unsettling, <i>Meat Rack</i> captures the fleeting nature of Glastonbury’s most notorious nightspot. Shot on a Betacam SP camcorder with additional VHS-C inserts. Both formats were manufactured and available to the public in 1982.`
+      },
       homeImages: [
         {
-          url: '/meat-rack/1.png'
+          url: '/meat-rack/meat-rack-poster.jpg',
+          placeholderUrl: '/meat-rack/placeholders/meat-rack-poster.jpg',
+          width: 1200,
+          height: 1697
         },
         {
-          url: '/meat-rack/2.png'
+          url: '/meat-rack/10.png',
+          placeholderUrl: '/meat-rack/placeholders/10.png',
+          width: 720,
+          height: 576
         },
         {
-          url: '/meat-rack/3.png'
+          url: '/meat-rack/8.png',
+          placeholderUrl: '/meat-rack/placeholders/8.png',
+          width: 720,
+          height: 576
         },
         {
-          url: '/meat-rack/4.png'
+          url: '/meat-rack/9.png',
+          placeholderUrl: '/meat-rack/placeholders/9.png',
+          width: 720,
+          height: 576
         },
         {
-          url: '/meat-rack/5.png'
+          url: '/meat-rack/13.png',
+          placeholderUrl: '/meat-rack/placeholders/13.png',
+          width: 720,
+          height: 576
         },
         {
-          url: '/meat-rack/sequence2_2.png'
+          url: '/meat-rack/16.png',
+          placeholderUrl: '/meat-rack/placeholders/16.png',
+          width: 720,
+          height: 576
         },
         {
-          url: '/meat-rack/6.png'
+          url: '/meat-rack/30.png',
+          placeholderUrl: '/meat-rack/placeholders/30.png',
+          width: 720,
+          height: 576
         },
         {
-          url: '/meat-rack/7.png'
+          url: '/meat-rack/11.png',
+          placeholderUrl: '/meat-rack/placeholders/11.png',
+          width: 720,
+          height: 576
         },
         {
-          url: '/meat-rack/8.png'
+          url: '/meat-rack/22.png',
+          placeholderUrl: '/meat-rack/placeholders/22.png',
+          width: 720,
+          height: 576
         },
         {
-          url: '/meat-rack/9.png'
+          url: '/meat-rack/23.png',
+          placeholderUrl: '/meat-rack/placeholders/23.png',
+          width: 720,
+          height: 576
         },
         {
-          url: '/meat-rack/10.png'
+          url: '/meat-rack/39.png',
+          placeholderUrl: '/meat-rack/placeholders/39.png',
+          width: 720,
+          height: 576
         },
         {
-          url: '/meat-rack/11.png'
-        },
-        {
-          url: '/meat-rack/12.png'
-        },
-        {
-          url: '/meat-rack/13.png'
-        },
-        {
-          url: '/meat-rack/14.png'
-        },
-        {
-          url: '/meat-rack/15.png'
-        },
-        {
-          url: '/meat-rack/16.png'
-        },
-        {
-          url: '/meat-rack/17.png'
-        },
-        {
-          url: '/meat-rack/18.png'
-        },
-        {
-          url: '/meat-rack/19.png'
-        },
-        {
-          url: '/meat-rack/20.png'
-        },
-        {
-          url: '/meat-rack/21.png'
-        },
-        {
-          url: '/meat-rack/22.png'
-        },
-        {
-          url: '/meat-rack/23.png'
-        },
-        {
-          url: '/meat-rack/24.png'
-        },
-        {
-          url: '/meat-rack/25.png'
-        },
-        {
-          url: '/meat-rack/26.png'
-        },
-        {
-          url: '/meat-rack/27.png'
-        },
-        {
-          url: '/meat-rack/28.png'
-        },
-        {
-          url: '/meat-rack/sequence1_4.png'
-        },
-        {
-          url: '/meat-rack/sequence3_2.png'
-        },
-        {
-          url: '/meat-rack/29.png'
+          url: '/meat-rack/29.png',
+          placeholderUrl: '/meat-rack/placeholders/29.png',
+          width: 720,
+          height: 576
         }
       ]
     }
   },
-  // mounted() {
-  //   document.querySelector('.name').addEventListener('mouseenter', function() {
-  //     const cursor = document.querySelector('div#cursor')
-  //     cursor.style.transform = 'scale(2.5)'
-  //   })
-  //   document.querySelector('.name').addEventListener('mouseleave', function() {
-  //     const cursor = document.querySelector('div#cursor')
-  //     cursor.style.transform = 'scale(1)'
-  //   })
-  // },
   methods: {
     intersected(payload) {
-      // console.log('intersected', payload)
       this.imageCount = payload
-    },
-    exited(payload) {
-      // console.log('exited', payload)
-      // this.imageCount = payload
     }
   }
 }
 </script>
 
 <style>
-#index .nav-button,
-#index nav a {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-}
-#full-screen {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  object-fit: fill;
-}
-.image-array .image-array-header {
-  color: white;
-  position: sticky;
-  top: 0;
-  padding: 2rem 3rem;
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 9999;
-  user-select: none;
-}
-.image-array .image-array-header a {
-  color: white;
-  text-decoration: none;
-}
-.image-array .image-container {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  height: 100vh;
-  position: relative;
+.index-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(71, 2rem);
   grid-gap: 1rem;
-  align-items: center;
+  padding: 12rem 3rem 0 3rem;
+  margin-bottom: 224px;
 }
-.image-array .image-container img {
-  /* max-width: 360px; */
-  display: block;
-  max-width: 100%;
+.index-container .content {
+  grid-column: 3 / 11;
+  grid-row: 1 / 2;
 }
-
-.sticky-paragraph {
-  position: sticky;
-  top: 0;
-  font-family: 'Union';
+.index-container .content h2 {
   font-weight: 400;
-  font-size: 1.75rem;
-  font-style: italic;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 41rem;
-  margin: 0 auto;
-  line-height: 1.4;
-  -webkit-font-smoothing: none;
-  /* z-index: 9;
-  mix-blend-mode: difference; */
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 3.75rem;
+  letter-spacing: -1px;
+}
+.index-container .content p {
+  font-family: 'Suisse Works';
+  line-height: 1.5;
+  font-size: 1.5625rem;
+  letter-spacing: -0.125px;
+  margin-bottom: 4rem;
 }
 
-/* Image + Grid Positioning */
-
-.image-array > .image-container:nth-child(2) img {
-  grid-column: 2 / 5;
+.index-container .image-1 {
+  grid-column: 1 / 7;
+  grid-row-start: 1;
+  display: none;
 }
-.image-array > .image-container:nth-child(3) img {
-  grid-column: 6 / 8;
+.index-container .image-2 {
+  grid-column: 9 / 12;
+  grid-row-start: 18;
+  transform: translateY(1rem);
 }
-.image-array > .image-container:nth-child(4) img {
-  grid-column: 2 / 4;
+.index-container .image-3 {
+  grid-column: 2 / 7;
+  grid-row-start: 23;
+  transform: translateY(1rem);
 }
-.image-array > .image-container:nth-child(5) img {
-  grid-column: 6 / 9;
+.index-container .image-4 {
+  grid-column: 6 / 10;
+  grid-row-start: 27;
+  transform: translateY(1rem);
 }
-.image-array > .image-container:nth-child(6) img {
-  grid-column: 2 / 4;
-}
-.image-array > .image-container:nth-child(7) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(8) img {
-  grid-column: 2 / 5;
-}
-.image-array > .image-container:nth-child(9) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(10) img {
+.index-container .image-5 {
   grid-column: 1 / 4;
+  grid-row-start: 35;
+  transform: translateY(2rem);
 }
-.image-array > .image-container:nth-child(11) img {
-  grid-column: 6 / 9;
+.index-container .image-6 {
+  grid-column: 7 / 12;
+  grid-row-start: 38;
 }
-.image-array > .image-container:nth-child(12) img {
-  grid-column: 2 / 4;
+.index-container .image-7 {
+  grid-column: 8 / 13;
+  grid-row-start: 50;
+  transform: translateY(1rem);
 }
-.image-array > .image-container:nth-child(13) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(14) img {
+.index-container .image-8 {
   grid-column: 2 / 5;
+  grid-row-start: 44;
+  transform: translateY(2rem);
 }
-.image-array > .image-container:nth-child(15) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(16) img {
+.index-container .image-9 {
   grid-column: 1 / 4;
+  grid-row-start: 53;
+  z-index: 2;
+  transform: translateY(2rem);
 }
-.image-array > .image-container:nth-child(17) img {
-  grid-column: 6 / 9;
-}
-.image-array > .image-container:nth-child(18) img {
-  grid-column: 2 / 4;
-}
-.image-array > .image-container:nth-child(19) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(20) img {
+.index-container .image-10 {
   grid-column: 2 / 5;
+  grid-row-start: 56;
+  z-index: 1;
+  transform: translateY(2rem);
 }
-.image-array > .image-container:nth-child(21) img {
-  grid-column: 6 / 8;
+.index-container .image-11 {
+  grid-column: 9 / 13;
+  grid-row-start: 63;
 }
-.image-array > .image-container:nth-child(22) img {
-  grid-column: 2 / 4;
+.index-container .image-12 {
+  grid-column: 3 / 7;
+  grid-row-start: 65;
+  transform: translateY(2rem);
 }
-.image-array > .image-container:nth-child(23) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(24) img {
-  grid-column: 2 / 4;
-}
-.image-array > .image-container:nth-child(25) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(26) img {
-  grid-column: 1 / 3;
-}
-.image-array > .image-container:nth-child(27) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(28) img {
-  grid-column: 2 / 4;
-}
-.image-array > .image-container:nth-child(29) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(30) img {
-  grid-column: 2 / 4;
-}
-.image-array > .image-container:nth-child(31) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(32) img {
-  grid-column: 1 / 3;
-}
-.image-array > .image-container:nth-child(33) img {
-  grid-column: 6 / 8;
-}
-.image-array > .image-container:nth-child(34) img {
-  grid-column: 1 / 3;
+.index-container img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Video Container */
-.video-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+/* Video */
 
 .home-film {
   margin-top: 3vh !important;

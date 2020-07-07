@@ -1,10 +1,12 @@
 <template>
   <!-- Credits -->
   <div class="credits">
-    <div class="column-1">
+    <!-- <h2>Credits</h2> -->
+    <div class="credits-container">
       <div
         v-for="(credit, index) in credits"
         :key="'credit-' + index"
+        :style="{ gridRowStart: index + 1 }"
         class="item"
       >
         <span class="credit">{{ credit.credit }}</span>
@@ -28,33 +30,44 @@ export default {
 <style>
 /* Credits */
 .credits {
-  font-size: 1rem;
-  line-height: 1.3;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  margin-bottom: 12.5rem;
-  border-top: 2px solid white;
+  width: 100%;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1rem;
+  padding-bottom: 10.5rem;
+  margin-top: 6rem;
 }
-.daylight .credits {
+.credits h2 {
+  font-weight: 400;
+  font-size: 2.75rem;
+  line-height: 1;
+  margin-bottom: 2.875rem;
+  letter-spacing: -0.64px;
+  grid-column: 3 / 8;
+  grid-row: 1 / 2;
+}
+.credits-container {
+  grid-column: 3 / 11;
+}
+.credits .item:first-child {
   border-top: 2px solid black;
+  /* padding-top: 1.25rem; */
 }
 .credits .item {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  padding-bottom: 1.5rem;
-  padding-top: 1.5rem;
-}
-.daylight .credits .item {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  line-height: 1.75;
+  font-size: 1rem;
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 .credits .credit {
-  grid-column: 1 / 3;
-  opacity: 0.48;
+  width: 30%;
+  opacity: 0.56;
 }
 .credits .name {
-  grid-column: 3 / 9;
+  width: 70%;
 }
 
 /* Responsive */

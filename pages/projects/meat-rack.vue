@@ -1,5 +1,8 @@
 <template>
   <div id="meat-rack">
+    <!-- Preloader -->
+    <PageLoader line-hex="#fff" bg-hex="#000" />
+    <!-- Navigation -->
     <Navigation />
     <!-- Canvas -->
     <ProjectCanvas
@@ -16,29 +19,22 @@
     <Credits :credits="credits" />
     <!-- Image Grid -->
     <ProjectImages :images="projectImages" />
-    <!-- Next Project -->
-    <BackToTop :projects="projects" />
+    <!-- Footer -->
+    <Footer />
   </div>
 </template>
 
 <script>
-import Navigation from '~/components/Navigation.vue'
-import ProjectCanvas from '~/components/ProjectCanvas.vue'
-import ProjectFilm from '~/components/ProjectFilm.vue'
-import ProjectFeature from '~/components/ProjectFeature.vue'
-import ProjectImages from '~/components/ProjectImages.vue'
-import Credits from '~/components/Credits.vue'
-import BackToTop from '~/components/BackToTop.vue'
-
 export default {
-  components: {
-    Navigation,
-    ProjectCanvas,
-    ProjectFilm,
-    ProjectFeature,
-    ProjectImages,
-    Credits,
-    BackToTop
+  head() {
+    return {
+      htmlAttrs: {
+        class: ['night']
+      },
+      bodyAttrs: {
+        class: ['night']
+      }
+    }
   },
   data() {
     return {
@@ -49,15 +45,8 @@ export default {
         '/meat-rack/4.png',
         '/meat-rack/5.png',
         '/meat-rack/6.png',
-        '/meat-rack/sequence2_1.png',
-        '/meat-rack/sequence2_2.png',
         '/meat-rack/7.png',
         '/meat-rack/8.png',
-        '/meat-rack/sequence1_1.png',
-        '/meat-rack/sequence1_2.png',
-        '/meat-rack/sequence1_3.png',
-        '/meat-rack/sequence1_4.png',
-        '/meat-rack/sequence1_5.png',
         '/meat-rack/9.png',
         '/meat-rack/10.png',
         '/meat-rack/11.png',
@@ -65,49 +54,55 @@ export default {
         '/meat-rack/13.png',
         '/meat-rack/14.png',
         '/meat-rack/15.png',
-        '/meat-rack/sequence3_1.png',
-        '/meat-rack/sequence3_2.png',
         '/meat-rack/16.png',
         '/meat-rack/17.png',
         '/meat-rack/18.png',
         '/meat-rack/19.png',
         '/meat-rack/20.png',
         '/meat-rack/21.png',
+        '/meat-rack/22.png',
+        '/meat-rack/23.png',
+        '/meat-rack/24.png',
         '/meat-rack/25.png',
         '/meat-rack/26.png',
         '/meat-rack/27.png',
         '/meat-rack/28.png',
-        '/meat-rack/22.png',
-        '/meat-rack/23.png',
-        '/meat-rack/24.png',
-        '/meat-rack/29.png'
+        '/meat-rack/29.png',
+        '/meat-rack/30.png',
+        '/meat-rack/31.png',
+        '/meat-rack/32.png',
+        '/meat-rack/33.png',
+        '/meat-rack/34.png',
+        '/meat-rack/35.png',
+        '/meat-rack/36.png',
+        '/meat-rack/37.png',
+        '/meat-rack/38.png',
+        '/meat-rack/39.png',
+        '/meat-rack/40.png',
+        '/meat-rack/41.png',
+        '/meat-rack/42.png',
+        '/meat-rack/43.png',
+        '/meat-rack/44.png',
+        '/meat-rack/45.png',
+        '/meat-rack/46.png',
+        '/meat-rack/47.png',
+        '/meat-rack/48.png'
       ],
       filmLink: '/meat-rack/supercut_o.mp4',
       projectFeatureContent: {
         title: 'Meat Rack (2020)',
-        paragraph: `The NYC Downlow is Block9’s legendary queer nightclub. It first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay club inside. Having since evolved into a warehouse at the heart of New York City’s Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary at Glastonbury Festival in 2017.
+        paragraph: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside. Having since evolved into a warehouse at the heart of the Meatpacking District in New York City circa 1982, The Downlow celebrated its 10th anniversary in 2017.
         <br /><br />
-        <i>Meat Rack</i> works as a document of the celebrations, taking us from Somerset to New York over the course of 16 minutes. From construction site to dance floor, build crew to muscle boys, the film is a personal tribute to a cultural phenomenon. An intimate, sometimes unsettling portrait, <i>Meat Rack</i> captures the fleeting nature of Glastonbury’s most notorious nightspot. Shot on a Betacam SP camcorder with VHS-C inserts. Both formats were manufactured and publicly available in 1982.
+        <i>Meat Rack</i> works as a document of the celebrations, taking us all the way from Somerset to New York over the course of 16 minutes. From construction site to dance floor, build crew to muscle boys, the film is a personal tribute to a cultural phenomenon. Intimate, expressive and occasionally unsettling, <i>Meat Rack</i> captures the fleeting nature of Glastonbury’s most notorious nightspot. Shot on a Betacam SP camcorder with additional VHS-C inserts. Both formats were manufactured and available to the public in 1982.
         <br /><br />
-        Exhibited online via Block9 (23rd → 30th June 2020).`,
-        featureImages: [
-          {
-            imageOne: '/meat-rack/sequence1_1.png',
-            imageTwo: '/meat-rack/sequence1_2.png'
-          },
-          {
-            imageOne: '/meat-rack/sequence1_4.png',
-            imageTwo: '/meat-rack/sequence1_5.png'
-          },
-          {
-            imageOne: '/meat-rack/sequence3_1.png',
-            imageTwo: '/meat-rack/sequence3_2.png'
-          }
-        ],
+        Exhibited online via Block9 (23rd June → 12th July 2020).`,
         footnotes: [
-          '1. The NYC Downlow (https://thenycdownlow.com/)',
-          '2. Block9 (https://www.block9.com/)',
-          '3. Glastonbury Festival (https://www.glastonburyfestivals.co.uk/)'
+          { title: 'The NYC Downlow', link: 'https://thenycdownlow.com/' },
+          { title: 'Block9', link: 'https://www.block9.com/' },
+          {
+            title: 'Glastonbury Festival',
+            link: 'https://www.glastonburyfestivals.co.uk/'
+          }
         ]
       },
       credits: [
@@ -126,67 +121,293 @@ export default {
         { credit: 'Commissioned by', name: 'Block9' }
       ],
       projectImages: [
-        '/meat-rack/meat-rack-poster.jpg',
-        '/meat-rack/1.png',
-        '/meat-rack/2.png',
-        '/meat-rack/3.png',
-        '/meat-rack/4.png',
-        '/meat-rack/5.png',
-        '/meat-rack/6.png',
-        '/meat-rack/7.png',
-        '/meat-rack/8.png',
-        '/meat-rack/9.png',
-        '/meat-rack/10.png',
-        '/meat-rack/11.png',
-        '/meat-rack/12.png',
-        '/meat-rack/13.png',
-        '/meat-rack/14.png',
-        '/meat-rack/15.png',
-        '/meat-rack/16.png',
-        '/meat-rack/17.png',
-        '/meat-rack/18.png',
-        '/meat-rack/19.png',
-        '/meat-rack/22.png',
-        '/meat-rack/23.png',
-        '/meat-rack/24.png',
-        '/meat-rack/29.png',
-        '/meat-rack/20.png',
-        '/meat-rack/21.png',
-        '/meat-rack/25.png',
-        '/meat-rack/26.png',
-        '/meat-rack/27.png',
-        '/meat-rack/28.png',
-        '/meat-rack/sequence1_1.png',
-        '/meat-rack/sequence1_2.png',
-        '/meat-rack/sequence1_3.png',
-        '/meat-rack/sequence1_4.png',
-        '/meat-rack/sequence1_5.png',
-        '/meat-rack/sequence2_1.png',
-        '/meat-rack/sequence2_2.png',
-        '/meat-rack/sequence3_1.png',
-        '/meat-rack/sequence3_2.png'
-      ],
-      projects: [
         {
-          title: 'Mundial',
-          medium: 'Video',
-          type: 'Commission',
-          year: '2020',
-          link: '/projects/mundial'
+          url: '/meat-rack/1.png',
+          placeholder: '/meat-rack/placeholders/1.png',
+          width: 720,
+          height: 576
         },
         {
-          title: 'Margaret',
-          medium: 'Video + Installation',
-          type: 'Research',
-          year: '2020',
-          link: '/projects/margaret'
+          url: '/meat-rack/2.png',
+          placeholder: '/meat-rack/placeholders/2.png',
+          width: 720,
+          height: 576
         },
         {
-          title: 'Ochre',
-          medium: 'Video',
-          type: 'Commission',
-          year: '2019',
-          link: '/projects/ochre'
+          url: '/meat-rack/3.png',
+          placeholder: '/meat-rack/placeholders/3.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/4.png',
+          placeholder: '/meat-rack/placeholders/4.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/5.png',
+          placeholder: '/meat-rack/placeholders/5.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/6.png',
+          placeholder: '/meat-rack/placeholders/6.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/7.png',
+          placeholder: '/meat-rack/placeholders/7.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/8.png',
+          placeholder: '/meat-rack/placeholders/8.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/9.png',
+          placeholder: '/meat-rack/placeholders/9.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/10.png',
+          placeholder: '/meat-rack/placeholders/10.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/11.png',
+          placeholder: '/meat-rack/placeholders/11.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/12.png',
+          placeholder: '/meat-rack/placeholders/12.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/13.png',
+          placeholder: '/meat-rack/placeholders/13.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/14.png',
+          placeholder: '/meat-rack/placeholders/14.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/15.png',
+          placeholder: '/meat-rack/placeholders/15.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/16.png',
+          placeholder: '/meat-rack/placeholders/16.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/17.png',
+          placeholder: '/meat-rack/placeholders/17.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/18.png',
+          placeholder: '/meat-rack/placeholders/18.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/19.png',
+          placeholder: '/meat-rack/placeholders/19.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/20.png',
+          placeholder: '/meat-rack/placeholders/20.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/21.png',
+          placeholder: '/meat-rack/placeholders/21.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/22.png',
+          placeholder: '/meat-rack/placeholders/22.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/23.png',
+          placeholder: '/meat-rack/placeholders/23.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/24.png',
+          placeholder: '/meat-rack/placeholders/24.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/25.png',
+          placeholder: '/meat-rack/placeholders/25.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/26.png',
+          placeholder: '/meat-rack/placeholders/26.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/27.png',
+          placeholder: '/meat-rack/placeholders/27.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/28.png',
+          placeholder: '/meat-rack/placeholders/28.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/29.png',
+          placeholder: '/meat-rack/placeholders/29.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/30.png',
+          placeholder: '/meat-rack/placeholders/30.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/31.png',
+          placeholder: '/meat-rack/placeholders/31.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/32.png',
+          placeholder: '/meat-rack/placeholders/32.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/33.png',
+          placeholder: '/meat-rack/placeholders/33.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/34.png',
+          placeholder: '/meat-rack/placeholders/34.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/35.png',
+          placeholder: '/meat-rack/placeholders/35.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/36.png',
+          placeholder: '/meat-rack/placeholders/36.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/37.png',
+          placeholder: '/meat-rack/placeholders/37.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/38.png',
+          placeholder: '/meat-rack/placeholders/38.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/39.png',
+          placeholder: '/meat-rack/placeholders/39.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/40.png',
+          placeholder: '/meat-rack/placeholders/40.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/41.png',
+          placeholder: '/meat-rack/placeholders/41.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/42.png',
+          placeholder: '/meat-rack/placeholders/42.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/43.png',
+          placeholder: '/meat-rack/placeholders/43.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/44.png',
+          placeholder: '/meat-rack/placeholders/44.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/45.png',
+          placeholder: '/meat-rack/placeholders/45.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/46.png',
+          placeholder: '/meat-rack/placeholders/46.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/47.png',
+          placeholder: '/meat-rack/placeholders/47.png',
+          width: 720,
+          height: 576
+        },
+        {
+          url: '/meat-rack/48.png',
+          placeholder: '/meat-rack/placeholders/48.png',
+          width: 720,
+          height: 576
         }
       ]
     }
@@ -196,9 +417,36 @@ export default {
 
 <style>
 #meat-rack .nav-button,
-#meat-rack nav a {
-  background: transparent;
-  border: 2px solid white;
+#meat-rack nav a,
+#meat-rack .feature .footnote-number,
+#meat-rack .credits .item:first-child,
+#meat-rack .play-button {
+  background: black;
+  border-color: white;
+  color: white;
+}
+
+#meat-rack .nav-button:hover,
+#meat-rack nav a:hover,
+#meat-rack .feature .footnote-number:hover,
+#meat-rack .play-button:hover {
+  background: white;
+  border-color: white;
+  color: black;
+}
+
+#meat-rack .credits .item,
+#meat-rack .credits .item:first-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#meat-rack,
+#meat-rack canvas {
+  background: black;
+  color: white;
+}
+
+#meat-rack .feature .footnotes p a {
   color: white;
 }
 </style>

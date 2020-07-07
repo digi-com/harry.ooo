@@ -1,5 +1,8 @@
 <template>
   <div id="ochre">
+    <!-- Preloader -->
+    <PageLoader />
+    <!-- Navigation -->
     <Navigation />
     <!-- Canvas -->
     <ProjectCanvas
@@ -16,123 +19,77 @@
     <Credits :credits="credits" />
     <!-- Image Grid -->
     <ProjectImages :images="projectImages" />
-    <!-- Next Project -->
-    <BackToTop :projects="projects" />
+    <!-- Footer -->
+    <Footer />
   </div>
 </template>
 
 <script>
-import Navigation from '~/components/Navigation.vue'
-import ProjectCanvas from '~/components/ProjectCanvas.vue'
-import ProjectFilm from '~/components/ProjectFilm.vue'
-import ProjectFeature from '~/components/ProjectFeature.vue'
-import ProjectImages from '~/components/ProjectImages.vue'
-import Credits from '~/components/Credits.vue'
-import BackToTop from '~/components/BackToTop.vue'
-
 export default {
-  components: {
-    Navigation,
-    ProjectCanvas,
-    ProjectFilm,
-    ProjectFeature,
-    ProjectImages,
-    Credits,
-    BackToTop
-  },
   data() {
     return {
       canvasImages: [
-        '/ochre/Maroque Timeline 1 (MASTER).00_00_23_19.Still004.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_08_00_13.Still006.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_08_06_24.Still007.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_08_09_15.Still012.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_08_10_22.Still011.png',
-        '/ochre/OCHRE website grabs.00_00_00_00.Still020.png',
-        '/ochre/OCHRE website grabs.00_00_07_07.Still021.png',
-        '/ochre/OCHRE website grabs.00_00_07_11.Still022.png',
-        '/ochre/OCHRE website grabs.00_00_10_20.Still024.png',
-        '/ochre/OCHRE website grabs.00_00_10_21.Still025.png',
-        '/ochre/OCHRE website grabs.00_00_10_24.Still026.png',
-        '/ochre/OCHRE website grabs.00_00_11_00.Still027.png',
-        '/ochre/OCHRE website grabs.00_00_11_01.Still028.png',
-        '/ochre/OCHRE website grabs.00_00_11_12.Still031.png',
-        '/ochre/OCHRE website grabs.00_00_12_08.Still035.png',
-        '/ochre/OCHRE website grabs.00_00_12_11.Still038.png',
-        '/ochre/OCHRE website grabs.00_00_18_15.Still039.png',
-        '/ochre/OCHRE website grabs.00_00_18_19.Still040.png',
-        '/ochre/OCHRE website grabs.00_00_20_01.Still041.png',
-        '/ochre/OCHRE website grabs.00_00_29_00.Still045.png',
-        '/ochre/OCHRE website grabs.00_00_30_08.Still046.png',
-        '/ochre/OCHRE website grabs.00_00_32_08.Still047.png',
-        '/ochre/OCHRE website grabs.00_00_37_24.Still052.png',
-        '/ochre/OCHRE website grabs.00_00_46_00.Still057.png',
-        '/ochre/OCHRE website grabs.00_00_47_19.Still058.png',
-        '/ochre/OCHRE website grabs.00_00_48_14.Still059.png',
-        '/ochre/OCHRE website grabs.00_01_01_13.Still064.png',
-        '/ochre/OCHRE website grabs.00_01_04_08.Still065.png',
-        '/ochre/OCHRE website grabs.00_01_10_00.Still066.png',
-        '/ochre/OCHRE website grabs.00_01_12_21.Still067.png',
-        '/ochre/OCHRE website grabs.00_01_16_07.Still068.png',
-        '/ochre/OCHRE website grabs.00_01_16_16.Still069.png',
-        '/ochre/OCHRE website grabs.00_01_18_09.Still070.png',
-        '/ochre/OCHRE website grabs.00_01_20_12.Still071.png',
-        '/ochre/OCHRE website grabs.00_01_27_02.Still072.png',
-        '/ochre/OCHRE website grabs.00_01_28_13.Still073.png',
-        '/ochre/OCHRE website grabs.00_01_29_08.Still074.png',
-        '/ochre/OCHRE website grabs.00_01_31_22.Still075.png',
-        '/ochre/OCHRE website grabs.00_01_32_10.Still076.png',
-        '/ochre/OCHRE website grabs.00_01_32_22.Still077.png',
-        '/ochre/OCHRE website grabs.00_01_33_10.Still078.png',
-        '/ochre/OCHRE website grabs.00_01_34_11.Still079.png',
-        '/ochre/OCHRE website grabs.00_01_37_05.Still080.png',
-        '/ochre/OCHRE website grabs.00_01_39_21.Still084.png',
-        '/ochre/OCHRE website grabs.00_01_41_06.Still085.png',
-        '/ochre/OCHRE website grabs.00_01_42_03.Still086.png',
-        '/ochre/OCHRE website grabs.00_01_44_04.Still090.png',
-        '/ochre/OCHRE website grabs.00_01_44_13.Still091.png',
-        '/ochre/OCHRE website grabs.00_01_45_08.Still092.png',
-        '/ochre/OCHRE website grabs.00_01_50_07.Still098.png',
-        '/ochre/OCHRE website grabs.00_01_59_18.Still108.png',
-        '/ochre/OCHRE website grabs.00_02_00_13.Still109.png',
-        '/ochre/OCHRE website grabs.00_02_01_06.Still110.png',
-        '/ochre/OCHRE website grabs.00_02_01_07.Still111.png',
-        '/ochre/OCHRE website grabs.00_02_15_09.Still116.png',
-        '/ochre/OCHRE website grabs.00_02_29_06.Still117.png',
-        '/ochre/OCHRE website grabs.00_02_58_07.Still141.png',
-        '/ochre/OCHRE website grabs.00_03_05_07.Still148.png',
-        '/ochre/OCHRE website grabs.00_03_09_12.Still155.png',
-        '/ochre/OCHRE website grabs.00_03_20_19.Still186.png',
-        '/ochre/OCHRE website grabs.00_03_22_17.Still190.png',
-        '/ochre/OCHRE website grabs.00_03_26_03.Still192.png',
-        '/ochre/CHEZ MOUNIR VISUAL ONLY.00_00_26_02.Still004.png'
+        '/ochre/1.png',
+        '/ochre/2.png',
+        '/ochre/3.png',
+        '/ochre/4.png',
+        '/ochre/5.png',
+        '/ochre/6.png',
+        '/ochre/7.png',
+        '/ochre/8.png',
+        '/ochre/9.png',
+        '/ochre/10.png',
+        '/ochre/11.png',
+        '/ochre/12.png',
+        '/ochre/13.png',
+        '/ochre/14.png',
+        '/ochre/15.png',
+        '/ochre/16.png',
+        '/ochre/17.png',
+        '/ochre/18.png',
+        '/ochre/19.png',
+        '/ochre/20.png',
+        '/ochre/21.png',
+        '/ochre/22.png',
+        '/ochre/23.png',
+        '/ochre/24.png',
+        '/ochre/25.png',
+        '/ochre/26.png',
+        '/ochre/27.png',
+        '/ochre/28.png',
+        '/ochre/29.png',
+        '/ochre/30.png',
+        '/ochre/31.png',
+        '/ochre/32.png',
+        '/ochre/33.png',
+        '/ochre/34.png',
+        '/ochre/35.png',
+        '/ochre/36.png',
+        '/ochre/37.png',
+        '/ochre/38.png',
+        '/ochre/39.png',
+        '/ochre/40.png',
+        '/ochre/41.png',
+        '/ochre/42.png',
+        '/ochre/43.png',
+        '/ochre/44.png',
+        '/ochre/45.png',
+        '/ochre/46.png',
+        '/ochre/47.png',
+        '/ochre/48.png'
       ],
       filmLink: '/ochre/supercut.mp4',
       projectFeatureContent: {
         title: 'Ochre (2019)',
-        paragraph: `<i>Ochre</i> is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, the film focuses on the textures and atmosphere of the city, gradually revealing elements of live performance and location before transitioning to the night-time programme.
+        paragraph: `<i>Ochre</i> is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, <i>Ochre</i> focuses on the textures and atmosphere of the location, gradually revealing elements of live performance before making the transition to the night programme.
         <br /><br />
-        The film was photographed on three small format cameras; a Krasnagorsk 3, a Braun Nizo Professional and a Eumig Nautica for the underwater sequences. The music in <i>Ochre</i> was provided by Tapan, a Serbian band who performed at the festival. The sound was designed by Goran Simonoski, a member of the band.
+        The film was photographed on a collection of small format cameras; a Krasnagorsk 3, a Braun Nizo Professional and a Eumig Nautica for underwater sequences. The music for <i>Ochre</i> was provided by Tapan, a Serbian band booked to perform at the festival. The sound was designed and edited by Goran Simonoski, a member of the band.
         <br /><br />
         Filmed at Atlas Electronic in 2018.`,
-        featureImages: [
-          {
-            imageOne: '/ochre/Instagram Edit.00_08_08_10.Still016.png',
-            imageTwo: '/ochre/Instagram Edit.00_08_09_03.Still020.png'
-          },
-          {
-            imageOne: '/ochre/Instagram Edit.00_08_09_04.Still021.png',
-            imageTwo: '/ochre/Instagram Edit.00_08_09_05.Still022.png'
-          },
-          {
-            imageOne: '/ochre/Instagram Edit.00_08_10_06.Still028.png',
-            imageTwo: '/ochre/Instagram Edit.00_08_10_08.Still030.png'
-          }
-        ],
         footnotes: [
-          '1. Atlas Electronic (https://atlas-electronic.com/)',
-          '2. Saul Pankhurst (https://vimeo.com/saulpankhurst)',
-          '3. Tapan (https://tapan.bandcamp.com/)'
+          { title: 'Atlas Electronic', link: 'https://atlas-electronic.com/' },
+          { title: 'Saul Pankhurst', link: 'https://vimeo.com/saulpankhurst' },
+          { title: 'Tapan', link: 'https://tapan.bandcamp.com/' }
         ]
       },
       credits: [
@@ -145,117 +102,295 @@ export default {
         { credit: 'Commissioned by', name: 'Atlas Electronic' }
       ],
       projectImages: [
-        '/ochre/OCHRE website grabs.00_01_49_22.Still097.png',
-        '/ochre/OCHRE website grabs.00_03_28_10.Still198.png',
-        '/ochre/Instagram Edit.00_08_08_10.Still016.png',
-        '/ochre/Instagram Edit.00_08_09_03.Still020.png',
-        '/ochre/Instagram Edit.00_08_09_04.Still021.png',
-        '/ochre/Instagram Edit.00_08_09_05.Still022.png',
-        '/ochre/Instagram Edit.00_08_09_06.Still023.png',
-        '/ochre/Instagram Edit.00_08_09_07.Still024.png',
-        '/ochre/Instagram Edit.00_08_09_08.Still025.png',
-        '/ochre/Instagram Edit.00_08_09_09.Still026.png',
-        '/ochre/Instagram Edit.00_08_09_10.Still027.png',
-        '/ochre/Instagram Edit.00_08_10_06.Still028.png',
-        '/ochre/Instagram Edit.00_08_10_07.Still029.png',
-        '/ochre/Instagram Edit.00_08_10_08.Still030.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_00_10_13.Still003.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_00_22_18.Still002.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_00_23_19.Still004.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_08_00_13.Still006.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_08_06_24.Still007.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_08_09_15.Still012.png',
-        '/ochre/Maroque Timeline 1 (MASTER).00_08_10_22.Still011.png',
-        '/ochre/OCHRE website grabs.00_00_00_00.Still020.png',
-        '/ochre/OCHRE website grabs.00_00_07_07.Still021.png',
-        '/ochre/OCHRE website grabs.00_00_07_11.Still022.png',
-        '/ochre/OCHRE website grabs.00_00_10_21.Still025.png',
-        '/ochre/OCHRE website grabs.00_00_10_24.Still026.png',
-        '/ochre/OCHRE website grabs.00_00_11_00.Still027.png',
-        '/ochre/OCHRE website grabs.00_00_12_08.Still035.png',
-        '/ochre/OCHRE website grabs.00_00_12_11.Still038.png',
-        '/ochre/OCHRE website grabs.00_00_18_15.Still039.png',
-        '/ochre/OCHRE website grabs.00_00_18_19.Still040.png',
-        '/ochre/OCHRE website grabs.00_00_20_01.Still041.png',
-        '/ochre/OCHRE website grabs.00_00_29_00.Still045.png',
-        '/ochre/OCHRE website grabs.00_00_30_08.Still046.png',
-        '/ochre/OCHRE website grabs.00_00_32_08.Still047.png',
-        '/ochre/OCHRE website grabs.00_00_37_24.Still052.png',
-        '/ochre/OCHRE website grabs.00_00_46_00.Still057.png',
-        '/ochre/OCHRE website grabs.00_00_47_19.Still058.png',
-        '/ochre/OCHRE website grabs.00_00_48_14.Still059.png',
-        '/ochre/OCHRE website grabs.00_01_01_13.Still064.png',
-        '/ochre/OCHRE website grabs.00_01_04_08.Still065.png',
-        '/ochre/OCHRE website grabs.00_01_10_00.Still066.png',
-        '/ochre/OCHRE website grabs.00_01_12_21.Still067.png',
-        '/ochre/OCHRE website grabs.00_01_16_07.Still068.png',
-        '/ochre/OCHRE website grabs.00_01_16_16.Still069.png',
-        '/ochre/OCHRE website grabs.00_01_18_09.Still070.png',
-        '/ochre/OCHRE website grabs.00_01_20_12.Still071.png',
-        '/ochre/OCHRE website grabs.00_01_27_02.Still072.png',
-        '/ochre/OCHRE website grabs.00_01_28_13.Still073.png',
-        '/ochre/OCHRE website grabs.00_01_29_08.Still074.png',
-        '/ochre/OCHRE website grabs.00_01_31_22.Still075.png',
-        '/ochre/OCHRE website grabs.00_01_32_10.Still076.png',
-        '/ochre/OCHRE website grabs.00_01_32_22.Still077.png',
-        '/ochre/OCHRE website grabs.00_01_33_10.Still078.png',
-        '/ochre/OCHRE website grabs.00_01_34_11.Still079.png',
-        '/ochre/OCHRE website grabs.00_01_37_05.Still080.png',
-        '/ochre/OCHRE website grabs.00_01_39_21.Still084.png',
-        '/ochre/OCHRE website grabs.00_01_41_06.Still085.png',
-        '/ochre/OCHRE website grabs.00_01_44_04.Still090.png',
-        '/ochre/OCHRE website grabs.00_01_44_13.Still091.png',
-        '/ochre/OCHRE website grabs.00_01_45_08.Still092.png',
-        '/ochre/CHEZ MOUNIR VISUAL ONLY.00_00_10_07.Still002.png',
-        '/ochre/OCHRE website grabs.00_01_59_18.Still108.png',
-        '/ochre/OCHRE website grabs.00_02_00_13.Still109.png',
-        '/ochre/OCHRE website grabs.00_02_01_06.Still110.png',
-        '/ochre/OCHRE website grabs.00_02_15_09.Still116.png',
-        '/ochre/OCHRE website grabs.00_02_29_06.Still117.png',
-        '/ochre/OCHRE website grabs.00_02_50_17.Still134.png',
-        '/ochre/OCHRE website grabs.00_02_56_07.Still140.png',
-        '/ochre/OCHRE website grabs.00_02_58_07.Still141.png',
-        '/ochre/OCHRE website grabs.00_03_05_07.Still148.png',
-        '/ochre/OCHRE website grabs.00_03_09_12.Still155.png',
-        '/ochre/OCHRE website grabs.00_03_20_19.Still186.png',
-        '/ochre/OCHRE website grabs.00_03_22_17.Still190.png',
-        '/ochre/OCHRE website grabs.00_03_26_03.Still192.png',
-        '/ochre/CHEZ MOUNIR VISUAL ONLY.00_00_26_02.Still004.png',
-        '/ochre/OCHRE website grabs.00_03_57_24.Still212.png'
-      ],
-      projects: [
         {
-          title: 'Mundial',
-          medium: 'Video',
-          type: 'Commission',
-          year: '2020',
-          link: '/projects/mundial'
+          url: '/ochre/1.png',
+          placeholder: '/ochre/placeholders/1.png',
+          width: 960,
+          height: 540
         },
         {
-          title: 'Meat Rack',
-          medium: 'Video',
-          type: 'Documentary',
-          year: '2020',
-          link: '/projects/meat-rack'
+          url: '/ochre/2.png',
+          placeholder: '/ochre/placeholders/2.png',
+          width: 960,
+          height: 540
         },
         {
-          title: 'Margaret',
-          medium: 'Video + Installation',
-          type: 'Research',
-          year: '2020',
-          link: '/projects/margaret'
+          url: '/ochre/3.png',
+          placeholder: '/ochre/placeholders/3.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/4.png',
+          placeholder: '/ochre/placeholders/4.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/5.png',
+          placeholder: '/ochre/placeholders/5.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/6.png',
+          placeholder: '/ochre/placeholders/6.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/7.png',
+          placeholder: '/ochre/placeholders/7.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/8.png',
+          placeholder: '/ochre/placeholders/8.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/9.png',
+          placeholder: '/ochre/placeholders/9.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/10.png',
+          placeholder: '/ochre/placeholders/10.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/11.png',
+          placeholder: '/ochre/placeholders/11.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/12.png',
+          placeholder: '/ochre/placeholders/12.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/13.png',
+          placeholder: '/ochre/placeholders/13.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/14.png',
+          placeholder: '/ochre/placeholders/14.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/15.png',
+          placeholder: '/ochre/placeholders/15.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/16.png',
+          placeholder: '/ochre/placeholders/16.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/17.png',
+          placeholder: '/ochre/placeholders/17.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/18.png',
+          placeholder: '/ochre/placeholders/18.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/19.png',
+          placeholder: '/ochre/placeholders/19.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/20.png',
+          placeholder: '/ochre/placeholders/20.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/21.png',
+          placeholder: '/ochre/placeholders/21.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/22.png',
+          placeholder: '/ochre/placeholders/22.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/23.png',
+          placeholder: '/ochre/placeholders/23.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/24.png',
+          placeholder: '/ochre/placeholders/24.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/25.png',
+          placeholder: '/ochre/placeholders/25.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/26.png',
+          placeholder: '/ochre/placeholders/26.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/27.png',
+          placeholder: '/ochre/placeholders/27.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/28.png',
+          placeholder: '/ochre/placeholders/28.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/29.png',
+          placeholder: '/ochre/placeholders/29.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/30.png',
+          placeholder: '/ochre/placeholders/30.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/31.png',
+          placeholder: '/ochre/placeholders/31.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/32.png',
+          placeholder: '/ochre/placeholders/32.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/33.png',
+          placeholder: '/ochre/placeholders/33.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/34.png',
+          placeholder: '/ochre/placeholders/34.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/35.png',
+          placeholder: '/ochre/placeholders/35.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/ochre/36.png',
+          placeholder: '/ochre/placeholders/36.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/37.png',
+          placeholder: '/ochre/placeholders/37.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/38.png',
+          placeholder: '/ochre/placeholders/38.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/39.png',
+          placeholder: '/ochre/placeholders/39.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/40.png',
+          placeholder: '/ochre/placeholders/40.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/41.png',
+          placeholder: '/ochre/placeholders/41.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/42.png',
+          placeholder: '/ochre/placeholders/42.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/43.png',
+          placeholder: '/ochre/placeholders/43.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/44.png',
+          placeholder: '/ochre/placeholders/44.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/45.png',
+          placeholder: '/ochre/placeholders/45.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/46.png',
+          placeholder: '/ochre/placeholders/46.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/47.png',
+          placeholder: '/ochre/placeholders/47.png',
+          width: 960,
+          height: 540
+        },
+        {
+          url: '/ochre/48.png',
+          placeholder: '/ochre/placeholders/48.png',
+          width: 960,
+          height: 540
         }
       ]
-    }
-  },
-  head() {
-    return {
-      htmlAttrs: {
-        class: ['daylight', 'ochre']
-      },
-      bodyAttrs: {
-        class: ['daylight', 'ochre']
-      }
     }
   }
 }

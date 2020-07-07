@@ -3,6 +3,33 @@ button {
   cursor: none !important;
 }
 
+nav a,
+.nav-button {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  font-size: 2rem;
+  text-transform: uppercase;
+  z-index: 9999;
+  border-radius: 999px;
+  height: 64px;
+  width: auto;
+  padding: 0 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  text-decoration: none;
+  letter-spacing: 0.1px;
+}
+
+nav a:hover,
+.nav-button:hover {
+  background-color: black;
+  border: 2px solid black;
+  color: white;
+}
+
 .close-button {
   background-color: transparent;
   border: 2px solid black;
@@ -15,8 +42,44 @@ button {
   justify-content: center;
   user-select: none;
   text-decoration: none;
-  position: absolute;
-  right: 3rem;
+}
+
+.close-button:hover,
+.circle-button:hover {
+  background-color: black;
+  border: 2px solid black;
+}
+.close-button:hover svg path,
+.circle-button:hover svg path {
+  fill: white;
+}
+
+.circle-button {
+  background-color: transparent;
+  border: 2px solid black;
+  z-index: 9999;
+  border-radius: 999px;
+  height: 64px;
+  width: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.tippy-popper {
+  z-index: 999999999 !important;
+}
+
+.tippy-tooltip.project-theme .tippy-backdrop {
+  background: blue;
+}
+.tippy-tooltip.project-theme .tippy-content {
+  color: white;
 }
 
 /* Responsive */

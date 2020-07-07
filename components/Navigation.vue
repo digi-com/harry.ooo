@@ -5,34 +5,51 @@
         <nuxt-link to="/">Harry Lawson</nuxt-link>
       </div>
       <div class="projects">
-        <div @click="toggleProjects()" class="nav-button">Projects</div>
+        <div @click="toggleNavProjects()" class="nav-button">Projects</div>
       </div>
       <div class="information">
-        <nuxt-link to="/information">Info</nuxt-link>
+        <div @click="toggleNavInfo()" class="nav-button">Info</div>
       </div>
-      <!-- <nuxt-link to="/misc" class="misc">Misc.</nuxt-link> -->
     </nav>
+    <NavigationProjectsOverlay
+      v-if="navProjectsVisible"
+      @close-modal="toggleNavProjects()"
+    />
+    <NavigationInfoOverlay
+      v-if="navInfoVisible"
+      @close-modal="toggleNavInfo()"
+    />
   </section>
 </template>
 
 <script>
 export default {
   data() {
-    return {}
+    return {
+      navProjectsVisible: false,
+      navInfoVisible: false
+    }
   },
   methods: {
-    toggleProjects() {
-      this.$router.push({
-        path: '/projects/'
-      })
+    toggleNavProjects() {
+      this.navProjectsVisible = !this.navProjectsVisible
     },
-    projectsMundialGo() {
-      this.projectsHover = !this.projectsHover
-      this.$router.push({
-        path: '/projects/mundial'
-      })
+    toggleNavInfo() {
+      this.navInfoVisible = !this.navInfoVisible
     }
   }
+  // head() {
+  //   return {
+  //     htmlAttrs: {
+  //       class:
+  //         this.navProjectsVisible || this.navInfoVisible ? 'modal-open' : ''
+  //     },
+  //     bodyAttrs: {
+  //       class:
+  //         this.navProjectsVisible || this.navInfoVisible ? 'modal-open' : ''
+  //     }
+  //   }
+  // }
 }
 </script>
 
@@ -40,47 +57,20 @@ export default {
 nav {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-gap: 1rem;
-  padding: 2rem 3rem 2rem 3rem;
+  padding: 2rem 3rem;
   position: absolute;
   z-index: 99999;
 }
-nav a,
-.nav-button {
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
-  font-size: 2rem;
-  text-transform: uppercase;
-  z-index: 9999;
-  border-radius: 999px;
-  height: 64px;
-  width: auto;
-  padding: 0 1.75rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  text-decoration: none;
-}
-.daylight nav a,
-.daylight .nav-button {
-  color: black;
-  background-color: white;
-  border: 2px solid black;
-}
 nav .name {
-  grid-column: 1 / 4;
+  grid-column: 1 / 5;
 }
 nav .projects {
-  grid-column: 4 / 6;
+  grid-column: 5 / 8;
 }
 nav .information {
-  grid-column: 6 / 8;
-}
-nav .misc {
-  grid-column: 8 / 9;
+  grid-column: 8 / 13;
 }
 
 @media screen and (min-width: 0px) and (max-width: 320px) {

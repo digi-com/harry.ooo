@@ -18,11 +18,12 @@
     }
   },
   "dependencies": {
+    "@nuxt/components": "^1.0.6",
     "@types/three": "^0.103.2",
     "intersection-observer": "^0.10.0",
     "nuxt": "^2.0.0",
     "rough-notation": "^0.3.3",
-    "three": "^0.117.1",
+    "vue-100vh": "^0.1.1",
     "vue-marquee-text-component": "^1.1.1",
     "vue-scrollto": "^2.18.1",
     "vue-threejs-composer": "^1.2.0",

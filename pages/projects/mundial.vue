@@ -1,5 +1,7 @@
 <template>
-  <div id="ochre">
+  <div id="mundial">
+    <!-- Preloader -->
+    <PageLoader />
     <!-- Navigation -->
     <Navigation />
     <!-- Canvas -->
@@ -17,30 +19,13 @@
     <Credits :credits="credits" />
     <!-- Image Grid -->
     <ProjectImages :images="projectImages" />
-    <!-- Next Project -->
-    <BackToTop :projects="projects" />
+    <!-- Footer -->
+    <Footer />
   </div>
 </template>
 
 <script>
-import Navigation from '~/components/Navigation.vue'
-import ProjectCanvas from '~/components/ProjectCanvas.vue'
-import ProjectFilm from '~/components/ProjectFilm.vue'
-import ProjectFeature from '~/components/ProjectFeature.vue'
-import ProjectImages from '~/components/ProjectImages.vue'
-import Credits from '~/components/Credits.vue'
-import BackToTop from '~/components/BackToTop.vue'
-
 export default {
-  components: {
-    Navigation,
-    ProjectCanvas,
-    ProjectFilm,
-    ProjectFeature,
-    ProjectImages,
-    Credits,
-    BackToTop
-  },
   data() {
     return {
       canvasImages: [
@@ -101,20 +86,12 @@ export default {
         teammate on the sidelines recovering from a long-term injury. Featuring
         footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, <i>Mundial</i> works as a collage of
         grassroots football in London.`,
-        featureImages: [
-          {
-            imageOne: '/mundial/mundial-35.png',
-            imageTwo: '/mundial/mundial-36.png'
-          },
-          {
-            imageOne: '/mundial/mundial-47.png',
-            imageTwo: '/mundial/mundial-48.png'
-          }
-        ],
         footnotes: [
-          '1. Mundial Magazine (https://mundialmag.com/)',
-          '2. Shameek Farrell (https://www.instagram.com/shameek_ldn/)',
-          '3. Hackney & Leyton Football League (http://www.hackneyandleytonfootballleague.co.uk/)'
+          { title: 'Mundial Magazine', link: 'https://mundialmag.com/' },
+          {
+            title: 'Shameek Farrell',
+            link: 'https://www.instagram.com/shameek_ldn/'
+          }
         ]
       },
       credits: [
@@ -122,62 +99,301 @@ export default {
         { credit: 'Cinematography', name: 'Harry Lawson' },
         {
           credit: 'Camera',
-          name:
-            'Harry Lawson, Tom Brandhorst, Alex Graham, Kamal Guthmy, Shameek Farrell'
+          name: 'Tom Brandhorst, Alex Graham, Kamal Guthmy, Shameek Farrell'
         },
         { credit: 'Edited by', name: 'Harry Lawson, Saul Pankhurst' },
         { credit: 'Titles', name: 'Alex Mertekis' },
         { credit: 'Commissioned by', name: 'Mundial Studio' }
       ],
       projectImages: [
-        '/mundial/mundial-1.png',
-        '/mundial/mundial-2.png',
-        '/mundial/mundial-3.png',
-        '/mundial/mundial-4.png',
-        '/mundial/mundial-5.png',
-        '/mundial/mundial-6.png',
-        '/mundial/mundial-7.png',
-        '/mundial/mundial-8.png',
-        '/mundial/mundial-9.png',
-        '/mundial/mundial-10.png',
-        '/mundial/mundial-11.png',
-        '/mundial/mundial-12.png',
-        '/mundial/mundial-13.png',
-        '/mundial/mundial-14.png',
-        '/mundial/mundial-15.png',
-        '/mundial/mundial-16.png',
-        '/mundial/mundial-17.png',
-        '/mundial/mundial-18.png',
-        '/mundial/mundial-19.png',
-        '/mundial/mundial-20.png',
-        '/mundial/mundial-21.png',
-        '/mundial/mundial-22.png',
-        '/mundial/mundial-23.png',
-        '/mundial/mundial-24.png',
-        '/mundial/mundial-25.png',
-        '/mundial/mundial-26.png',
-        '/mundial/mundial-27.png',
-        '/mundial/mundial-28.png',
-        '/mundial/mundial-29.png',
-        '/mundial/mundial-30.png',
-        '/mundial/mundial-31.png',
-        '/mundial/mundial-32.png',
-        '/mundial/mundial-33.png',
-        '/mundial/mundial-34.png',
-        '/mundial/mundial-35.png',
-        '/mundial/mundial-36.png',
-        '/mundial/mundial-37.png',
-        '/mundial/mundial-38.png',
-        '/mundial/mundial-39.png',
-        '/mundial/mundial-40.png',
-        '/mundial/mundial-41.png',
-        '/mundial/mundial-42.png',
-        '/mundial/mundial-43.png',
-        '/mundial/mundial-44.png',
-        '/mundial/mundial-45.png',
-        '/mundial/mundial-46.png',
-        '/mundial/mundial-47.png',
-        '/mundial/mundial-48.png'
+        {
+          url: '/mundial/mundial-1.png',
+          placeholder: '/mundial/placeholders/mundial-1.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-2.png',
+          placeholder: '/mundial/placeholders/mundial-2.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-3.png',
+          placeholder: '/mundial/placeholders/mundial-3.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-4.png',
+          placeholder: '/mundial/placeholders/mundial-4.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-5.png',
+          placeholder: '/mundial/placeholders/mundial-5.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-6.png',
+          placeholder: '/mundial/placeholders/mundial-6.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-7.png',
+          placeholder: '/mundial/placeholders/mundial-7.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-8.png',
+          placeholder: '/mundial/placeholders/mundial-8.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-9.png',
+          placeholder: '/mundial/placeholders/mundial-9.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-10.png',
+          placeholder: '/mundial/placeholders/mundial-10.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-11.png',
+          placeholder: '/mundial/placeholders/mundial-11.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-12.png',
+          placeholder: '/mundial/placeholders/mundial-12.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-13.png',
+          placeholder: '/mundial/placeholders/mundial-13.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-14.png',
+          placeholder: '/mundial/placeholders/mundial-14.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-15.png',
+          placeholder: '/mundial/placeholders/mundial-15.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-16.png',
+          placeholder: '/mundial/placeholders/mundial-16.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-17.png',
+          placeholder: '/mundial/placeholders/mundial-17.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-18.png',
+          placeholder: '/mundial/placeholders/mundial-18.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-19.png',
+          placeholder: '/mundial/placeholders/mundial-19.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-20.png',
+          placeholder: '/mundial/placeholders/mundial-20.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-21.png',
+          placeholder: '/mundial/placeholders/mundial-21.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-22.png',
+          placeholder: '/mundial/placeholders/mundial-22.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-23.png',
+          placeholder: '/mundial/placeholders/mundial-23.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-24.png',
+          placeholder: '/mundial/placeholders/mundial-24.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-25.png',
+          placeholder: '/mundial/placeholders/mundial-25.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-26.png',
+          placeholder: '/mundial/placeholders/mundial-26.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-27.png',
+          placeholder: '/mundial/placeholders/mundial-27.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-28.png',
+          placeholder: '/mundial/placeholders/mundial-28.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-29.png',
+          placeholder: '/mundial/placeholders/mundial-29.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-30.png',
+          placeholder: '/mundial/placeholders/mundial-30.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-31.png',
+          placeholder: '/mundial/placeholders/mundial-31.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-32.png',
+          placeholder: '/mundial/placeholders/mundial-32.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-33.png',
+          placeholder: '/mundial/placeholders/mundial-33.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-34.png',
+          placeholder: '/mundial/placeholders/mundial-34.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-35.png',
+          placeholder: '/mundial/placeholders/mundial-35.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-36.png',
+          placeholder: '/mundial/placeholders/mundial-36.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-37.png',
+          placeholder: '/mundial/placeholders/mundial-37.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-38.png',
+          placeholder: '/mundial/placeholders/mundial-38.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-39.png',
+          placeholder: '/mundial/placeholders/mundial-39.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-40.png',
+          placeholder: '/mundial/placeholders/mundial-40.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-41.png',
+          placeholder: '/mundial/placeholders/mundial-41.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-42.png',
+          placeholder: '/mundial/placeholders/mundial-42.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-43.png',
+          placeholder: '/mundial/placeholders/mundial-43.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-44.png',
+          placeholder: '/mundial/placeholders/mundial-44.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-45.png',
+          placeholder: '/mundial/placeholders/mundial-45.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-46.png',
+          placeholder: '/mundial/placeholders/mundial-46.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-47.png',
+          placeholder: '/mundial/placeholders/mundial-47.png',
+          width: 1000,
+          height: 563
+        },
+        {
+          url: '/mundial/mundial-48.png',
+          placeholder: '/mundial/placeholders/mundial-48.png',
+          width: 1000,
+          height: 563
+        }
       ],
       projects: [
         {
@@ -202,16 +418,6 @@ export default {
           link: '/projects/ochre'
         }
       ]
-    }
-  },
-  head() {
-    return {
-      htmlAttrs: {
-        class: ['daylight', 'mundial']
-      },
-      bodyAttrs: {
-        class: ['daylight', 'mundial']
-      }
     }
   }
 }

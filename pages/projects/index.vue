@@ -213,7 +213,7 @@ export default {
 #projects .nav-button {
   color: black;
   background-color: white;
-  border: 2px solid black;
+  border-color: black;
 }
 a {
   text-decoration: none;

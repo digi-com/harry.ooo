@@ -58,7 +58,7 @@ h2 {
 #information .nav-button {
   color: black;
   background-color: white;
-  border: 2px solid black;
+  border-color: black;
 }
 .information-container {
   max-width: 100%;
