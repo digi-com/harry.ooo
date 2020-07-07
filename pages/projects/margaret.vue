@@ -392,6 +392,68 @@ export default {
         }
       ]
     }
+  },
+  head() {
+    return {
+      title: 'Harry Lawson | Margaret (2020)',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Margaret is a long-term multimedia project that explores memory, memory loss, intimacy and care through the experiences of families and health workers living with dementia on a daily basis. The project now exists as a body of work about Margaret and the place she spent the last four years of her life — Glenholme House in Sunderland. It is set loosely over a period during which she moved out of her home and into residential care, and features a growing archive of objects and images relating to this time.`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `Margaret is a long-term multimedia project that explores memory, memory loss, intimacy and care through the experiences of families and health workers living with dementia on a daily basis. The project now exists as a body of work about Margaret and the place she spent the last four years of her life — Glenholme House in Sunderland. It is set loosely over a period during which she moved out of her home and into residential care, and features a growing archive of objects and images relating to this time.`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: `Margaret is a long-term multimedia project that explores memory, memory loss, intimacy and care through the experiences of families and health workers living with dementia on a daily basis. The project now exists as a body of work about Margaret and the place she spent the last four years of her life — Glenholme House in Sunderland. It is set loosely over a period during which she moved out of her home and into residential care, and features a growing archive of objects and images relating to this time.`
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://harry.ooo/projects/margaret'
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://harry.ooo/projects/margaret'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Harry Lawson | Margaret (2020)'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Harry Lawson | Margaret (2020)'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://harry.ooo/margaret/15.png'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://harry.ooo/margaret/15.png'
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: 'Margaret (2020)'
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: 'Margaret (2020)'
+        }
+      ]
+    }
   }
 }
 </script>
