@@ -127,10 +127,13 @@ html.night {
   color: white;
 }
 
+html * {
+  cursor: none !important;
+}
+
 html,
 body,
 a {
-  cursor: none !important;
   color: black;
 }
 
