@@ -153,6 +153,21 @@ export default {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer-container {
+    height: auto;
+    display: block;
+    padding: 1.5rem;
+    padding-top: 0;
+  }
+  .footer-container nav {
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  .back-to-top {
+    position: relative;
+    display: inline-flex;
+    right: auto;
+  }
 }
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
 }
