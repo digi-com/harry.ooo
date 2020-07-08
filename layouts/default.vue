@@ -234,22 +234,38 @@ canvas {
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
+  #app {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+  }
 }
 @media screen and (min-width: 1441px) and (max-width: 1600px) {
+  #app {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+  }
 }
 @media screen and (min-width: 1601px) and (max-width: 1920px) {
-  html {
-    font-size: 20px;
+  #app {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
   }
 }
 @media screen and (min-width: 1921px) and (max-width: 2560px) {
-  html {
-    font-size: 24px;
+  #app {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
   }
 }
 @media screen and (min-width: 2561px) and (max-width: 9999px) {
-  html {
-    font-size: 32px;
+  #app {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
   }
 }
 </style>

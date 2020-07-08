@@ -553,13 +553,33 @@ export default {
   }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .info-overlay {
+    padding-left: calc(50vw - 640px + 3rem);
+    padding-right: calc(50vw - 640px + 3rem);
+  }
 }
 @media screen and (min-width: 1441px) and (max-width: 1600px) {
+  .info-overlay {
+    padding-left: calc(50vw - 640px + 3rem);
+    padding-right: calc(50vw - 640px + 3rem);
+  }
 }
 @media screen and (min-width: 1601px) and (max-width: 1920px) {
+  .info-overlay {
+    padding-left: calc(50vw - 640px + 3rem);
+    padding-right: calc(50vw - 640px + 3rem);
+  }
 }
 @media screen and (min-width: 1921px) and (max-width: 2560px) {
+  .info-overlay {
+    padding-left: calc(50vw - 640px + 3rem);
+    padding-right: calc(50vw - 640px + 3rem);
+  }
 }
 @media screen and (min-width: 2561px) and (max-width: 9999px) {
+  .info-overlay {
+    padding-left: calc(50vw - 640px + 3rem);
+    padding-right: calc(50vw - 640px + 3rem);
+  }
 }
 </style>
