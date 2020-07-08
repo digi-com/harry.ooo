@@ -298,6 +298,33 @@ export default {
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
+  .index-container {
+    display: block;
+    padding: 6.5rem 1.5rem 0 1.5rem;
+    margin-bottom: 8rem;
+  }
+  .index-container .content {
+    margin-bottom: 8rem;
+  }
+  .index-container .content h2 {
+    font-size: 2.25rem;
+    letter-spacing: -0.4px;
+    margin-bottom: 3rem;
+  }
+  .index-container .content p {
+    font-size: 0.8125rem;
+    letter-spacing: -0.18px;
+    margin-bottom: 3.25rem;
+  }
+  .index-container .home-image {
+    margin-bottom: 1.5rem;
+    transform: none;
+  }
+  .home-film {
+    margin-top: 8rem !important;
+    margin-bottom: 8rem !important;
+    height: 41vh !important;
+  }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 }

@@ -317,6 +317,21 @@ export default {
   .info-overlay .info-overlay-grid .press-row .circle-button {
     display: none;
   }
+  .info-overlay .info-overlay-grid .contact-row:hover .circle-button {
+    background-color: white !important;
+  }
+  .info-overlay .info-overlay-grid .contact-row:hover .circle-button svg path {
+    fill: white !important;
+  }
+  .info-overlay
+    .info-overlay-grid
+    .contact-row:hover
+    .circle-button.mail
+    svg
+    g {
+    stroke: black !important;
+    fill: white !important;
+  }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
   .info-overlay {
@@ -365,6 +380,50 @@ export default {
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
+  .info-overlay {
+    padding: 1.5rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .info-overlay .info-overlay-grid {
+    display: block;
+  }
+  .info-overlay .info-overlay-grid .content {
+    font-size: 1.5rem;
+    letter-spacing: -0.05px;
+    margin-bottom: 4rem;
+  }
+  .info-overlay .info-overlay-grid .contact {
+    font-size: 1.5rem;
+    letter-spacing: -0.05px;
+    margin-bottom: 4rem;
+  }
+  .info-overlay .info-overlay-grid .press-row {
+    font-size: 1.375rem;
+    letter-spacing: -0.05px;
+    margin-bottom: 4rem;
+  }
+  .info-overlay .info-overlay-grid .press-row p {
+    margin-right: 0;
+  }
+  .info-overlay .info-overlay-grid .press-row .circle-button {
+    display: none;
+  }
+  .info-overlay .info-overlay-grid .contact-row:hover .circle-button {
+    background-color: white !important;
+  }
+  .info-overlay .info-overlay-grid .contact-row:hover .circle-button svg path {
+    fill: white !important;
+  }
+  .info-overlay
+    .info-overlay-grid
+    .contact-row:hover
+    .circle-button.mail
+    svg
+    g {
+    stroke: black !important;
+    fill: white !important;
+  }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 }

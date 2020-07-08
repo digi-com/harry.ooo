@@ -103,6 +103,10 @@ export default {
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
+  #film {
+    margin: 0 1.5rem;
+    height: 30vh;
+  }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 }

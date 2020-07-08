@@ -261,6 +261,26 @@ export default {
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
+  .projects-overlay {
+    padding: 1.5rem;
+  }
+  .projects-overlay .projects-overlay-title {
+    margin-bottom: 0.75rem;
+  }
+  .projects-overlay .project-row .right {
+    display: none;
+  }
+  .projects-overlay .project-row {
+    padding: 0.75rem 0;
+  }
+  #video-hover {
+    display: none;
+  }
+  .projects-overlay .project-row:hover .circle-button,
+  .projects-overlay .project-row:hover .nav-button {
+    background: white !important;
+    color: black !important;
+  }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 }

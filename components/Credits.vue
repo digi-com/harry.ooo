@@ -72,8 +72,36 @@ export default {
 
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
+  .credits {
+    display: block;
+    padding: 0 1rem;
+  }
+  .credits .item {
+    font-size: 0.875rem;
+  }
+  .credits .credit {
+    width: 50%;
+  }
+  .credits .name {
+    width: 50%;
+  }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
+  .credits {
+    display: block;
+    padding: 0 1.5rem;
+  }
+  .credits .item {
+    font-size: 0.875rem;
+  }
+  .credits .credit {
+    width: 50%;
+  }
+  .credits .name {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
   .credits {
     display: block;
     padding: 0 1.5rem;
@@ -88,8 +116,6 @@ export default {
   .credits .name {
     width: 50%;
   }
-}
-@media screen and (min-width: 376px) and (max-width: 480px) {
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 }

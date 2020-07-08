@@ -111,6 +111,13 @@ export default {}
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
+  #hero {
+    display: block;
+    padding: 24.5rem 1.5rem 0 1.5rem;
+  }
+  #hero .progressive-image {
+    margin-bottom: 1.5rem;
+  }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 }

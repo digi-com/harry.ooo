@@ -201,6 +201,49 @@ export default {
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
+  .feature {
+    display: block;
+    padding: 8rem 1.5rem 0 1.5rem;
+  }
+  .feature h2 {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 3rem;
+    letter-spacing: -0.5px;
+  }
+  .feature .paragraph {
+    font-size: 0.8125rem;
+    letter-spacing: -0.18px;
+    margin-bottom: 3rem;
+  }
+  .feature .paragraph .caption {
+    font-size: 0.8125rem;
+    letter-spacing: -0.16px;
+    line-height: 1.48;
+  }
+  .feature .footnotes {
+    margin-bottom: 4rem;
+    font-size: 0.875rem;
+    margin-top: 3rem;
+  }
+  .feature .footnotes p {
+    margin-bottom: 0.5rem;
+  }
+  .feature .footnotes .footnote-link {
+    display: none;
+  }
+  .feature .footnote-number {
+    border: 1px solid black;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 99999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+  }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 }

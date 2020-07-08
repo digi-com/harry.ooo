@@ -350,6 +350,20 @@ export default {
 
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
+  .image-array-container {
+    display: block;
+    margin: 0 1rem 0 1rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  .image-array-container .image {
+    transform: none;
+    margin-bottom: 1rem;
+  }
+  .image-array-container .image:nth-last-child(2) {
+    transform: none;
+    margin-bottom: 0;
+  }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
   .image-array-container {
@@ -368,6 +382,20 @@ export default {
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
+  .image-array-container {
+    display: block;
+    margin: 0 1.5rem 0 1.5rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  .image-array-container .image {
+    transform: none;
+    margin-bottom: 1.5rem;
+  }
+  .image-array-container .image:nth-last-child(2) {
+    transform: none;
+    margin-bottom: 0;
+  }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 }

@@ -238,9 +238,18 @@ canvas {
 @media screen and (min-width: 1441px) and (max-width: 1600px) {
 }
 @media screen and (min-width: 1601px) and (max-width: 1920px) {
+  html {
+    font-size: 20px;
+  }
 }
 @media screen and (min-width: 1921px) and (max-width: 2560px) {
+  html {
+    font-size: 24px;
+  }
 }
 @media screen and (min-width: 2561px) and (max-width: 9999px) {
+  html {
+    font-size: 32px;
+  }
 }
 </style>
