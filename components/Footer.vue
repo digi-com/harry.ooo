@@ -89,6 +89,7 @@ export default {
     height: auto;
     display: block;
     padding: 1rem;
+    padding-top: 0;
   }
   .footer-container nav {
     padding: 0;
@@ -105,6 +106,7 @@ export default {
     height: auto;
     display: block;
     padding: 1.5rem;
+    padding-top: 0;
   }
   .footer-container nav {
     padding: 0;

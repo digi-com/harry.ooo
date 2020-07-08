@@ -232,6 +232,11 @@ export default {
   #video-hover {
     display: none;
   }
+  .projects-overlay .project-row:hover .circle-button,
+  .projects-overlay .project-row:hover .nav-button {
+    background: white !important;
+    color: black !important;
+  }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
   .projects-overlay {
@@ -248,6 +253,11 @@ export default {
   }
   #video-hover {
     display: none;
+  }
+  .projects-overlay .project-row:hover .circle-button,
+  .projects-overlay .project-row:hover .nav-button {
+    background: white !important;
+    color: black !important;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {

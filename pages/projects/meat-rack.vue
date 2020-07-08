@@ -507,4 +507,29 @@ export default {
 #meat-rack .feature .footnotes p a {
   color: white;
 }
+
+/* Responsive */
+
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+  #meat-rack .nav-button:hover,
+  #meat-rack nav a:hover,
+  #meat-rack .feature .footnote-number:hover,
+  #meat-rack .play-button:hover {
+    background: black;
+    border-color: white;
+    color: white;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
+}
 </style>

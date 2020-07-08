@@ -348,6 +348,21 @@ export default {
   .info-overlay .info-overlay-grid .press-row .circle-button {
     display: none;
   }
+  .info-overlay .info-overlay-grid .contact-row:hover .circle-button {
+    background-color: white !important;
+  }
+  .info-overlay .info-overlay-grid .contact-row:hover .circle-button svg path {
+    fill: white !important;
+  }
+  .info-overlay
+    .info-overlay-grid
+    .contact-row:hover
+    .circle-button.mail
+    svg
+    g {
+    stroke: black !important;
+    fill: white !important;
+  }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
 }

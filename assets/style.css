@@ -92,8 +92,38 @@ nav a:hover,
     width: 48px;
     height: 48px;
   }
+  nav a:hover,
+  .nav-button:hover {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+  }
+  .close-button:hover,
+  .circle-button:hover {
+    background-color: white;
+    border: 2px solid black;
+  }
+  .close-button:hover svg path,
+  .circle-button:hover svg path {
+    fill: black;
+  }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
+  nav a:hover,
+  .nav-button:hover {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+  }
+  .close-button:hover,
+  .circle-button:hover {
+    background-color: white;
+    border: 2px solid black;
+  }
+  .close-button:hover svg path,
+  .circle-button:hover svg path {
+    fill: black;
+  }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
 }

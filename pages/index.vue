@@ -235,7 +235,7 @@ export default {
 
 .home-film {
   margin-top: 3vh !important;
-  margin-bottom: 3vh !important;
+  margin-bottom: 10.75rem !important;
 }
 
 /* Responsive */
