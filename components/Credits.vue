@@ -150,6 +150,20 @@ export default {
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
+  .credits {
+    display: block;
+    padding: 0 1.5rem;
+    /* margin-top: 4rem; */
+  }
+  .credits .item {
+    font-size: 0.875rem;
+  }
+  .credits .credit {
+    width: 50%;
+  }
+  .credits .name {
+    width: 50%;
+  }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
 }

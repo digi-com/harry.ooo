@@ -131,6 +131,14 @@ nav .information {
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
+  nav {
+    display: block;
+    padding: 1.5rem;
+  }
+  nav .name,
+  nav .projects {
+    margin-bottom: 1.5rem;
+  }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
 }

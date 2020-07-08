@@ -520,6 +520,37 @@ export default {
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
+  .info-overlay {
+    padding: 1.5rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .info-overlay .info-overlay-grid {
+    display: block;
+  }
+  .info-overlay .info-overlay-grid .content {
+    font-size: 2rem;
+    letter-spacing: -0.08px;
+    margin-bottom: 4rem;
+    max-width: 820px;
+  }
+  .info-overlay .info-overlay-grid .contact {
+    font-size: 2rem;
+    letter-spacing: -0.08px;
+    margin-bottom: 4rem;
+  }
+  .info-overlay .info-overlay-grid .press-row {
+    font-size: 2rem;
+    letter-spacing: -0.08px;
+    margin-bottom: 4rem;
+    max-width: 820px;
+  }
+  .info-overlay .info-overlay-grid .press-row p {
+    margin-right: 0;
+  }
+  .info-overlay .info-overlay-grid .press-row .circle-button {
+    display: none;
+  }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
 }

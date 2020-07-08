@@ -296,6 +296,29 @@ export default {
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
+  .feature {
+    display: block;
+    padding: 8rem 1.5rem 0 1.5rem;
+  }
+  .feature h2 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 3rem;
+    letter-spacing: -0.64px;
+  }
+  .feature .paragraph {
+    font-size: 1.375rem;
+    letter-spacing: -0.18px;
+    margin-bottom: 3rem;
+  }
+  .feature .paragraph .caption {
+    font-size: 1rem;
+    letter-spacing: -0.16px;
+    line-height: 1.5;
+  }
+  .feature .footnotes .footnote-link {
+    display: none;
+  }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
 }
