@@ -531,6 +531,9 @@ export default {
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
+  #meat-rack #film {
+    height: 43vh !important;
+  }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 }

@@ -398,6 +398,11 @@ export default {
   }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
+  .image-array-container {
+    margin: 0 1.5rem 0 1.5rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 }
