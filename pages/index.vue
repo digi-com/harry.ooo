@@ -249,8 +249,8 @@ export default {
     margin-bottom: 8rem;
   }
   .index-container .content h2 {
-    font-size: 2.25rem;
-    letter-spacing: -0.4px;
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
     margin-bottom: 3rem;
   }
   .index-container .content p {

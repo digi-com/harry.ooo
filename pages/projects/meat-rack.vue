@@ -81,7 +81,7 @@ export default {
       filmLink: '/meat-rack/supercut_o.mp4',
       projectFeatureContent: {
         title: 'Meat Rack (2020)',
-        paragraph: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside. Having since evolved into a warehouse at the heart of the Meatpacking District in New York City circa 1982, The Downlow celebrated its 10th anniversary in 2017.
+        paragraph: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s LES tenement with an X-rated gay nightclub inside. Having since evolved into a seedy warehouse at the heart of New York City's Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary in 2017.
         <br /><br />
         <i>Meat Rack</i> works as a document of the celebrations, taking us all the way from Somerset to New York over the course of 16 minutes. From construction site to dance floor, build crew to muscle boys, the film is a personal tribute to a cultural phenomenon. Intimate, expressive and occasionally unsettling, <i>Meat Rack</i> captures the fleeting nature of Glastonbury’s most notorious nightspot. Shot on a Betacam SP camcorder with additional VHS-C inserts. Both formats were manufactured and available to the public in 1982.
         <br /><br />
@@ -519,6 +519,22 @@ export default {
     border-color: white;
     color: white;
   }
+}
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  #meat-rack #film {
+    height: 37vh !important;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  #meat-rack #film {
+    height: 41vh !important;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 }
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
 }

@@ -11,20 +11,10 @@
         >
           <a :href="footnote.link" target="_blank" rel="noopener">
             <span class="footnote-number">{{ index + 1 }}</span>
-            {{ footnote.title }} ({{ footnote.link }})
+            {{ footnote.title }}
+            <span class="footnote-link">({{ footnote.link }})</span>
           </a>
         </p>
-      </div>
-    </div>
-    <!-- Feature Images -->
-    <div class="feature-images">
-      <div
-        v-for="(row, index) in content.featureImages"
-        :key="'row-' + index"
-        class="row"
-      >
-        <img :src="row.imageOne" class="image-1" />
-        <img :src="row.imageTwo" class="image-2" />
       </div>
     </div>
   </div>
@@ -138,16 +128,14 @@ export default {
 
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
-}
-@media screen and (min-width: 321px) and (max-width: 375px) {
   .feature {
     display: block;
-    margin: 0 1.5rem;
+    padding: 8rem 1rem 0 1rem;
   }
   .feature h2 {
     font-size: 2.5rem;
     line-height: 1;
-    margin-bottom: 3.75rem;
+    margin-bottom: 3rem;
     letter-spacing: -0.5px;
   }
   .feature .paragraph {
@@ -159,8 +147,57 @@ export default {
     font-size: 0.9375rem;
   }
   .feature .footnotes {
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
+    font-size: 1.125rem;
+    margin-top: 3.25rem;
+  }
+  .feature .footnotes .footnote-link {
+    display: none;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .feature {
+    display: block;
+    padding: 8rem 1.5rem 0 1.5rem;
+  }
+  .feature h2 {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 3rem;
+    letter-spacing: -0.5px;
+  }
+  .feature .paragraph {
+    font-size: 0.75rem;
+    letter-spacing: -0.05px;
+    margin-bottom: 3rem;
+  }
+  .feature .paragraph .caption {
+    font-size: 0.75rem;
+    letter-spacing: -0.12px;
+    line-height: 1.48;
+  }
+  .feature .footnotes {
+    margin-bottom: 4rem;
     font-size: 0.875rem;
+    margin-top: 3rem;
+  }
+  .feature .footnotes p {
+    margin-bottom: 0.5rem;
+  }
+  .feature .footnotes .footnote-link {
+    display: none;
+  }
+  .feature .footnote-number {
+    border: 1px solid black;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 99999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {

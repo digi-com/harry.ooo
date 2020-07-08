@@ -353,12 +353,18 @@ export default {
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
   .image-array-container {
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(4, auto);
-    grid-gap: 1rem;
+    display: block;
     margin: 0 1.5rem 0 1.5rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  .image-array-container .image {
+    transform: none;
+    margin-bottom: 1.5rem;
+  }
+  .image-array-container .image:nth-last-child(2) {
+    transform: none;
+    margin-bottom: 0;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {

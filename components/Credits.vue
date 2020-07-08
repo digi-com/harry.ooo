@@ -75,19 +75,18 @@ export default {
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
   .credits {
+    display: block;
+    padding: 0 1.5rem;
+    /* margin-top: 4rem; */
+  }
+  .credits .item {
     font-size: 0.875rem;
-    line-height: 1.3;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    margin-bottom: 12.5rem;
-    border-top: 2px solid white;
   }
   .credits .credit {
-    grid-column: 1 / 5;
-    opacity: 0.48;
+    width: 50%;
   }
   .credits .name {
-    grid-column: 5 / 9;
+    width: 50%;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
