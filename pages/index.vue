@@ -20,6 +20,7 @@
         v-for="(image, index) in homeImages"
         :key="'image-' + index"
         :class="'image-' + (index + 1)"
+        class="home-image"
       >
         <client-only>
           <ProgressiveImage
@@ -239,26 +240,61 @@ export default {
 
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
-  .image-array .image-array-header {
-    color: white;
-    position: sticky;
-    top: 0;
-    padding: 1.5rem;
+  .index-container {
+    display: block;
+    padding: 6.5rem 1rem 0 1rem;
+    margin-bottom: 8rem;
+  }
+  .index-container .content {
+    margin-bottom: 8rem;
+  }
+  .index-container .content h2 {
+    font-size: 2.25rem;
+    letter-spacing: -0.4px;
+    margin-bottom: 3rem;
+  }
+  .index-container .content p {
+    font-size: 0.75rem;
+    letter-spacing: -0.05px;
+    margin-bottom: 3.25rem;
+  }
+  .index-container .home-image {
+    margin-bottom: 1rem;
+    transform: none;
+  }
+  .home-film {
+    margin-top: 8rem !important;
+    margin-bottom: 8rem !important;
+    height: 37vh !important;
   }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
-  .image-array .image-array-header {
-    color: white;
-    position: sticky;
-    top: 0;
-    padding: 1.5rem;
+  .index-container {
+    display: block;
+    padding: 6.5rem 1.5rem 0 1.5rem;
+    margin-bottom: 8rem;
+  }
+  .index-container .content {
+    margin-bottom: 8rem;
+  }
+  .index-container .content h2 {
+    font-size: 2.25rem;
+    letter-spacing: -0.4px;
+    margin-bottom: 3rem;
+  }
+  .index-container .content p {
+    font-size: 0.75rem;
+    letter-spacing: -0.05px;
+    margin-bottom: 3.25rem;
+  }
+  .index-container .home-image {
+    margin-bottom: 1.5rem;
+    transform: none;
   }
   .home-film {
-    margin-top: 35vh !important;
-    margin-bottom: 0 !important;
-  }
-  .home-film #film-scroll {
-    top: -35vh !important;
+    margin-top: 8rem !important;
+    margin-bottom: 8rem !important;
+    height: 41vh !important;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {

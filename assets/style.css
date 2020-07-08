@@ -12,7 +12,7 @@ nav a,
   text-transform: uppercase;
   z-index: 9999;
   border-radius: 999px;
-  height: 64px;
+  height: 4rem;
   width: auto;
   padding: 0 1.625rem;
   display: inline-flex;
@@ -89,13 +89,11 @@ nav a:hover,
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
   .close-button {
-    right: 1.5rem;
+    width: 48px;
+    height: 48px;
   }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
-  .close-button {
-    right: 1.5rem;
-  }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
 }

@@ -1,6 +1,6 @@
 <template>
   <!-- Next Project -->
-  <div class="top-container">
+  <div class="footer-container">
     <nav>
       <div class="name">
         <nuxt-link to="/">Harry Lawson</nuxt-link>
@@ -63,20 +63,75 @@ export default {
 </script>
 
 <style scoped>
-.top-container {
+.footer-container {
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 0;
 }
-#index .top-container {
+.footer-container nav {
+  position: relative;
+}
+/* #index .footer-container {
   margin-top: 12.5rem !important;
   height: 2rem;
-}
+} */
 .back-to-top {
   position: absolute;
   right: 3rem;
-  z-index: 999999;
+  z-index: 999;
+}
+
+/* Responsive */
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  .footer-container {
+    height: auto;
+    display: block;
+    padding: 1rem;
+  }
+  .footer-container nav {
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  .back-to-top {
+    position: relative;
+    display: inline-flex;
+    right: auto;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .footer-container {
+    height: auto;
+    display: block;
+    padding: 1.5rem;
+  }
+  .footer-container nav {
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  .back-to-top {
+    position: relative;
+    display: inline-flex;
+    right: auto;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
 }
 </style>

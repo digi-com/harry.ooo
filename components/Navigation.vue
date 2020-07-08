@@ -61,7 +61,7 @@ nav {
   grid-gap: 1rem;
   padding: 2rem 3rem;
   position: absolute;
-  z-index: 99999;
+  z-index: 9;
 }
 nav .name {
   grid-column: 1 / 5;
@@ -76,11 +76,11 @@ nav .information {
 @media screen and (min-width: 0px) and (max-width: 320px) {
   nav {
     display: block;
-    padding: 1.5rem;
+    padding: 1rem;
   }
   nav .name,
   nav .projects {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
   nav a,
   .nav-button {

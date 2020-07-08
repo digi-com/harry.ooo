@@ -57,6 +57,7 @@
         autoplay
         muted
         loop
+        playsinline
       >
         <source :src="project.supercut" type="video/mp4" />
       </video>
@@ -213,7 +214,58 @@ export default {
   z-index: 1;
 }
 
-#video-hover.mundial {
-  left: calc(50% - 250px);
+/* Responsive */
+
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  .projects-overlay {
+    padding: 1rem;
+  }
+  .projects-overlay .projects-overlay-title {
+    margin-bottom: 0.5rem;
+  }
+  .projects-overlay .project-row .right {
+    display: none;
+  }
+  .projects-overlay .project-row {
+    padding: 0.5rem 0;
+  }
+  #video-hover {
+    display: none;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .projects-overlay {
+    padding: 1.5rem;
+  }
+  .projects-overlay .projects-overlay-title {
+    margin-bottom: 0.75rem;
+  }
+  .projects-overlay .project-row .right {
+    display: none;
+  }
+  .projects-overlay .project-row {
+    padding: 0.75rem 0;
+  }
+  #video-hover {
+    display: none;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
 }
 </style>

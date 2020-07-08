@@ -91,6 +91,10 @@ export default {
 }
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
+  #film {
+    margin: 0 1rem;
+    height: 30vh;
+  }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
   #film {
