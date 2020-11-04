@@ -164,10 +164,11 @@ export default {
 
 /* Animation */
 .progressive-image {
-  transform: translate3d(0, 3rem, 0);
-  transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+  /* transform: translate3d(0, 3rem, 0); */
+  /* opacity: 0; */
+  /* transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1); */
 }
 .progressive-image--animate {
-  transform: translate3d(0, 0, 0);
+  /* opacity: 1; */
 }
 </style>

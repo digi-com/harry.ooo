@@ -247,7 +247,7 @@ export default {
   border: none;
 }
 
-.info-overlay .info-overlay-grid .contact-row:hover .circle-button.mail svg g {
+.contact-row:hover .circle-button.mail svg g {
   stroke: white;
   fill: black;
 }

@@ -1,52 +1,56 @@
 <template>
-  <div id="index">
-    <!-- Preloader -->
+  <div>
     <PageLoader />
-    <!-- Page -->
-    <Navigation />
-    <!-- Hero -->
-    <Hero />
-    <div class="index-container">
-      <!-- Content -->
-      <div class="content">
-        <h2>{{ homeContent.title }}</h2>
-        <p v-html="homeContent.paragraph" />
-        <nuxt-link to="/projects/meat-rack" class="nav-button"
-          >View Project</nuxt-link
+    <vue100vh class="page-container">
+      <!-- Scroll Position & lmS Object -->
+      <div style="position: fixed; top: 0; left: 0; font-size: 1rem;">
+        <span style="color: red;"
+          >current scroll position: {{ scrollPosition }}</span
         >
+        {{ lmS }}
       </div>
-      <!-- Images -->
-      <div
-        v-for="(image, index) in homeImages"
-        :key="'image-' + index"
-        :class="'image-' + (index + 1)"
-        class="home-image"
-      >
-        <client-only>
-          <ProgressiveImage
-            :src="image.url"
-            :placeholder="image.placeholderUrl"
-            :width="image.width"
-            :height="image.height"
-          />
-        </client-only>
+      <div id="scroll-container" class="scroll-container">
+        <!-- Hero -->
+        <!-- <Hero /> -->
+        <div class="index-container">
+          <div
+            v-for="(image, index) in homeImages"
+            :key="'image-' + index"
+            :class="'image-' + (index + 1)"
+            @mouseenter="viewProjectEnter()"
+            @mouseleave="viewProjectExit()"
+            class="home-image test"
+          >
+            <client-only>
+              <ProgressiveImage
+                :src="image.url"
+                :placeholder="image.placeholderUrl"
+                :width="image.width"
+                :height="image.height"
+              />
+            </client-only>
+          </div>
+        </div>
+        <Footer />
       </div>
-    </div>
-    <!-- Video -->
-    <ProjectFilm
-      film-link="/meat-rack/supercut_o.mp4"
-      external-link="https://www.youtube.com/watch?v=33ZEwRBQ75w"
-      class="home-film"
-    />
-    <!-- Footer -->
-    <Footer />
+    </vue100vh>
   </div>
 </template>
 
 <script>
+import vue100vh from 'vue-100vh'
+import locomotive from '~/mixins/locomotive.js'
+// import { gsap } from 'gsap'
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 export default {
+  components: {
+    vue100vh
+  },
+  mixins: [locomotive],
   data() {
     return {
+      itemHovered: false,
       homeContent: {
         title: 'Meat Rack (2020)',
         paragraph: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s LES tenement with an X-rated gay nightclub inside. Having since evolved into a seedy warehouse at the heart of New York City's Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary in 2017.
@@ -129,23 +133,122 @@ export default {
       ]
     }
   },
+  mounted() {
+    // If touch device, do nothing.
+    // If mouse-based device, create lmS.
+    // if (this.isTouchDevice()) {
+    // } else {
+    //   const LocomotiveScrollConstructor = this.locomotiveScroll
+    //   const locoScroll = new LocomotiveScrollConstructor({
+    //     el: document.querySelector('.scroll-container'),
+    //     smooth: true,
+    //     lerp: 0.04
+    //   })
+    // gsap.registerPlugin(ScrollTrigger)
+    // Update ScrollTrigger on lmS
+    // this.lmS.on('scroll', ScrollTrigger.update)
+    // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+    // ScrollTrigger.scrollerProxy('#scroll-container', {
+    //   scrollTop(value) {
+    //     return arguments.length
+    //       ? this.lmS.scrollTo(value, 0, 0)
+    //       : this.lmS.scroll.instance.scroll.y
+    //   },
+    //   getBoundingClientRect() {
+    //     return {
+    //       top: 0,
+    //       left: 0,
+    //       width: window.innerWidth,
+    //       height: window.innerHeight
+    //     }
+    //   }
+    // })
+    // gsap.from('.index-container', {
+    //   scrollTrigger: {
+    //     trigger: '.index-container',
+    //     scroller: '#scroll-container',
+    //     scrub: true,
+    //     start: 'top bottom',
+    //     end: 'top top'
+    //   },
+    //   scaleX: 0,
+    //   transformOrigin: 'left center',
+    //   ease: 'none'
+    // })
+    // ScrollTrigger.addEventListener('refresh', () => this.lmS.update())
+    // ScrollTrigger.refresh()
+    // console.log(locoScroll.scroll.instance.scroll.y)
+    // gsap.from('.index-container', {
+    //   scrollTrigger: {
+    //     trigger: '.index-container',
+    //     scroller: this.locoScroll,
+    //     scrub: true
+    //   },
+    //   scaleX: 0,
+    //   ease: 'none'
+    // })
+    // }
+  },
   methods: {
     intersected(payload) {
       this.imageCount = payload
+    },
+    viewProjectEnter() {
+      document.querySelector('div#cursor').classList.add('view-project')
+      this.itemHovered = true
+    },
+    viewProjectExit() {
+      document.querySelector('div#cursor').classList.remove('view-project')
+      this.itemHovered = false
+    },
+    isTouchDevice() {
+      const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')
+      const mq = function(query) {
+        return window.matchMedia(query).matches
+      }
+
+      if (
+        'ontouchstart' in window ||
+        (window.DocumentTouch && document instanceof window.DocumentTouch)
+      ) {
+        return true
+      }
+
+      // include the 'heartz' as a way to have a non matching MQ to help terminate the join
+      // https://git.io/vznFH
+      const query = [
+        '(',
+        prefixes.join('touch-enabled),('),
+        'heartz',
+        ')'
+      ].join('')
+      return mq(query)
     }
   }
 }
 </script>
 
 <style>
+.page-container {
+  background: white;
+  overflow: hidden;
+}
+.page-container.no-scroll {
+  overflow: visible;
+  height: auto !important;
+}
+
 .index-container {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(71, 2rem);
   grid-gap: 1rem;
-  padding: 12rem 3rem 0 3rem;
+  padding: 6rem 4rem 0 4rem;
   margin-bottom: 224px;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .index-container .content {
   grid-column: 3 / 11;
@@ -173,57 +276,57 @@ export default {
 }
 .index-container .image-2 {
   grid-column: 9 / 12;
-  grid-row-start: 18;
+  grid-row-start: calc(18 - 18);
   transform: translateY(1rem);
 }
 .index-container .image-3 {
   grid-column: 2 / 7;
-  grid-row-start: 23;
+  grid-row-start: calc(23 - 18);
   transform: translateY(1rem);
 }
 .index-container .image-4 {
   grid-column: 6 / 10;
-  grid-row-start: 27;
+  grid-row-start: calc(27 - 18);
   transform: translateY(1rem);
 }
 .index-container .image-5 {
   grid-column: 1 / 4;
-  grid-row-start: 35;
+  grid-row-start: calc(35 - 18);
   transform: translateY(2rem);
 }
 .index-container .image-6 {
   grid-column: 7 / 12;
-  grid-row-start: 38;
+  grid-row-start: calc(38 - 18);
 }
 .index-container .image-7 {
   grid-column: 8 / 13;
-  grid-row-start: 50;
+  grid-row-start: calc(50 - 18);
   transform: translateY(1rem);
 }
 .index-container .image-8 {
   grid-column: 2 / 5;
-  grid-row-start: 44;
+  grid-row-start: calc(44 - 18);
   transform: translateY(2rem);
 }
 .index-container .image-9 {
   grid-column: 1 / 4;
-  grid-row-start: 53;
+  grid-row-start: calc(53 - 18);
   z-index: 2;
   transform: translateY(2rem);
 }
 .index-container .image-10 {
   grid-column: 2 / 5;
-  grid-row-start: 56;
+  grid-row-start: calc(56 - 18);
   z-index: 1;
   transform: translateY(2rem);
 }
 .index-container .image-11 {
   grid-column: 9 / 13;
-  grid-row-start: 63;
+  grid-row-start: calc(63 - 18);
 }
 .index-container .image-12 {
   grid-column: 3 / 7;
-  grid-row-start: 65;
+  grid-row-start: calc(65 - 18);
   transform: translateY(2rem);
 }
 .index-container img {

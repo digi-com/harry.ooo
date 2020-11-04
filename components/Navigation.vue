@@ -5,10 +5,10 @@
         <nuxt-link to="/">Harry Lawson</nuxt-link>
       </div>
       <div class="projects">
-        <div @click="toggleNavProjects()" class="nav-button">Projects</div>
+        <nuxt-link to="/projects" class="nav-button">Projects</nuxt-link>
       </div>
       <div class="information">
-        <div @click="toggleNavInfo()" class="nav-button">Info</div>
+        <nuxt-link to="/info" class="nav-button">Info</nuxt-link>
       </div>
     </nav>
     <NavigationProjectsOverlay
@@ -55,22 +55,21 @@ export default {
 
 <style>
 nav {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 1rem;
-  padding: 2rem 3rem;
+  width: auto;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
   position: absolute;
-  z-index: 9;
+  z-index: 999;
 }
 nav .name {
-  grid-column: 1 / 5;
+  margin: 0;
 }
 nav .projects {
-  grid-column: 5 / 8;
+  margin-left: 1rem;
 }
 nav .information {
-  grid-column: 8 / 13;
+  margin-left: 1rem;
 }
 
 @media screen and (min-width: 0px) and (max-width: 320px) {

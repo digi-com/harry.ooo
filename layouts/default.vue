@@ -30,6 +30,7 @@
         </transition>
       </vue100vh>
     </transition>
+    <Navigation />
     <nuxt />
   </section>
 </template>
@@ -119,7 +120,9 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: white;
-  overflow-x: hidden;
+}
+html.has-scroll-init {
+  overflow: hidden;
 }
 
 html.night {
@@ -144,7 +147,27 @@ div#cursor {
   pointer-events: none;
   position: fixed;
   z-index: 99999999;
-  transition: transform 0.5s linear;
+  /* transition: transform 0.5s linear; */
+}
+div#cursor.view-project {
+  background-color: white;
+  background-image: none;
+  border: 2px solid black;
+  border-radius: 999px;
+  height: 4rem;
+  width: 17.3125rem;
+  padding: 0 1.625rem;
+  transform: translateX(calc(-17.3125rem / 2)) translateY(-2rem);
+}
+div#cursor.view-project::after {
+  content: 'View Project';
+  color: black;
+  font-size: 1.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
+  position: absolute;
+  left: 1.625rem;
+  top: 0.75rem;
 }
 
 canvas {
@@ -235,36 +258,36 @@ canvas {
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   #app {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     position: relative;
   }
 }
 @media screen and (min-width: 1441px) and (max-width: 1600px) {
   #app {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     position: relative;
   }
 }
 @media screen and (min-width: 1601px) and (max-width: 1920px) {
   #app {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     position: relative;
   }
 }
 @media screen and (min-width: 1921px) and (max-width: 2560px) {
   #app {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     position: relative;
   }
 }
 @media screen and (min-width: 2561px) and (max-width: 9999px) {
   #app {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     position: relative;
   }
 }

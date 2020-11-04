@@ -1,18 +1,10 @@
 <template>
   <!-- Next Project -->
   <div class="footer-container">
-    <nav>
-      <div class="name">
-        <nuxt-link to="/">Harry Lawson</nuxt-link>
-      </div>
-      <div class="projects">
-        <div @click="toggleProjects()" class="nav-button">Projects</div>
-      </div>
-      <div class="information">
-        <div @click="toggleInfo()" class="nav-button">Info</div>
-      </div>
-    </nav>
-    <div
+    <div class="nav-button">
+      © 2020
+    </div>
+    <!-- <div
       v-scroll-to="{
         el: '#app',
         duration: 1500,
@@ -24,12 +16,7 @@
       class="nav-button back-to-top"
     >
       Back to Top
-    </div>
-    <NavigationProjectsOverlay
-      v-if="projectsVisible"
-      @close-modal="toggleProjects()"
-    />
-    <NavigationInfoOverlay v-if="infoVisible" @close-modal="toggleInfo()" />
+    </div> -->
   </div>
 </template>
 
@@ -67,9 +54,9 @@ export default {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-top: 0;
   position: relative;
+  padding: 2rem;
 }
 .footer-container nav {
   position: relative;
@@ -79,9 +66,8 @@ export default {
   height: 2rem;
 } */
 .back-to-top {
-  position: absolute;
-  right: 3rem;
   z-index: 999;
+  margin-left: 1rem;
 }
 
 /* Responsive */

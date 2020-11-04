@@ -133,6 +133,9 @@ export default {
       this.$router.push({
         path: slug
       })
+      setTimeout(() => {
+        this.closeModal()
+      }, 1)
       //   this.$emit('close-modal')
     }
   }
@@ -144,7 +147,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 8;
   background-color: white;
   width: 100vw;
   user-select: none;
