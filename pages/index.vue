@@ -2,17 +2,17 @@
   <div>
     <PageLoader />
     <vue100vh class="page-container">
-      <!-- Scroll Position & lmS Object -->
+      <!-- scrollPosition & lmS Object -->
       <div style="position: fixed; top: 0; left: 0; font-size: 1rem;">
-        <span style="color: red;"
-          >current scroll position: {{ scrollPosition }}</span
-        >
+        <span style="color: red;">
+          current scroll position: {{ scrollPosition }}
+        </span>
         {{ lmS }}
       </div>
+      <!-- scroll-container for lmS to bind to -->
       <div id="scroll-container" class="scroll-container">
-        <!-- Hero -->
-        <!-- <Hero /> -->
         <div class="index-container">
+          <!-- image loop -->
           <div
             v-for="(image, index) in homeImages"
             :key="'image-' + index"
@@ -38,10 +38,18 @@
 </template>
 
 <script>
+// Import vue100vh component
 import vue100vh from 'vue-100vh'
+
+// Import gsap and ScrollTrigger plugin
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// Import locomotive.js mixin
 import locomotive from '~/mixins/locomotive.js'
-// import { gsap } from 'gsap'
-// import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   components: {
@@ -50,7 +58,6 @@ export default {
   mixins: [locomotive],
   data() {
     return {
-      itemHovered: false,
       homeContent: {
         title: 'Meat Rack (2020)',
         paragraph: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s LES tenement with an X-rated gay nightclub inside. Having since evolved into a seedy warehouse at the heart of New York City's Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary in 2017.
@@ -134,60 +141,44 @@ export default {
     }
   },
   mounted() {
-    // If touch device, do nothing.
-    // If mouse-based device, create lmS.
-    // if (this.isTouchDevice()) {
-    // } else {
-    //   const LocomotiveScrollConstructor = this.locomotiveScroll
-    //   const locoScroll = new LocomotiveScrollConstructor({
-    //     el: document.querySelector('.scroll-container'),
-    //     smooth: true,
-    //     lerp: 0.04
-    //   })
-    // gsap.registerPlugin(ScrollTrigger)
-    // Update ScrollTrigger on lmS
-    // this.lmS.on('scroll', ScrollTrigger.update)
-    // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-    // ScrollTrigger.scrollerProxy('#scroll-container', {
-    //   scrollTop(value) {
-    //     return arguments.length
-    //       ? this.lmS.scrollTo(value, 0, 0)
-    //       : this.lmS.scroll.instance.scroll.y
-    //   },
-    //   getBoundingClientRect() {
-    //     return {
-    //       top: 0,
-    //       left: 0,
-    //       width: window.innerWidth,
-    //       height: window.innerHeight
-    //     }
-    //   }
-    // })
-    // gsap.from('.index-container', {
-    //   scrollTrigger: {
-    //     trigger: '.index-container',
-    //     scroller: '#scroll-container',
-    //     scrub: true,
-    //     start: 'top bottom',
-    //     end: 'top top'
-    //   },
-    //   scaleX: 0,
-    //   transformOrigin: 'left center',
-    //   ease: 'none'
-    // })
-    // ScrollTrigger.addEventListener('refresh', () => this.lmS.update())
-    // ScrollTrigger.refresh()
-    // console.log(locoScroll.scroll.instance.scroll.y)
-    // gsap.from('.index-container', {
-    //   scrollTrigger: {
-    //     trigger: '.index-container',
-    //     scroller: this.locoScroll,
-    //     scrub: true
-    //   },
-    //   scaleX: 0,
-    //   ease: 'none'
-    // })
-    // }
+    // Wait for nextTick
+    this.$nextTick(function() {
+      // Update ScrollTrigger on lmS
+      // this.lmS.on('scroll', ScrollTrigger.update)
+      // Tell ScrollTrigger to use these proxy methods for the "#scroll-container" element
+      // ScrollTrigger.scrollerProxy('#scroll-container', {
+      //   scrollTop(value) {
+      //     return arguments.length
+      //       ? this.lmS.scrollTo(value, 0, 0)
+      //       : this.lmS.scroll.instance.scroll.y
+      //   },
+      //   getBoundingClientRect() {
+      //     return {
+      //       top: 0,
+      //       left: 0,
+      //       width: window.innerWidth,
+      //       height: window.innerHeight
+      //     }
+      //   }
+      // })
+      // Animate .index-container on scroll, from (scaleX: 0) to (scaleX: 1)
+      // gsap.from('.index-container', {
+      //   scrollTrigger: {
+      //     trigger: '.index-container',
+      //     scroller: '#scroll-container',
+      //     scrub: true,
+      //     start: 'top bottom',
+      //     end: 'top top'
+      //   },
+      //   scaleX: 0,
+      //   transformOrigin: 'left center',
+      //   ease: 'none'
+      // })
+      // Each time the window updates, refresh ScrollTrigger and update lmS
+      // ScrollTrigger.addEventListener('refresh', () => this.lmS.update())
+      // After everything is set up, refresh ScrollTrigger and update lmS because padding may have been added for pinning, etc.
+      // ScrollTrigger.refresh()
+    })
   },
   methods: {
     intersected(payload) {
@@ -195,34 +186,9 @@ export default {
     },
     viewProjectEnter() {
       document.querySelector('div#cursor').classList.add('view-project')
-      this.itemHovered = true
     },
     viewProjectExit() {
       document.querySelector('div#cursor').classList.remove('view-project')
-      this.itemHovered = false
-    },
-    isTouchDevice() {
-      const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')
-      const mq = function(query) {
-        return window.matchMedia(query).matches
-      }
-
-      if (
-        'ontouchstart' in window ||
-        (window.DocumentTouch && document instanceof window.DocumentTouch)
-      ) {
-        return true
-      }
-
-      // include the 'heartz' as a way to have a non matching MQ to help terminate the join
-      // https://git.io/vznFH
-      const query = [
-        '(',
-        prefixes.join('touch-enabled),('),
-        'heartz',
-        ')'
-      ].join('')
-      return mq(query)
     }
   }
 }

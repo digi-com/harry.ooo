@@ -106,7 +106,6 @@ export default {
     { src: '~/plugins/vue-scroll-to', ssr: false },
     { src: '~/plugins/intersection-observer-polyfill', ssr: false },
     { src: '~/plugins/locomotive-scroll', ssr: false }
-    // { src: '~/plugins/gsap', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
