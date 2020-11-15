@@ -2,17 +2,12 @@
   <div>
     <PageLoader />
     <vue100vh class="page-container">
-      <!-- scrollPosition & lmS Object -->
-      <div style="position: fixed; top: 0; left: 0; font-size: 1rem;">
-        <span style="color: red;">
-          current scroll position: {{ scrollPosition }}
-        </span>
-        {{ lmS }}
-      </div>
-      <!-- scroll-container for lmS to bind to -->
       <div id="scroll-container" class="scroll-container">
+        <div
+          class="red-square"
+          style="width: 500px; height: 500px; background: red;"
+        />
         <div class="index-container">
-          <!-- image loop -->
           <div
             v-for="(image, index) in homeImages"
             :key="'image-' + index"
@@ -38,24 +33,14 @@
 </template>
 
 <script>
-// Import vue100vh component
 import vue100vh from 'vue-100vh'
-
-// Import gsap and ScrollTrigger plugin
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-// Import locomotive.js mixin
-import locomotive from '~/mixins/locomotive.js'
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger)
 
 export default {
   components: {
     vue100vh
   },
-  mixins: [locomotive],
   data() {
     return {
       homeContent: {
@@ -137,50 +122,81 @@ export default {
           width: 720,
           height: 576
         }
-      ]
+      ],
+      scrollPosition: 0
     }
   },
   mounted() {
-    // Wait for nextTick
-    this.$nextTick(function() {
-      // Update ScrollTrigger on lmS
-      // this.lmS.on('scroll', ScrollTrigger.update)
-      // Tell ScrollTrigger to use these proxy methods for the "#scroll-container" element
-      // ScrollTrigger.scrollerProxy('#scroll-container', {
-      //   scrollTop(value) {
-      //     return arguments.length
-      //       ? this.lmS.scrollTo(value, 0, 0)
-      //       : this.lmS.scroll.instance.scroll.y
-      //   },
-      //   getBoundingClientRect() {
-      //     return {
-      //       top: 0,
-      //       left: 0,
-      //       width: window.innerWidth,
-      //       height: window.innerHeight
-      //     }
-      //   }
-      // })
-      // Animate .index-container on scroll, from (scaleX: 0) to (scaleX: 1)
-      // gsap.from('.index-container', {
-      //   scrollTrigger: {
-      //     trigger: '.index-container',
-      //     scroller: '#scroll-container',
-      //     scrub: true,
-      //     start: 'top bottom',
-      //     end: 'top top'
-      //   },
-      //   scaleX: 0,
-      //   transformOrigin: 'left center',
-      //   ease: 'none'
-      // })
-      // Each time the window updates, refresh ScrollTrigger and update lmS
-      // ScrollTrigger.addEventListener('refresh', () => this.lmS.update())
-      // After everything is set up, refresh ScrollTrigger and update lmS because padding may have been added for pinning, etc.
-      // ScrollTrigger.refresh()
-    })
+    this.smooth()
   },
   methods: {
+    onScroll(obj) {
+      this.scrollPosition = obj.scroll.y
+      console.log({ pos: this.scrollPosition })
+    },
+    smooth() {
+      gsap.registerPlugin(ScrollTrigger)
+      document.documentElement.scrollTop = 0
+      /* eslint-disable-next-line */
+      const locoScroll = new this.locomotiveScroll({
+        el: document.querySelector('#scroll-container'),
+        smooth: true,
+        lerp: 0.04
+      })
+      locoScroll.scrollTo(0, 0, 0)
+
+      locoScroll.on('scroll', ScrollTrigger.update)
+
+      // window.addEventListener('resize', () => {
+      //   locoScroll.update()
+      // })
+
+      // Tell ScrollTrigger to use these proxy methods for the "#scroll-container" element
+      ScrollTrigger.scrollerProxy('#scroll-container', {
+        scrollTop(value) {
+          return arguments.length
+            ? locoScroll.scrollTo(value, 0, 0)
+            : locoScroll.scroll.instance.scroll.y
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight
+          }
+        }
+      })
+      // Run the animate function
+      this.animate(locoScroll)
+      // Each time the window updates, refresh ScrollTrigger and update lmS
+      ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
+      // After everything is set up, refresh ScrollTrigger and update lmS because padding may have been added for pinning, etc.
+      ScrollTrigger.refresh()
+    },
+    animate(locoScroll) {
+      gsap.from('.index-container', {
+        scrollTrigger: {
+          trigger: '.index-container',
+          scroller: '#scroll-container',
+          scrub: true,
+          start: 'top top',
+          end: 'bottom bottom',
+          onUpdate: (self) => console.log(self.direction)
+        },
+        translateX: '100%',
+        transformOrigin: 'left center',
+        ease: 'none'
+      })
+    },
+    isTouchDevice() {
+      try {
+        document.createEvent('TouchEvent')
+        return true
+      } catch (e) {
+        return false
+      }
+    },
     intersected(payload) {
       this.imageCount = payload
     },
@@ -203,7 +219,6 @@ export default {
   overflow: visible;
   height: auto !important;
 }
-
 .index-container {
   width: 100%;
   display: grid;
@@ -234,7 +249,6 @@ export default {
   letter-spacing: -0.125px;
   margin-bottom: 4rem;
 }
-
 .index-container .image-1 {
   grid-column: 1 / 7;
   grid-row-start: 1;
@@ -299,14 +313,11 @@ export default {
   max-width: 100%;
   height: auto;
 }
-
 /* Video */
-
 .home-film {
   margin-top: 3vh !important;
   margin-bottom: 10.75rem !important;
 }
-
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
   .index-container {
