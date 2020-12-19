@@ -1184,6 +1184,14 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
+"@vimeo/player@^2.14.1":
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/@vimeo/player/-/player-2.14.1.tgz#f35fd141fbd096555d1090e53625364cb0874fff"
+  integrity sha512-PXIATVxUfblTbRoSXzNcplJFjsho6e32ltfEm4po/RFZcAOYefOO4mjxDMGUTAzo937DZvjd5n1u7+EfGHuLPw==
+  dependencies:
+    native-promise-only "0.8.1"
+    weakmap-polyfill "2.0.1"
+
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.0.0.tgz#048fe579958da408fb7a8b2a3ec050b50a661040"
@@ -5240,6 +5248,11 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+native-promise-only@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/native-promise-only/-/native-promise-only-0.8.1.tgz#20a318c30cb45f71fe7adfbf7b21c99c1472ef11"
+  integrity sha1-IKMYwwy0X3H+et+/eyHJnBRy7xE=
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -8167,6 +8180,14 @@ vue-tippy@^4.4.0:
     humps "^2.0.1"
     tippy.js "^4.3.5"
 
+vue-vimeo-player@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/vue-vimeo-player/-/vue-vimeo-player-0.1.1.tgz#3d09f163f476a712e23437528b21e3fdef49d82b"
+  integrity sha512-JQHX2QetEmk7NxRQ0cFE9Gg1xvT/EQoXbbnY21a66H9vK/CFX/OvobN8wsK7okKpz4/VUyrN/uStoDL1k5QAAw==
+  dependencies:
+    "@vimeo/player" "^2.14.1"
+    object-assign "^4.1.1"
+
 vue@^2.5.17, vue@^2.6, vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
@@ -8194,6 +8215,11 @@ watchpack@^1.6.1:
   optionalDependencies:
     chokidar "^3.4.0"
     watchpack-chokidar2 "^2.0.0"
+
+weakmap-polyfill@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/weakmap-polyfill/-/weakmap-polyfill-2.0.1.tgz#ff0278c7f75bb0c492fc3343257f3e87114d709a"
+  integrity sha512-Jy177Lvb1LCrPQDWJsXyyqf4eOhcdvQHFGoCqSv921kVF5i42MVbr4e2WEwetuTLBn1NX0IhPzTmMu0N3cURqQ==
 
 webpack-bundle-analyzer@^3.6.1:
   version "3.8.0"

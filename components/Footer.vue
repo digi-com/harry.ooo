@@ -1,22 +1,29 @@
 <template>
   <!-- Next Project -->
   <div class="footer-container">
-    <div class="nav-button">
+    <div class="nav-button c-button no-hover">
       © 2020
     </div>
-    <!-- <div
-      v-scroll-to="{
-        el: '#app',
-        duration: 1500,
-        easing: [0.0, 0.0, 0.58, 1.0],
-        cancelable: true,
-        x: false,
-        y: true
-      }"
-      class="nav-button back-to-top"
+    <a
+      @mouseenter="pointerEnter()"
+      @mouseleave="pointerExit()"
+      @click="pointerExit()"
+      href="https://www.instagram.com/harrylaws.on/"
+      rel="noopener"
+      target="_blank"
+      class="nav-button ig-button"
     >
-      Back to Top
-    </div> -->
+      Instagram
+    </a>
+    <a
+      @mouseenter="pointerEnter()"
+      @mouseleave="pointerExit()"
+      @click="pointerExit()"
+      href="mailto:harry@harry.ooo"
+      class="nav-button email-button"
+    >
+      Email
+    </a>
   </div>
 </template>
 
@@ -29,6 +36,16 @@ export default {
     }
   },
   methods: {
+    pointerEnter() {
+      if (document.querySelector('div#cursor')) {
+        document.querySelector('div#cursor').classList.add('view-project')
+      }
+    },
+    pointerExit() {
+      if (document.querySelector('div#cursor')) {
+        document.querySelector('div#cursor').classList.remove('view-project')
+      }
+    },
     toggleProjects() {
       this.projectsVisible = !this.projectsVisible
     },
@@ -36,16 +53,6 @@ export default {
       this.infoVisible = !this.infoVisible
     }
   }
-  // head() {
-  //   return {
-  //     htmlAttrs: {
-  //       class: this.projectsVisible || this.infoVisible ? 'modal-open' : ''
-  //     },
-  //     bodyAttrs: {
-  //       class: this.projectsVisible || this.infoVisible ? 'modal-open' : ''
-  //     }
-  //   }
-  // }
 }
 </script>
 
@@ -56,99 +63,104 @@ export default {
   align-items: center;
   margin-top: 0;
   position: relative;
-  padding: 2rem;
+  padding: 0 2.5vw 2.5vw;
 }
 .footer-container nav {
   position: relative;
 }
-/* #index .footer-container {
-  margin-top: 12.5rem !important;
-  height: 2rem;
-} */
-.back-to-top {
-  z-index: 999;
-  margin-left: 1rem;
+
+.c-button {
+  letter-spacing: -0.2px;
+}
+
+.c-button,
+.ig-button {
+  margin-right: 0.9375vw;
+}
+
+.ig-button:hover {
+  background: #d6249f;
+  background: radial-gradient(
+    circle at 20% 145%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  border: none;
+  padding: 0 2.1875vw;
 }
 
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
   .footer-container {
     height: auto;
-    display: block;
-    padding: 1rem;
-    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1.5rem 1.6875rem;
   }
-  .footer-container nav {
-    padding: 0;
-    margin-bottom: 1rem;
-  }
-  .back-to-top {
-    position: relative;
-    display: inline-flex;
-    right: auto;
+  .c-button,
+  .ig-button {
+    margin-right: 0;
+    margin-bottom: 1.25rem;
   }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
   .footer-container {
     height: auto;
-    display: block;
-    padding: 1.5rem;
-    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1.5rem 1.6875rem;
   }
-  .footer-container nav {
-    padding: 0;
-    margin-bottom: 1.5rem;
-  }
-  .back-to-top {
-    position: relative;
-    display: inline-flex;
-    right: auto;
+  .c-button,
+  .ig-button {
+    margin-right: 0;
+    margin-bottom: 1.25rem;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
   .footer-container {
     height: auto;
-    display: block;
-    padding: 1.5rem;
-    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1.5rem 1.6875rem;
   }
-  .footer-container nav {
-    padding: 0;
-    margin-bottom: 1.5rem;
-  }
-  .back-to-top {
-    position: relative;
-    display: inline-flex;
-    right: auto;
+  .c-button,
+  .ig-button {
+    margin-right: 0;
+    margin-bottom: 1.25rem;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
   .footer-container {
     height: auto;
-    display: block;
-    padding: 1.5rem;
-    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1.5rem 1.6875rem;
   }
-  .footer-container nav {
-    padding: 0;
-    margin-bottom: 1.5rem;
-  }
-  .back-to-top {
-    position: relative;
-    display: inline-flex;
-    right: auto;
+  .c-button,
+  .ig-button {
+    margin-right: 0;
+    margin-bottom: 1.25rem;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .footer-container {
     height: auto;
-    display: block;
-    padding: 1.5rem;
-    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1.5rem 1.6875rem;
   }
-  .footer-container nav {
-    padding: 0;
-    margin-bottom: 1.5rem;
+  .c-button,
+  .ig-button {
+    margin-right: 0;
+    margin-bottom: 1.25rem;
   }
   .back-to-top {
     position: relative;
@@ -159,13 +171,15 @@ export default {
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
   .footer-container {
     height: auto;
-    display: block;
-    padding: 1.5rem;
-    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1.5rem 1.6875rem;
   }
-  .footer-container nav {
-    padding: 0;
-    margin-bottom: 1.5rem;
+  .c-button,
+  .ig-button {
+    margin-right: 0;
+    margin-bottom: 1.25rem;
   }
   .back-to-top {
     position: relative;

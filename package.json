@@ -31,7 +31,8 @@
     "vue-marquee-text-component": "^1.1.1",
     "vue-scrollto": "^2.18.1",
     "vue-threejs-composer": "^1.2.0",
-    "vue-tippy": "^4.4.0"
+    "vue-tippy": "^4.4.0",
+    "vue-vimeo-player": "^0.1.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

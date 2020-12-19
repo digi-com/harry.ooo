@@ -1,91 +1,59 @@
 <template>
   <div id="meat-rack">
     <!-- Preloader -->
-    <PageLoader line-hex="#fff" bg-hex="#000" />
-    <!-- Navigation -->
-    <Navigation />
-    <!-- Canvas -->
-    <ProjectCanvas
-      :images="canvasImages"
-      :image-width="360"
-      :image-height="288"
-      logo="/meat-rack/meat-rack-title.png"
-    />
-    <!-- Video -->
-    <ProjectFilm :film-link="filmLink" />
-    <!-- Feature -->
-    <ProjectFeature :content="projectFeatureContent" />
-    <!-- Credits -->
-    <Credits :credits="credits" />
-    <!-- Image Grid -->
-    <ProjectImages :images="projectImages" />
-    <!-- Footer -->
-    <Footer />
+    <PageLoader />
+    <div id="scroll-container" class="scroll-container">
+      <!-- Navigation -->
+      <Navigation />
+      <!-- Top Spacer -->
+      <div class="top-spacer spacer" />
+      <!-- Video -->
+      <ProjectFilm
+        @play-clicked="toggleMeatRack()"
+        film-link="/meat-rack/supercut_blur.mp4"
+      />
+      <!-- Spacer -->
+      <div class="spacer" />
+      <!-- Feature -->
+      <ProjectFeature :content="projectFeatureContent" />
+      <!-- Spacer -->
+      <div class="spacer" />
+      <!-- Credits -->
+      <Credits :credits="credits" />
+      <!-- Spacer -->
+      <div class="spacer" />
+      <!-- Image Grid -->
+      <MeatRackImages />
+      <!-- Bottom Spacer -->
+      <div class="bottom-spacer spacer" />
+      <!-- Footer -->
+      <Footer />
+    </div>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// Import locomotive.js mixin
+import locomotive from '~/mixins/locomotive.js'
+
 export default {
+  mixins: [locomotive],
   data() {
     return {
-      canvasImages: [
-        '/meat-rack/1.png',
-        '/meat-rack/2.png',
-        '/meat-rack/3.png',
-        '/meat-rack/4.png',
-        '/meat-rack/5.png',
-        '/meat-rack/6.png',
-        '/meat-rack/7.png',
-        '/meat-rack/8.png',
-        '/meat-rack/9.png',
-        '/meat-rack/10.png',
-        '/meat-rack/11.png',
-        '/meat-rack/12.png',
-        '/meat-rack/13.png',
-        '/meat-rack/14.png',
-        '/meat-rack/15.png',
-        '/meat-rack/16.png',
-        '/meat-rack/17.png',
-        '/meat-rack/18.png',
-        '/meat-rack/19.png',
-        '/meat-rack/20.png',
-        '/meat-rack/21.png',
-        '/meat-rack/22.png',
-        '/meat-rack/23.png',
-        '/meat-rack/24.png',
-        '/meat-rack/25.png',
-        '/meat-rack/26.png',
-        '/meat-rack/27.png',
-        '/meat-rack/28.png',
-        '/meat-rack/29.png',
-        '/meat-rack/30.png',
-        '/meat-rack/31.png',
-        '/meat-rack/32.png',
-        '/meat-rack/33.png',
-        '/meat-rack/34.png',
-        '/meat-rack/35.png',
-        '/meat-rack/36.png',
-        '/meat-rack/37.png',
-        '/meat-rack/38.png',
-        '/meat-rack/39.png',
-        '/meat-rack/40.png',
-        '/meat-rack/41.png',
-        '/meat-rack/42.png',
-        '/meat-rack/43.png',
-        '/meat-rack/44.png',
-        '/meat-rack/45.png',
-        '/meat-rack/46.png',
-        '/meat-rack/47.png',
-        '/meat-rack/48.png'
-      ],
-      filmLink: '/meat-rack/supercut_o.mp4',
       projectFeatureContent: {
         title: 'Meat Rack (2020)',
-        paragraph: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s LES tenement with an X-rated gay nightclub inside. Having since evolved into a seedy warehouse at the heart of New York City's Meatpacking District circa 1982, The Downlow celebrated its 10th anniversary in 2017.
+        paragraph: `The NYC Downlow is Block9’s legendary queer nightclub. First appearing at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside, the space has since evolved into a seedy warehouse at the heart of the Meatpacking District circa 1982. The warehouse serves as the location for <i>Meat Rack</i>, a short film documenting the Downlow's 10th birthday celebration in 2017. In an attempt to construct an immersive reality (like the venue itself) <i>Meat Rack</i> was filmed on a Betacam SP camcorder with VHS-C inserts. Both formats were manufactured and available to the public in 1982.
         <br /><br />
-        <i>Meat Rack</i> works as a document of the celebrations, taking us all the way from Somerset to New York over the course of 16 minutes. From construction site to dance floor, build crew to muscle boys, the film is a personal tribute to a cultural phenomenon. Intimate, expressive and occasionally unsettling, <i>Meat Rack</i> captures the fleeting nature of Glastonbury’s most notorious nightspot. Shot on a Betacam SP camcorder with additional VHS-C inserts. Both formats were manufactured and available to the public in 1982.
+        <i>Meat Rack</i> takes viewers from Somerset to New York City over the course of 16 minutes. From construction site to dance floor, build crew to muscle boys, the film is a personal tribute to a cultural phenomenon. An intimate, unsettling portrait that attempts to capture the fleeting nature of one of Glastonbury’s most notorious nightspots.
         <br /><br />
-        Exhibited online via Block9 (23rd June → 12th July 2020).`,
+        Two major influences on the film were Wakefield Poole's <i>Bijou</i> and Philip Trevelyan's <i>The Moon and The Sledgehammer</i>. Special thanks to Andrew Kötting for his advice and guidance throughout. Cinematography by Saul Pankhurst. Second Camera by Liam Healy. Sound Recording by Emma Barnaby. Graphics by Dennis McInnes. Meat Rack featured (in order of appearance); Jacob Love, Dieter Zachmeister, Richard Godderidge, Dan Thompson, David McFarlane, Olly Lajevardi, Chris Thompson, Haydn Nuttall, Alex Hale, Justin McCarthy, Josh Doyle, Dave Rushton, Giorgio Spiegelfeld, Craig Worrall, Jordi Hulsof, Thanasis Petroyiannis, Camille Leon, James Andrew Telford, Chester Hayes, Lottie Croucher, Joseph Wilson, Felippe Johann, Rudi Douglas, Ashraf Ejjbair, AJ Pittman, Paul Willis, Maggie Balmaceda, Rhys, Yoko Fomo, Ginger Johnson, Kenny “Dope” Gonzalez, Lucy Fizz, Joey Demento, and Rodent Decay.
+        <br /><br />
+        <i>Meat Rack</i> was first exhibited online via Block9 from 23rd → 30th June 2020. It was selected as part of The Observer's Guide to Summer Culture and covered widely in other publications such as Crack, Resident Advisor, Mixmag, DJMag, Ransom Note, Hypebeast and Attack Magazine.
+        `,
         footnotes: [
           { title: 'The NYC Downlow', link: 'https://thenycdownlow.com/' },
           { title: 'Block9', link: 'https://www.block9.com/' },
@@ -107,309 +75,617 @@ export default {
         { credit: 'Sound Design', name: 'Harry Lawson' },
         { credit: 'Edited by', name: 'Harry Lawson' },
         { credit: 'Special thanks', name: 'Andrew Kötting' },
-        { credit: 'Titles', name: 'Dennis McInnes' },
-        { credit: 'Commissioned by', name: 'Block9' }
-      ],
-      projectImages: [
-        {
-          url: '/meat-rack/1.png',
-          placeholder: '/meat-rack/placeholders/1.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/2.png',
-          placeholder: '/meat-rack/placeholders/2.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/3.png',
-          placeholder: '/meat-rack/placeholders/3.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/4.png',
-          placeholder: '/meat-rack/placeholders/4.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/5.png',
-          placeholder: '/meat-rack/placeholders/5.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/6.png',
-          placeholder: '/meat-rack/placeholders/6.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/7.png',
-          placeholder: '/meat-rack/placeholders/7.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/8.png',
-          placeholder: '/meat-rack/placeholders/8.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/9.png',
-          placeholder: '/meat-rack/placeholders/9.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/10.png',
-          placeholder: '/meat-rack/placeholders/10.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/11.png',
-          placeholder: '/meat-rack/placeholders/11.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/12.png',
-          placeholder: '/meat-rack/placeholders/12.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/13.png',
-          placeholder: '/meat-rack/placeholders/13.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/14.png',
-          placeholder: '/meat-rack/placeholders/14.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/15.png',
-          placeholder: '/meat-rack/placeholders/15.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/16.png',
-          placeholder: '/meat-rack/placeholders/16.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/17.png',
-          placeholder: '/meat-rack/placeholders/17.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/18.png',
-          placeholder: '/meat-rack/placeholders/18.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/19.png',
-          placeholder: '/meat-rack/placeholders/19.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/20.png',
-          placeholder: '/meat-rack/placeholders/20.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/21.png',
-          placeholder: '/meat-rack/placeholders/21.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/22.png',
-          placeholder: '/meat-rack/placeholders/22.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/23.png',
-          placeholder: '/meat-rack/placeholders/23.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/24.png',
-          placeholder: '/meat-rack/placeholders/24.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/25.png',
-          placeholder: '/meat-rack/placeholders/25.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/26.png',
-          placeholder: '/meat-rack/placeholders/26.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/27.png',
-          placeholder: '/meat-rack/placeholders/27.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/28.png',
-          placeholder: '/meat-rack/placeholders/28.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/29.png',
-          placeholder: '/meat-rack/placeholders/29.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/30.png',
-          placeholder: '/meat-rack/placeholders/30.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/31.png',
-          placeholder: '/meat-rack/placeholders/31.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/32.png',
-          placeholder: '/meat-rack/placeholders/32.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/33.png',
-          placeholder: '/meat-rack/placeholders/33.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/34.png',
-          placeholder: '/meat-rack/placeholders/34.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/35.png',
-          placeholder: '/meat-rack/placeholders/35.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/36.png',
-          placeholder: '/meat-rack/placeholders/36.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/37.png',
-          placeholder: '/meat-rack/placeholders/37.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/38.png',
-          placeholder: '/meat-rack/placeholders/38.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/39.png',
-          placeholder: '/meat-rack/placeholders/39.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/40.png',
-          placeholder: '/meat-rack/placeholders/40.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/41.png',
-          placeholder: '/meat-rack/placeholders/41.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/42.png',
-          placeholder: '/meat-rack/placeholders/42.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/43.png',
-          placeholder: '/meat-rack/placeholders/43.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/44.png',
-          placeholder: '/meat-rack/placeholders/44.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/45.png',
-          placeholder: '/meat-rack/placeholders/45.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/46.png',
-          placeholder: '/meat-rack/placeholders/46.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/47.png',
-          placeholder: '/meat-rack/placeholders/47.png',
-          width: 720,
-          height: 576
-        },
-        {
-          url: '/meat-rack/48.png',
-          placeholder: '/meat-rack/placeholders/48.png',
-          width: 720,
-          height: 576
-        }
+        { credit: 'Titles', name: 'Dennis McInnes' }
       ]
+    }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.smooth()
+    })
+  },
+  beforeDestroy() {
+    // If touch device, do nothing.
+    // If mouse-based device, remove lmS.
+    if (this.isTouchDevice()) {
+    } else {
+      // Remove resize event listener
+      window.removeEventListener('resize', this.updateLms)
+      // Remove refresh event listener
+      ScrollTrigger.removeEventListener('refresh', this.updateLms)
+    }
+  },
+  methods: {
+    ...mapMutations({
+      toggleMeatRack: 'toggleMeatRack'
+    }),
+    smooth() {
+      // If touch device, do nothing.
+      // If mouse-based device, create lmS.
+      if (this.isTouchDevice()) {
+        // Register ScrollTrigger with GSAP
+        gsap.registerPlugin(ScrollTrigger)
+        // Run the animate function
+        this.animateNoLms()
+        // After everything is set up, refresh ScrollTrigger and update lmS because padding may have been added for pinning, etc.
+        ScrollTrigger.refresh(true)
+      } else {
+        // Register ScrollTrigger with GSAP
+        gsap.registerPlugin(ScrollTrigger)
+        // On lmS scroll, update ScrollTrigger
+        this.lmS.on('scroll', ScrollTrigger.update)
+        // On resize, update lmS
+        window.addEventListener('resize', this.updateLms)
+        // Create this.lmS without 'this'
+        const lmsInstance = this.lmS
+        // Tell ScrollTrigger to use these proxy methods for the "#scroll-container" element
+        ScrollTrigger.scrollerProxy('#scroll-container', {
+          scrollTop(value) {
+            return arguments.length
+              ? lmsInstance.scrollTo(value, 0, 0)
+              : lmsInstance.scroll.instance.scroll.y
+          },
+          getBoundingClientRect() {
+            return {
+              top: 0,
+              left: 0,
+              width: window.innerWidth,
+              height: window.innerHeight
+            }
+          }
+        })
+        // Run the animate function
+        this.animate(this.lmS)
+        // Each time the window updates, refresh ScrollTrigger and update lmS
+        ScrollTrigger.addEventListener('refresh', this.updateLms)
+        // After everything is set up, refresh ScrollTrigger and update lmS because padding may have been added for pinning, etc.
+        ScrollTrigger.refresh(true)
+      }
+    },
+    animate(lmS) {
+      // Body color change
+      gsap
+        .timeline()
+        .set('.scroll-container', {
+          backgroundColor: '#ffffff'
+        })
+        .fromTo(
+          '.scroll-container',
+          {
+            backgroundColor: '#ffffff',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer',
+              trigger: '.top-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            backgroundColor: '#000000',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.scroll-container',
+          {
+            backgroundColor: '#000000',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer',
+              trigger: '.bottom-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            backgroundColor: '#ffffff',
+            ease: 'none'
+          }
+        )
+      // Placeholder color change
+      gsap
+        .timeline()
+        .set('.progressive-image__placeholder', {
+          backgroundColor: '#f5f5f7'
+        })
+        .fromTo(
+          '.progressive-image__placeholder',
+          {
+            backgroundColor: '#f5f5f7',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer-placeholder',
+              trigger: '.top-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            backgroundColor: '#080809',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.progressive-image__placeholder',
+          {
+            backgroundColor: '#080809',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer-placeholder',
+              trigger: '.bottom-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            backgroundColor: '#f5f5f7',
+            ease: 'none'
+          }
+        )
+      // Circle color change
+      gsap
+        .timeline()
+        .set('.circle-1', {
+          borderTopColor: '#000000'
+        })
+        .fromTo(
+          '.circle-1',
+          {
+            borderTopColor: '#000000',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer-spinner',
+              trigger: '.top-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            borderTopColor: '#ffffff',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.circle-1',
+          {
+            borderTopColor: '#ffffff',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer-spinner',
+              trigger: '.bottom-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            borderTopColor: '#000000',
+            ease: 'none'
+          }
+        )
+      gsap
+        .timeline()
+        .set('.circle-2', {
+          borderBottomColor: '#000000'
+        })
+        .fromTo(
+          '.circle-2',
+          {
+            borderBottomColor: '#000000',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer-spinner-ii',
+              trigger: '.top-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            borderBottomColor: '#ffffff',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.circle-2',
+          {
+            borderBottomColor: '#ffffff',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer-spinner-ii',
+              trigger: '.bottom-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            borderBottomColor: '#000000',
+            ease: 'none'
+          }
+        )
+      // Content colour change
+      gsap
+        .timeline()
+        .set('.feature-content', {
+          color: '#000000'
+        })
+        .fromTo(
+          '.feature-content',
+          {
+            color: '#000000',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer-spinner',
+              trigger: '.top-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            color: '#ffffff',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.feature-content',
+          {
+            color: '#ffffff',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer-spinner',
+              trigger: '.bottom-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            color: '#000000',
+            ease: 'none'
+          }
+        )
+      // Credits colour change
+      gsap
+        .timeline()
+        .set('.credits', {
+          color: '#000000'
+        })
+        .fromTo(
+          '.credits',
+          {
+            color: '#000000',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer-spinner',
+              trigger: '.top-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            color: '#ffffff',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.credits',
+          {
+            color: '#ffffff',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer-spinner',
+              trigger: '.bottom-spacer',
+              scroller: '#scroll-container',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            color: '#000000',
+            ease: 'none'
+          }
+        )
+    },
+    animateNoLms() {
+      // Body color change
+      gsap
+        .timeline()
+        .set('.scroll-container', {
+          backgroundColor: '#ffffff'
+        })
+        .fromTo(
+          '.scroll-container',
+          {
+            backgroundColor: '#ffffff',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer',
+              trigger: '.top-spacer',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            backgroundColor: '#000000',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.scroll-container',
+          {
+            backgroundColor: '#000000',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer',
+              trigger: '.bottom-spacer',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            backgroundColor: '#ffffff',
+            ease: 'none'
+          }
+        )
+      // Placeholder color change
+      gsap
+        .timeline()
+        .set('.progressive-image__placeholder', {
+          backgroundColor: '#f5f5f7'
+        })
+        .fromTo(
+          '.progressive-image__placeholder',
+          {
+            backgroundColor: '#f5f5f7',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer-placeholder',
+              trigger: '.top-spacer',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            backgroundColor: '#080809',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.progressive-image__placeholder',
+          {
+            backgroundColor: '#080809',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer-placeholder',
+              trigger: '.bottom-spacer',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            backgroundColor: '#f5f5f7',
+            ease: 'none'
+          }
+        )
+      // Circle color change
+      gsap
+        .timeline()
+        .set('.circle-1', {
+          borderTopColor: '#000000'
+        })
+        .fromTo(
+          '.circle-1',
+          {
+            borderTopColor: '#000000',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer-spinner',
+              trigger: '.top-spacer',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            borderTopColor: '#ffffff',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.circle-1',
+          {
+            borderTopColor: '#ffffff',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer-spinner',
+              trigger: '.bottom-spacer',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            borderTopColor: '#000000',
+            ease: 'none'
+          }
+        )
+      gsap
+        .timeline()
+        .set('.circle-2', {
+          borderBottomColor: '#000000'
+        })
+        .fromTo(
+          '.circle-2',
+          {
+            borderBottomColor: '#000000',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer-spinner-ii',
+              trigger: '.top-spacer',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            borderBottomColor: '#ffffff',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.circle-2',
+          {
+            borderBottomColor: '#ffffff',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer-spinner-ii',
+              trigger: '.bottom-spacer',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            borderBottomColor: '#000000',
+            ease: 'none'
+          }
+        )
+      // Content colour change
+      gsap
+        .timeline()
+        .set('.feature-content', {
+          color: '#000000'
+        })
+        .fromTo(
+          '.feature-content',
+          {
+            color: '#000000',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer-spinner',
+              trigger: '.top-spacer',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            color: '#ffffff',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.feature-content',
+          {
+            color: '#ffffff',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer-spinner',
+              trigger: '.bottom-spacer',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            color: '#000000',
+            ease: 'none'
+          }
+        )
+      // Credits colour change
+      gsap
+        .timeline()
+        .set('.credits', {
+          color: '#000000'
+        })
+        .fromTo(
+          '.credits',
+          {
+            color: '#000000',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'top-spacer-spinner',
+              trigger: '.top-spacer',
+              scrub: true,
+              start: 'top top',
+              end: '+=360 top'
+            },
+            color: '#ffffff',
+            ease: 'none'
+          }
+        )
+        .fromTo(
+          '.credits',
+          {
+            color: '#ffffff',
+            ease: 'none'
+          },
+          {
+            scrollTrigger: {
+              id: 'bottom-spacer-spinner',
+              trigger: '.bottom-spacer',
+              scrub: true,
+              start: 'top bottom',
+              end: 'bottom bottom'
+            },
+            color: '#000000',
+            ease: 'none'
+          }
+        )
+    },
+    isTouchDevice() {
+      const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')
+      const mq = function(query) {
+        return window.matchMedia(query).matches
+      }
+
+      if (
+        'ontouchstart' in window ||
+        (window.DocumentTouch && document instanceof window.DocumentTouch)
+      ) {
+        return true
+      }
+
+      // include the 'heartz' as a way to have a non matching MQ to help terminate the join
+      // https://git.io/vznFH
+      const query = [
+        '(',
+        prefixes.join('touch-enabled),('),
+        'heartz',
+        ')'
+      ].join('')
+      return mq(query)
     }
   },
   head() {
     return {
-      htmlAttrs: {
-        class: ['night']
-      },
-      bodyAttrs: {
-        class: ['night']
-      },
       title: 'Harry Lawson | Meat Rack (2020)',
       meta: [
         {
@@ -474,76 +750,27 @@ export default {
 </script>
 
 <style>
-#meat-rack .nav-button,
-#meat-rack nav a,
-#meat-rack .feature .footnote-number,
-#meat-rack .credits .item:first-child,
-#meat-rack .play-button {
-  background: black;
-  border-color: white;
-  color: white;
+#meat-rack .credits .item .credit {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-#meat-rack .nav-button:hover,
-#meat-rack nav a:hover,
-#meat-rack .feature .footnote-number:hover,
-#meat-rack .play-button:hover {
-  background: white;
-  border-color: white;
-  color: black;
+#meat-rack .credits .item .name {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-#meat-rack .credits .item,
-#meat-rack .credits .item:first-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-#meat-rack,
-#meat-rack canvas {
-  background: black;
-  color: white;
-}
-
-#meat-rack .feature .footnotes p a {
-  color: white;
-}
-
 /* Responsive */
 
 @media screen and (min-width: 0px) and (max-width: 1024px) {
-  #meat-rack .nav-button:hover,
-  #meat-rack nav a:hover,
-  #meat-rack .feature .footnote-number:hover,
-  #meat-rack .play-button:hover {
-    background: black;
-    border-color: white;
-    color: white;
-  }
 }
 @media screen and (min-width: 0px) and (max-width: 320px) {
-  #meat-rack #film {
-    height: 37vh !important;
-  }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
-  #meat-rack #film {
-    height: 41vh !important;
-  }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
-  #meat-rack #film {
-    height: 43vh !important;
-  }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
-  #meat-rack #film {
-    height: 46vh !important;
-  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  #meat-rack #film {
-    height: 50vh !important;
-  }
 }
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
 }

@@ -1,17 +1,13 @@
 <template>
   <!-- Credits -->
   <div class="credits">
-    <!-- <h2>Credits</h2> -->
-    <div class="credits-container">
-      <div
-        v-for="(credit, index) in credits"
-        :key="'credit-' + index"
-        :style="{ gridRowStart: index + 1 }"
-        class="item"
-      >
-        <span class="credit">{{ credit.credit }}</span>
-        <span class="name">{{ credit.name }}</span>
-      </div>
+    <div
+      v-for="(credit, index) in credits"
+      :key="'credit-' + index"
+      class="item"
+    >
+      <span class="credit">{{ credit.credit }}</span>
+      <span class="name">{{ credit.name }}</span>
     </div>
   </div>
 </template>
@@ -31,139 +27,112 @@ export default {
 /* Credits */
 .credits {
   width: 100%;
-  padding: 0 3rem;
+  padding: 0 2.5vw;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 1rem;
-  padding-bottom: 10.5rem;
-  margin-top: 6rem;
+  grid-column-gap: 0.625vw;
+  grid-row-gap: 5.625vw;
 }
-.credits h2 {
-  font-weight: 400;
-  font-size: 2.75rem;
-  line-height: 1;
-  margin-bottom: 2.875rem;
-  letter-spacing: -0.64px;
-  grid-column: 3 / 8;
-  grid-row: 1 / 2;
+.credits .item .credit {
+  line-height: 1.875;
+  font-size: 0.9375vw;
+  text-transform: uppercase;
+  letter-spacing: 0.32px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: 0.32;
+  display: block;
 }
-.credits-container {
-  grid-column: 3 / 11;
+.credits .item .name {
+  line-height: 1.875;
+  font-size: 0.9375vw;
+  text-transform: uppercase;
+  letter-spacing: 0.32px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.credits .item:first-child {
-  border-top: 2px solid black;
-  /* padding-top: 1.25rem; */
+.credits .item:nth-child(1) {
+  grid-column: 2 / 5;
 }
-.credits .item {
-  line-height: 1.75;
-  font-size: 1rem;
-  display: flex;
-  align-items: flex-start;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+.credits .item:nth-child(2) {
+  grid-column: 5 / 8;
 }
-.credits .credit {
-  width: 30%;
-  opacity: 0.56;
+.credits .item:nth-child(3) {
+  grid-column: 9 / 12;
 }
-.credits .name {
-  width: 70%;
+.credits .item:nth-child(4) {
+  grid-column: 2 / 5;
+}
+.credits .item:nth-child(5) {
+  grid-column: 5 / 8;
+}
+.credits .item:nth-child(6) {
+  grid-column: 9 / 12;
+}
+.credits .item:nth-child(7) {
+  grid-column: 2 / 5;
+}
+.credits .item:nth-child(8) {
+  grid-column: 5 / 8;
+}
+.credits .item:nth-child(9) {
+  grid-column: 9 / 12;
 }
 
 /* Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
   .credits {
-    display: block;
-    padding: 0 1rem;
+    width: 100%;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 0.625vw;
+    grid-row-gap: 5.625vw;
   }
   .credits .item {
-    font-size: 0.875rem;
+    grid-column: 1 / 13 !important;
   }
-  .credits .credit {
-    width: 50%;
+  .credits .item .credit {
+    line-height: 1.875;
+    font-size: 11px;
+    letter-spacing: 0.32px;
   }
-  .credits .name {
-    width: 50%;
+  .credits .item .name {
+    line-height: 1.875;
+    font-size: 11px;
+    letter-spacing: 0.32px;
   }
 }
-@media screen and (min-width: 321px) and (max-width: 375px) {
+@media screen and (min-width: 321px) and (max-width: 767px) {
   .credits {
-    display: block;
+    width: 100%;
     padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 0.625vw;
+    grid-row-gap: 5.625vw;
   }
   .credits .item {
-    font-size: 0.875rem;
+    grid-column: 1 / 10 !important;
   }
-  .credits .credit {
-    width: 50%;
+  .credits .item .credit {
+    line-height: 1.875;
+    font-size: 11px;
+    letter-spacing: 0.32px;
   }
-  .credits .name {
-    width: 50%;
+  .credits .item .name {
+    line-height: 1.875;
+    font-size: 11px;
+    letter-spacing: 0.32px;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
-  .credits {
-    display: block;
-    padding: 0 1.5rem;
-    /* margin-top: 4rem; */
-  }
-  .credits .item {
-    font-size: 0.875rem;
-  }
-  .credits .credit {
-    width: 50%;
-  }
-  .credits .name {
-    width: 50%;
-  }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
-  .credits {
-    display: block;
-    padding: 0 1.5rem;
-    /* margin-top: 4rem; */
-  }
-  .credits .item {
-    font-size: 0.875rem;
-  }
-  .credits .credit {
-    width: 50%;
-  }
-  .credits .name {
-    width: 50%;
-  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .credits {
-    display: block;
-    padding: 0 1.5rem;
-    /* margin-top: 4rem; */
-  }
-  .credits .item {
-    font-size: 0.875rem;
-  }
-  .credits .credit {
-    width: 50%;
-  }
-  .credits .name {
-    width: 50%;
-  }
 }
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
-  .credits {
-    display: block;
-    padding: 0 1.5rem;
-    /* margin-top: 4rem; */
-  }
-  .credits .item {
-    font-size: 0.875rem;
-  }
-  .credits .credit {
-    width: 50%;
-  }
-  .credits .name {
-    width: 50%;
-  }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
 }

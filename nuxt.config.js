@@ -104,6 +104,7 @@ export default {
     { src: '~/plugins/vue-tippy', ssr: false },
     { src: '~/plugins/vue-marquee', ssr: false },
     { src: '~/plugins/vue-scroll-to', ssr: false },
+    { src: '~/plugins/vue-vimeo-player', ssr: false },
     { src: '~/plugins/intersection-observer-polyfill', ssr: false },
     { src: '~/plugins/locomotive-scroll', ssr: false }
   ],
@@ -129,6 +130,7 @@ export default {
    ** Build configuration
    */
   build: {
-    transpile: ['vue-100vh', 'gsap']
+    transpile: ['vue-100vh', 'gsap'],
+    vendor: ['vue-vimeo-player']
   }
 }

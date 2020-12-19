@@ -23,7 +23,6 @@ export default {
       smooth: true,
       lerp: 0.04
     })
-    console.log('lmS', this.lmS)
   }
 }
 </script>

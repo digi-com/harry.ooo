@@ -1,14 +1,44 @@
 <template>
   <section id="navigation">
     <nav>
-      <div class="name">
-        <nuxt-link to="/">Harry Lawson</nuxt-link>
+      <div v-if="home" class="name">
+        <nuxt-link to="/" class="no-hover">Harry Lawson</nuxt-link>
       </div>
-      <div class="projects">
-        <nuxt-link to="/projects" class="nav-button">Projects</nuxt-link>
+      <div v-if="!home" class="name">
+        <nuxt-link
+          @mouseenter.native="pointerEnter()"
+          @mouseleave.native="pointerExit()"
+          @click.native="pointerExit()"
+          to="/"
+          class="nav-button"
+          >Harry Lawson</nuxt-link
+        >
       </div>
-      <div class="information">
-        <nuxt-link to="/info" class="nav-button">Info</nuxt-link>
+      <div v-if="projects" class="projects">
+        <nuxt-link to="/projects" class="no-hover">Projects</nuxt-link>
+      </div>
+      <div v-if="!projects" class="projects">
+        <nuxt-link
+          @mouseenter.native="pointerEnter()"
+          @mouseleave.native="pointerExit()"
+          @click.native="pointerExit()"
+          to="/projects"
+          class="nav-button"
+          >Projects</nuxt-link
+        >
+      </div>
+      <div v-if="info" class="information">
+        <nuxt-link to="/info" class="no-hover">Info</nuxt-link>
+      </div>
+      <div v-if="!info" class="information">
+        <nuxt-link
+          @mouseenter.native="pointerEnter()"
+          @mouseleave.native="pointerExit()"
+          @click.native="pointerExit()"
+          to="/info"
+          class="nav-button"
+          >Info</nuxt-link
+        >
       </div>
     </nav>
     <NavigationProjectsOverlay
@@ -24,6 +54,23 @@
 
 <script>
 export default {
+  props: {
+    home: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
+    projects: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
+    info: {
+      type: Boolean,
+      default: false,
+      required: false
+    }
+  },
   data() {
     return {
       navProjectsVisible: false,
@@ -31,6 +78,16 @@ export default {
     }
   },
   methods: {
+    pointerEnter() {
+      if (document.querySelector('div#cursor')) {
+        document.querySelector('div#cursor').classList.add('view-project')
+      }
+    },
+    pointerExit() {
+      if (document.querySelector('div#cursor')) {
+        document.querySelector('div#cursor').classList.remove('view-project')
+      }
+    },
     toggleNavProjects() {
       this.navProjectsVisible = !this.navProjectsVisible
     },
@@ -38,105 +95,90 @@ export default {
       this.navInfoVisible = !this.navInfoVisible
     }
   }
-  // head() {
-  //   return {
-  //     htmlAttrs: {
-  //       class:
-  //         this.navProjectsVisible || this.navInfoVisible ? 'modal-open' : ''
-  //     },
-  //     bodyAttrs: {
-  //       class:
-  //         this.navProjectsVisible || this.navInfoVisible ? 'modal-open' : ''
-  //     }
-  //   }
-  // }
 }
 </script>
 
 <style>
 nav {
   width: auto;
-  padding: 2rem;
+  padding: 2.5vw 2.5vw 0;
   display: flex;
   align-items: center;
-  position: absolute;
-  z-index: 999;
 }
 nav .name {
-  margin: 0;
+  margin-right: 0.9375vw;
 }
 nav .projects {
-  margin-left: 1rem;
+  margin-right: 0.9375vw;
 }
 nav .information {
-  margin-left: 1rem;
+  margin: 0;
 }
 
 @media screen and (min-width: 0px) and (max-width: 320px) {
   nav {
     display: block;
-    padding: 1rem;
+    padding: 1.6875rem 1.5rem 0;
   }
   nav .name,
   nav .projects {
-    margin-bottom: 1rem;
-  }
-  nav a,
-  .nav-button {
-    font-size: 1.5rem;
-    height: 48px;
-    width: auto;
-    padding: 0 1.3125rem;
+    margin-bottom: 1.25rem;
+    margin-right: 0;
   }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
   nav {
     display: block;
-    padding: 1.5rem;
+    padding: 1.6875rem 1.5rem 0;
   }
   nav .name,
   nav .projects {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    margin-right: 0;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
   nav {
     display: block;
-    padding: 1.5rem;
+    padding: 1.6875rem 1.5rem 0;
   }
   nav .name,
   nav .projects {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    margin-right: 0;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
   nav {
     display: block;
-    padding: 1.5rem;
+    padding: 1.6875rem 1.5rem 0;
   }
   nav .name,
   nav .projects {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    margin-right: 0;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   nav {
     display: block;
-    padding: 1.5rem;
+    padding: 1.6875rem 1.5rem 0;
   }
   nav .name,
   nav .projects {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    margin-right: 0;
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1279px) {
   nav {
     display: block;
-    padding: 1.5rem;
+    padding: 1.6875rem 1.5rem 0;
   }
   nav .name,
   nav .projects {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    margin-right: 0;
   }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
