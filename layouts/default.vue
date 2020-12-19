@@ -31,6 +31,13 @@
     </transition>
     <!-- <Navigation /> -->
     <nuxt />
+    <!-- Preload Cursors -->
+    <div
+      style="position: absolute; top: 0; right: 0; width: 0; height: 0; pointer-events: none;"
+    >
+      <img src="/cursor.svg" style="opacity: 0;" />
+      <img src="/pointer.svg" style="opacity: 0;" />
+    </div>
     <!-- Meat Rack Modal -->
     <VideoModal
       v-if="meatRackModal"
