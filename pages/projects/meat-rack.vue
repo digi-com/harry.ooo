@@ -691,17 +691,17 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside. Having since evolved into a warehouse at the heart of the Meatpacking District in New York City circa 1982, The Downlow celebrated its 10th anniversary in 2017.`
+          content: `The NYC Downlow is Block9’s legendary queer nightclub. First appearing at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside, the space has since evolved into a seedy warehouse at the heart of the Meatpacking District circa 1982. The warehouse serves as the location for Meat Rack, a short film documenting the Downlow's 10th birthday celebration in 2017.`
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside. Having since evolved into a warehouse at the heart of the Meatpacking District in New York City circa 1982, The Downlow celebrated its 10th anniversary in 2017.`
+          content: `The NYC Downlow is Block9’s legendary queer nightclub. First appearing at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside, the space has since evolved into a seedy warehouse at the heart of the Meatpacking District circa 1982. The warehouse serves as the location for Meat Rack, a short film documenting the Downlow's 10th birthday celebration in 2017.`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: `The NYC Downlow first appeared at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside. Having since evolved into a warehouse at the heart of the Meatpacking District in New York City circa 1982, The Downlow celebrated its 10th anniversary in 2017.`
+          content: `The NYC Downlow is Block9’s legendary queer nightclub. First appearing at Glastonbury Festival in 2007 as a film-set replica of a dilapidated 1970s Lower East Side tenement with an X-rated gay nightclub inside, the space has since evolved into a seedy warehouse at the heart of the Meatpacking District circa 1982. The warehouse serves as the location for Meat Rack, a short film documenting the Downlow's 10th birthday celebration in 2017.`
         },
         {
           hid: 'og:url',

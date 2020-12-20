@@ -389,17 +389,17 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Mundial follows the SCdM men's first team through their inaugural season, providing an intimate portrait of a team from the perspective of a teammate on the sidelines recovering from a long-term injury. Featuring footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, Mundial works as a collage of grassroots football in London.`
+          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Featuring footage from players Kamal Guthmy and Shameek Farrell, clips donated by opposing teams, and a selection of archival material shot on early camera phones, Mundial is a collage of grassroots football in London.`
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Mundial follows the SCdM men's first team through their inaugural season, providing an intimate portrait of a team from the perspective of a teammate on the sidelines recovering from a long-term injury. Featuring footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, Mundial works as a collage of grassroots football in London.`
+          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Featuring footage from players Kamal Guthmy and Shameek Farrell, clips donated by opposing teams, and a selection of archival material shot on early camera phones, Mundial is a collage of grassroots football in London.`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Mundial follows the SCdM men's first team through their inaugural season, providing an intimate portrait of a team from the perspective of a teammate on the sidelines recovering from a long-term injury. Featuring footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, Mundial works as a collage of grassroots football in London.`
+          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Featuring footage from players Kamal Guthmy and Shameek Farrell, clips donated by opposing teams, and a selection of archival material shot on early camera phones, Mundial is a collage of grassroots football in London.`
         },
         {
           hid: 'og:url',

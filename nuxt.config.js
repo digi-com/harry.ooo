@@ -30,17 +30,17 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `Harry Lawson (b. 1994) is a documentary filmmaker based in London.`
+        content: `Harry Lawson (b. South Shields, 1994) is an artist and documentary filmmaker based in London. His work is split between archival research, experimental documentary and image-making. He sporadically programmes and hosts documentary film screenings, exhibiting experimental non-fiction work in London and elsewhere.`
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: `Harry Lawson (b. 1994) is a documentary filmmaker based in London.`
+        content: `Harry Lawson (b. South Shields, 1994) is an artist and documentary filmmaker based in London. His work is split between archival research, experimental documentary and image-making. He sporadically programmes and hosts documentary film screenings, exhibiting experimental non-fiction work in London and elsewhere.`
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: `Harry Lawson (b. 1994) is a documentary filmmaker based in London.`
+        content: `Harry Lawson (b. South Shields, 1994) is an artist and documentary filmmaker based in London. His work is split between archival research, experimental documentary and image-making. He sporadically programmes and hosts documentary film screenings, exhibiting experimental non-fiction work in London and elsewhere.`
       },
       {
         hid: 'og:url',

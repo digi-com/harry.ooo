@@ -88,17 +88,17 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Margaret is a long-term multimedia project that explores memory, memory loss, intimacy and care through the experiences of families and health workers living with dementia on a daily basis. The project now exists as a body of work about Margaret and the place she spent the last four years of her life — Glenholme House in Sunderland. It is set loosely over a period during which she moved out of her home and into residential care, and features a growing archive of objects and images relating to this time.`
+          content: `Margaret is a long-term multimedia project focused on themes of intimacy, care and memory loss. The project now exists as a body of work about my grandma (Margaret) and the place she spent the last four years of her life, Glenholme House in Sunderland. The project is set over a period of four years, during which she moved out of her home and into residential care.`
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `Margaret is a long-term multimedia project that explores memory, memory loss, intimacy and care through the experiences of families and health workers living with dementia on a daily basis. The project now exists as a body of work about Margaret and the place she spent the last four years of her life — Glenholme House in Sunderland. It is set loosely over a period during which she moved out of her home and into residential care, and features a growing archive of objects and images relating to this time.`
+          content: `Margaret is a long-term multimedia project focused on themes of intimacy, care and memory loss. The project now exists as a body of work about my grandma (Margaret) and the place she spent the last four years of her life, Glenholme House in Sunderland. The project is set over a period of four years, during which she moved out of her home and into residential care.`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: `Margaret is a long-term multimedia project that explores memory, memory loss, intimacy and care through the experiences of families and health workers living with dementia on a daily basis. The project now exists as a body of work about Margaret and the place she spent the last four years of her life — Glenholme House in Sunderland. It is set loosely over a period during which she moved out of her home and into residential care, and features a growing archive of objects and images relating to this time.`
+          content: `Margaret is a long-term multimedia project focused on themes of intimacy, care and memory loss. The project now exists as a body of work about my grandma (Margaret) and the place she spent the last four years of her life, Glenholme House in Sunderland. The project is set over a period of four years, during which she moved out of her home and into residential care.`
         },
         {
           hid: 'og:url',

@@ -44,7 +44,7 @@ export default {
     return {
       projectFeatureContent: {
         title: 'Ochre (2019)',
-        paragraph: `<i>Ochre</i> is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. The film focuses on textures and atmosphere, gradually revealing elements of live performance before transitioning to the night programme. <i>Ochre</i> was photographed on a collection of small format film cameras; a Krasnagorsk 3, a Braun Nizo Professional and a Eumig Nautica for underwater sequences. The music was provided by Tapan, a Serbian band booked to perform at the festival. The sound was designed and edited by Tapan's Goran Simonoski.
+        paragraph: `<i>Ochre</i> is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. The film focuses on texture and atmosphere, gradually revealing elements of live performance before transitioning to the night programme. <i>Ochre</i> was photographed on a collection of small format film cameras; a Krasnagorsk 3, a Braun Nizo Professional and a Eumig Nautica for underwater sequences. The music was provided by Tapan, a Serbian band booked to perform at the festival. The sound was designed and edited by Tapan's Goran Simonoski.
         <br/><br/>
         Commissioned by Atlas Electronic, a music festival in Marrakech.`,
         footnotes: [
@@ -75,17 +75,17 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Ochre is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, the film focuses on texture and atmosphere, gradually revealing elements of live performance before making the transition to the night programme.`
+          content: `Ochre is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. The film focuses on textures and atmosphere, gradually revealing elements of live performance before transitioning to the night programme.`
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `Ochre is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, the film focuses on texture and atmosphere, gradually revealing elements of live performance before making the transition to the night programme.`
+          content: `Ochre is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. The film focuses on textures and atmosphere, gradually revealing elements of live performance before transitioning to the night programme.`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: `Ochre is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. A collaboration with cinematographer Saul Pankhurst, the film focuses on texture and atmosphere, gradually revealing elements of live performance before making the transition to the night programme.`
+          content: `Ochre is the result of a twelve-day journey through Morocco, ending at Atlas Electronic on the outskirts of Marrakech. The film focuses on textures and atmosphere, gradually revealing elements of live performance before transitioning to the night programme.`
         },
         {
           hid: 'og:url',
