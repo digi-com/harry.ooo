@@ -30,17 +30,17 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `Harry Lawson (b. 1994) is a documentary filmmaker based in London.`
+        content: `Harry Lawson (b. South Shields, 1994) is an artist and documentary filmmaker based in London. His work is split between archival research, experimental documentary and image-making. He sporadically programmes and hosts documentary film screenings, exhibiting experimental non-fiction work in London and elsewhere.`
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: `Harry Lawson (b. 1994) is a documentary filmmaker based in London.`
+        content: `Harry Lawson (b. South Shields, 1994) is an artist and documentary filmmaker based in London. His work is split between archival research, experimental documentary and image-making. He sporadically programmes and hosts documentary film screenings, exhibiting experimental non-fiction work in London and elsewhere.`
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: `Harry Lawson (b. 1994) is a documentary filmmaker based in London.`
+        content: `Harry Lawson (b. South Shields, 1994) is an artist and documentary filmmaker based in London. His work is split between archival research, experimental documentary and image-making. He sporadically programmes and hosts documentary film screenings, exhibiting experimental non-fiction work in London and elsewhere.`
       },
       {
         hid: 'og:url',
@@ -104,7 +104,9 @@ export default {
     { src: '~/plugins/vue-tippy', ssr: false },
     { src: '~/plugins/vue-marquee', ssr: false },
     { src: '~/plugins/vue-scroll-to', ssr: false },
-    { src: '~/plugins/intersection-observer-polyfill', ssr: false }
+    { src: '~/plugins/vue-vimeo-player', ssr: false },
+    { src: '~/plugins/intersection-observer-polyfill', ssr: false },
+    { src: '~/plugins/locomotive-scroll', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -128,6 +130,6 @@ export default {
    ** Build configuration
    */
   build: {
-    transpile: ['vue-100vh']
+    transpile: ['vue-100vh', 'gsap']
   }
 }

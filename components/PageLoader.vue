@@ -56,7 +56,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999998;
+  z-index: 9998;
   background-color: white;
 }
 
@@ -67,8 +67,10 @@ export default {
 }
 
 .half-circle-spinner {
-  width: 60px;
-  height: 60px;
+  width: 4.6875vw;
+  height: 4.6875vw;
+  min-width: 60px;
+  min-height: 60px;
   border-radius: 100%;
   position: relative;
 }
@@ -79,7 +81,7 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  border: calc(60px / 30) solid transparent;
+  border: 0.15625vw solid transparent;
 }
 
 .half-circle-spinner .circle.circle-1 {
@@ -115,5 +117,58 @@ export default {
   opacity: 0;
   transform: translate3d(0, 0, 0);
   will-change: opacity, transform;
+}
+
+/* Responsive */
+@media screen and (min-width: 0) and (max-width: 1279px) {
+  .half-circle-spinner .circle {
+    border: 2px solid transparent;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  .progressive-image .half-circle-spinner {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 100%;
+    position: relative;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .progressive-image .half-circle-spinner {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 100%;
+    position: relative;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+  .progressive-image .half-circle-spinner {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 100%;
+    position: relative;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
 }
 </style>

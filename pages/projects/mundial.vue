@@ -2,105 +2,63 @@
   <div id="mundial">
     <!-- Preloader -->
     <PageLoader />
-    <!-- Navigation -->
-    <Navigation />
-    <!-- Canvas -->
-    <ProjectCanvas
-      :images="canvasImages"
-      :image-width="360"
-      :image-height="203"
-      logo="/mundial/mundial-title.svg"
-    />
-    <!-- Video -->
-    <ProjectFilm :film-link="filmLink" />
-    <!-- Feature -->
-    <ProjectFeature :content="projectFeatureContent" />
-    <!-- Credits -->
-    <Credits :credits="credits" />
-    <!-- Image Grid -->
-    <ProjectImages :images="projectImages" />
-    <!-- Footer -->
-    <Footer />
+    <div id="scroll-container" class="scroll-container">
+      <!-- Navigation -->
+      <Navigation />
+      <!-- Top Spacer -->
+      <div class="top-spacer spacer" />
+      <!-- Video -->
+      <ProjectFilm
+        @play-clicked="toggleMundial()"
+        film-link="/mundial/mundial-supercut-blur.mp4"
+        film-poster-link="/mundial/mundial-supercut-poster.png"
+      />
+      <!-- Spacer -->
+      <div class="spacer" />
+      <!-- Feature -->
+      <ProjectFeature :content="projectFeatureContent" />
+      <!-- Spacer -->
+      <div class="spacer" />
+      <!-- Credits -->
+      <Credits :credits="credits" />
+      <!-- Spacer -->
+      <div class="spacer" />
+      <!-- Image Grid -->
+      <MundialImages />
+      <!-- Bottom Spacer -->
+      <div class="bottom-spacer spacer" />
+      <!-- Footer -->
+      <Footer />
+    </div>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
+// Import locomotive.js mixin
+import locomotive from '~/mixins/locomotive.js'
+
 export default {
+  mixins: [locomotive],
   data() {
     return {
-      canvasImages: [
-        '/mundial/mundial-1.png',
-        '/mundial/mundial-2.png',
-        '/mundial/mundial-3.png',
-        '/mundial/mundial-4.png',
-        '/mundial/mundial-5.png',
-        '/mundial/mundial-6.png',
-        '/mundial/mundial-7.png',
-        '/mundial/mundial-8.png',
-        '/mundial/mundial-9.png',
-        '/mundial/mundial-10.png',
-        '/mundial/mundial-11.png',
-        '/mundial/mundial-12.png',
-        '/mundial/mundial-13.png',
-        '/mundial/mundial-14.png',
-        '/mundial/mundial-15.png',
-        '/mundial/mundial-16.png',
-        '/mundial/mundial-17.png',
-        '/mundial/mundial-18.png',
-        '/mundial/mundial-19.png',
-        '/mundial/mundial-20.png',
-        '/mundial/mundial-21.png',
-        '/mundial/mundial-22.png',
-        '/mundial/mundial-23.png',
-        '/mundial/mundial-24.png',
-        '/mundial/mundial-25.png',
-        '/mundial/mundial-26.png',
-        '/mundial/mundial-27.png',
-        '/mundial/mundial-28.png',
-        '/mundial/mundial-29.png',
-        '/mundial/mundial-30.png',
-        '/mundial/mundial-31.png',
-        '/mundial/mundial-32.png',
-        '/mundial/mundial-33.png',
-        '/mundial/mundial-34.png',
-        '/mundial/mundial-35.png',
-        '/mundial/mundial-36.png',
-        '/mundial/mundial-37.png',
-        '/mundial/mundial-38.png',
-        '/mundial/mundial-39.png',
-        '/mundial/mundial-40.png',
-        '/mundial/mundial-41.png',
-        '/mundial/mundial-42.png',
-        '/mundial/mundial-43.png',
-        '/mundial/mundial-44.png',
-        '/mundial/mundial-45.png',
-        '/mundial/mundial-46.png',
-        '/mundial/mundial-47.png',
-        '/mundial/mundial-48.png'
-      ],
-      filmLink: '/mundial/mundial-supercut-o.mp4',
       projectFeatureContent: {
         title: 'Mundial (2020)',
-        paragraph: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. <i>Mundial</i> follows the SCdM men's first team through their inaugural season,
+        paragraph: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. <i>Mundial</i> had initially hoped to follow the SCdM men's first team through their inaugural season,
         providing an intimate portrait of a team from the perspective of a
-        teammate on the sidelines recovering from a long-term injury. Featuring
-        footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, <i>Mundial</i> works as a collage of
-        grassroots football in London.`,
-        footnotes: [
-          { title: 'Mundial Magazine', link: 'https://mundialmag.com/' },
-          {
-            title: 'Shameek Farrell',
-            link: 'https://www.instagram.com/shameek_ldn/'
-          }
-        ]
+        teammate recovering from a long-term injury. However, in March 2020, halfway through the season (with the team still unbeaten in the league) COVID-19 hit and grassroots sport in London ground to a halt. The season was written off, and for various off-the-field reasons, SCdM no longer exists. The film now exists as a time capsule to a strangely distant time earlier this year, before the pandemic. Featuring footage from players Kamal Guthmy and Shameek Farrell, clips donated by opposing teams, and a selection of archival material shot on early camera phones, <i>Mundial</i> is a collage of
+        grassroots football in London.
+        <br/><br/>
+        The film was made in loving memory of Jermaine Wright, who sadly passed away in April having contracted Coronavirus. Affectionately known as Mr. Hackney Marshes, Jermaine served as both an on-field referee and behind-the-scenes catalyst for the Hackney & Leyton Sunday Football League — as vice chairman, schedule secretary, results secretary, press officer and head official. Film commissioned by Mundial Magazine.`
       },
       credits: [
         { credit: 'Directed by', name: 'Harry Lawson' },
-        { credit: 'Cinematography', name: 'Harry Lawson' },
         {
           credit: 'Camera',
           name: 'Tom Brandhorst, Alex Graham, Kamal Guthmy, Shameek Farrell'
         },
+        { credit: 'Cinematography', name: 'Harry Lawson' },
         { credit: 'Edited by', name: 'Harry Lawson, Saul Pankhurst' },
         { credit: 'Titles', name: 'Alex Mertekis' },
         { credit: 'Commissioned by', name: 'Mundial Studio' }
@@ -420,6 +378,11 @@ export default {
       ]
     }
   },
+  methods: {
+    ...mapMutations({
+      toggleMundial: 'toggleMundial'
+    })
+  },
   head() {
     return {
       title: 'Harry Lawson | Mundial (2020)',
@@ -427,17 +390,17 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Mundial follows the SCdM men's first team through their inaugural season, providing an intimate portrait of a team from the perspective of a teammate on the sidelines recovering from a long-term injury. Featuring footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, Mundial works as a collage of grassroots football in London.`
+          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Featuring footage from players Kamal Guthmy and Shameek Farrell, clips donated by opposing teams, and a selection of archival material shot on early camera phones, Mundial is a collage of grassroots football in London.`
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Mundial follows the SCdM men's first team through their inaugural season, providing an intimate portrait of a team from the perspective of a teammate on the sidelines recovering from a long-term injury. Featuring footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, Mundial works as a collage of grassroots football in London.`
+          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Featuring footage from players Kamal Guthmy and Shameek Farrell, clips donated by opposing teams, and a selection of archival material shot on early camera phones, Mundial is a collage of grassroots football in London.`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Mundial follows the SCdM men's first team through their inaugural season, providing an intimate portrait of a team from the perspective of a teammate on the sidelines recovering from a long-term injury. Featuring footage from players Kamal Guthmy and Shameek Farrell, alongside clips donated by opposing teams, Mundial works as a collage of grassroots football in London.`
+          content: `Sporting Club de Mundial was founded by Mundial Magazine in 2019. Featuring footage from players Kamal Guthmy and Shameek Farrell, clips donated by opposing teams, and a selection of archival material shot on early camera phones, Mundial is a collage of grassroots football in London.`
         },
         {
           hid: 'og:url',

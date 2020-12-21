@@ -5,9 +5,8 @@
         <transition name="fade-up">
           <svg
             v-show="logoLoaded"
-            width="310"
-            height="64"
-            viewBox="0 0 310 64"
+            style="width: 20.46875vw; height: 4.921875vw; min-width: 262px; min-height: 63px;"
+            viewBox="0 0 262 63"
             xmlns="http://www.w3.org/2000/svg"
           >
             <g transform="translate(2 2)" fill-rule="nonzero" fill="none">
@@ -17,12 +16,12 @@
                 fill="#FFFFFF"
                 x="-1"
                 y="-1"
-                width="308"
-                height="62"
-                rx="31"
+                width="260"
+                height="61"
+                rx="30.5"
               />
               <path
-                d="M31.472 41V30.376H43.44V41h3.04V18.12h-3.04v9.6H31.472v-9.6h-3.04V41h3.04zm20.58 0l2.528-6.912h9.664L66.836 41h3.36l-9.152-22.88h-3.328L48.884 41h3.168zm11.232-9.408h-7.776l2.528-6.912c.48-1.312.928-2.656 1.28-3.968h.032c.384 1.312.864 2.624 1.344 3.968l2.592 6.912zM75.608 41v-9.952h5.536c3.136 0 4.64 1.728 5.216 4.768.384 1.952 1.216 4.256 2.176 5.184h3.488c-1.312-1.536-2.08-3.936-2.752-6.144-.512-1.664-1.248-3.584-3.04-4.32l-.864-.352c3.392-.512 5.216-2.752 5.216-5.856 0-3.712-2.432-6.208-7.648-6.208H72.568V41h3.04zm6.688-12.544h-6.688V20.68H83c3.136 0 4.48 1.44 4.48 3.808 0 2.752-1.696 3.968-5.184 3.968zM98.14 41v-9.952h5.536c3.136 0 4.64 1.728 5.216 4.768.384 1.952 1.216 4.256 2.176 5.184h3.488c-1.312-1.536-2.08-3.936-2.752-6.144-.512-1.664-1.248-3.584-3.04-4.32l-.864-.352c3.392-.512 5.216-2.752 5.216-5.856 0-3.712-2.432-6.208-7.648-6.208H95.1V41h3.04zm6.688-12.544H98.14V20.68h7.392c3.136 0 4.48 1.44 4.48 3.808 0 2.752-1.696 3.968-5.184 3.968zM126.176 41v-9.504l8.928-13.376h-3.488l-6.88 10.848-6.784-10.848h-3.648l8.832 13.376V41h3.04zm33.832 0v-2.624h-11.712V18.12h-3.04V41h14.752zm3.78 0l2.528-6.912h9.664L178.572 41h3.36l-9.152-22.88h-3.328L160.62 41h3.168zm11.232-9.408h-7.776l2.528-6.912c.48-1.312.928-2.656 1.28-3.968h.032c.384 1.312.864 2.624 1.344 3.968l2.592 6.912zM189.936 41l4.544-16.384.864-3.328h.032l.896 3.328L200.752 41h3.04L210 18.12h-3.04l-3.648 14.976-1.056 4.384h-.032l-.992-4.192-4.064-15.168h-3.456l-4.224 15.232-1.024 4.128h-.032l-.96-4.384-3.52-14.976h-3.104L186.8 41h3.136zm31.46.448c4.64 0 8.704-2.56 8.704-6.784 0-2.944-1.568-4.736-4.256-5.728-1.664-.64-5.888-1.568-7.936-2.368-1.152-.448-2.336-1.216-2.336-2.624 0-2.464 2.144-3.84 5.152-3.84 3.264 0 5.408 1.632 5.6 4.704l2.944-.096c-.16-4.608-3.52-7.04-8.576-7.04-4.448 0-8.128 2.432-8.128 6.4 0 2.816 1.952 4.32 4.096 5.152 2.24.864 6.272 1.696 7.968 2.432 1.664.704 2.464 1.632 2.464 3.168 0 2.72-2.56 4.064-5.728 4.064-2.592 0-6.432-1.056-6.72-5.44l-2.848.128c.096 4.992 3.872 7.872 9.6 7.872zm22.564 0c7.296 0 10.944-5.856 10.944-12.096 0-6.4-4.192-11.712-10.88-11.712-5.728 0-11.008 4-11.008 12.064 0 6.784 4.48 11.744 10.944 11.744zm0-2.528c-5.792 0-7.872-5.184-7.872-9.184 0-5.856 3.072-9.568 7.904-9.568 4.992 0 7.84 4.256 7.84 9.248 0 4.832-2.272 9.504-7.872 9.504zM261.724 41V22.6h.096L273.724 41h3.232V18.12h-2.912v18.304h-.096L261.98 18.12h-3.168V41h2.912z"
+                d="M30.446 39v-8.632h9.724V39h2.47V20.41h-2.47v7.8h-9.724v-7.8h-2.47V39h2.47zm16.74 0l2.054-5.616h7.852L59.198 39h2.73l-7.436-18.59h-2.704L44.612 39h2.574zm9.126-7.644h-6.318l2.054-5.616c.39-1.066.754-2.158 1.04-3.224h.026c.312 1.066.702 2.132 1.092 3.224l2.106 5.616zM66.344 39v-8.086h4.498c2.548 0 3.77 1.404 4.238 3.874.312 1.586.988 3.458 1.768 4.212h2.834c-1.066-1.248-1.69-3.198-2.236-4.992-.416-1.352-1.014-2.912-2.47-3.51l-.702-.286c2.756-.416 4.238-2.236 4.238-4.758 0-3.016-1.976-5.044-6.214-5.044h-8.424V39h2.47zm5.434-10.192h-5.434V22.49h6.006c2.548 0 3.64 1.17 3.64 3.094 0 2.236-1.378 3.224-4.212 3.224zM84.67 39v-8.086h4.498c2.548 0 3.77 1.404 4.238 3.874.312 1.586.988 3.458 1.768 4.212h2.834c-1.066-1.248-1.69-3.198-2.236-4.992-.416-1.352-1.014-2.912-2.47-3.51l-.702-.286c2.756-.416 4.238-2.236 4.238-4.758 0-3.016-1.976-5.044-6.214-5.044H82.2V39h2.47zm5.434-10.192H84.67V22.49h6.006c2.548 0 3.64 1.17 3.64 3.094 0 2.236-1.378 3.224-4.212 3.224zM107.468 39v-7.722l7.254-10.868h-2.834l-5.59 8.814-5.512-8.814h-2.964l7.176 10.868V39h2.47zm27.526 0v-2.132h-9.516V20.41h-2.47V39h11.986zm3.09 0l2.054-5.616h7.852L150.096 39h2.73l-7.436-18.59h-2.704L135.51 39h2.574zm9.126-7.644h-6.318l2.054-5.616c.39-1.066.754-2.158 1.04-3.224h.026c.312 1.066.702 2.132 1.092 3.224l2.106 5.616zM159.348 39l3.692-13.312.702-2.704h.026l.728 2.704L168.136 39h2.47l5.044-18.59h-2.47l-2.964 12.168-.858 3.562h-.026l-.806-3.406-3.302-12.324h-2.808l-3.432 12.376-.832 3.354h-.026l-.78-3.562-2.86-12.168h-2.522L156.8 39h2.548zm25.58.364c3.77 0 7.072-2.08 7.072-5.512 0-2.392-1.274-3.848-3.458-4.654-1.352-.52-4.784-1.274-6.448-1.924-.936-.364-1.898-.988-1.898-2.132 0-2.002 1.742-3.12 4.186-3.12 2.652 0 4.394 1.326 4.55 3.822l2.392-.078c-.13-3.744-2.86-5.72-6.968-5.72-3.614 0-6.604 1.976-6.604 5.2 0 2.288 1.586 3.51 3.328 4.186 1.82.702 5.096 1.378 6.474 1.976 1.352.572 2.002 1.326 2.002 2.574 0 2.21-2.08 3.302-4.654 3.302-2.106 0-5.226-.858-5.46-4.42l-2.314.104c.078 4.056 3.146 6.396 7.8 6.396zm18.352 0c5.928 0 8.892-4.758 8.892-9.828 0-5.2-3.406-9.516-8.84-9.516-4.654 0-8.944 3.25-8.944 9.802 0 5.512 3.64 9.542 8.892 9.542zm0-2.054c-4.706 0-6.396-4.212-6.396-7.462 0-4.758 2.496-7.774 6.422-7.774 4.056 0 6.37 3.458 6.37 7.514 0 3.926-1.846 7.722-6.396 7.722zM217.732 39V24.05h.078L227.482 39h2.626V20.41h-2.366v14.872h-.078L217.94 20.41h-2.574V39h2.366z"
                 fill="#000000"
               />
             </g>
@@ -30,11 +29,52 @@
         </transition>
       </vue100vh>
     </transition>
+    <!-- <Navigation /> -->
     <nuxt />
+    <!-- Preload Cursors -->
+    <div
+      style="position: absolute; top: 0; right: 0; width: 0; height: 0; pointer-events: none;"
+    >
+      <img
+        src="/cursor.svg"
+        style="opacity: 0; width: 0px; height: 0px;"
+        alt="Preload cursor."
+      />
+      <img
+        src="/pointer.svg"
+        style="opacity: 0; width: 0px; height: 0px;"
+        alt="Preload pointer."
+      />
+    </div>
+    <!-- Meat Rack Modal -->
+    <VideoModal
+      v-if="meatRackModal"
+      @close-clicked="toggleMeatRack()"
+      video-id="429754603"
+    />
+    <!-- Mundial Modal -->
+    <VideoModal
+      v-if="mundialModal"
+      @close-clicked="toggleMundial()"
+      video-id="462169909"
+    />
+    <!-- Margaret Modal -->
+    <VideoModal
+      v-if="margaretModal"
+      @close-clicked="toggleMargaret()"
+      video-id="390695847"
+    />
+    <!-- Ochre Modal -->
+    <VideoModal
+      v-if="ochreModal"
+      @close-clicked="toggleOchre()"
+      video-id="370058381"
+    />
   </section>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import vue100vh from 'vue-100vh'
 
 export default {
@@ -45,6 +85,20 @@ export default {
     return {
       loading: true,
       logoLoaded: false
+    }
+  },
+  computed: {
+    meatRackModal() {
+      return this.$store.state.meatRack
+    },
+    mundialModal() {
+      return this.$store.state.mundial
+    },
+    margaretModal() {
+      return this.$store.state.margaret
+    },
+    ochreModal() {
+      return this.$store.state.ochre
     }
   },
   mounted() {
@@ -73,6 +127,12 @@ export default {
     this.preload()
   },
   methods: {
+    ...mapMutations({
+      toggleMeatRack: 'toggleMeatRack',
+      toggleMundial: 'toggleMundial',
+      toggleMargaret: 'toggleMargaret',
+      toggleOchre: 'toggleOchre'
+    }),
     isTouchDevice() {
       const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')
       const mq = function(query) {
@@ -119,7 +179,9 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: white;
-  overflow-x: hidden;
+}
+html.has-scroll-init {
+  overflow: hidden;
 }
 
 html.night {
@@ -138,14 +200,55 @@ a {
 }
 
 div#cursor {
-  width: 34px;
-  height: 62px;
+  width: 2.578125vw;
+  min-width: 33px;
+  height: 4.375vw;
+  min-height: 56px;
   background-image: url('/cursor.svg');
   pointer-events: none;
   position: fixed;
   z-index: 99999999;
-  transition: transform 0.5s linear;
 }
+div#cursor.view-project {
+  width: 3.203125vw;
+  min-width: 41px;
+  height: 4.21875vw;
+  min-height: 54px;
+  background-image: url('/pointer.svg');
+  pointer-events: none;
+  position: fixed;
+  z-index: 99999999;
+  transform: translateX(-0.625vw);
+}
+/* div#cursor.view-project {
+  background-color: white;
+  background-image: none;
+  border: 2px solid black;
+  border-radius: 999px;
+  height: 63px;
+  width: 15.375rem;
+  padding: 0 1.625rem;
+  transform: translateX(calc(-15.375rem / 2)) translateY(-2rem);
+  z-index: 9999;
+} */
+/* .nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  text-decoration: none;
+  letter-spacing: 0.15px;
+} */
+/* div#cursor.view-project::after {
+  content: 'View Project';
+  color: black;
+  font-size: 1.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
+  position: absolute;
+  left: 1.625rem;
+  top: 0.875rem;
+} */
 
 canvas {
   background-color: white;
@@ -235,36 +338,36 @@ canvas {
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   #app {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     position: relative;
   }
 }
 @media screen and (min-width: 1441px) and (max-width: 1600px) {
   #app {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     position: relative;
   }
 }
 @media screen and (min-width: 1601px) and (max-width: 1920px) {
   #app {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     position: relative;
   }
 }
 @media screen and (min-width: 1921px) and (max-width: 2560px) {
   #app {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     position: relative;
   }
 }
 @media screen and (min-width: 2561px) and (max-width: 9999px) {
   #app {
-    max-width: 1280px;
-    margin: 0 auto;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     position: relative;
   }
 }

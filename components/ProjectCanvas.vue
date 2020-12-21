@@ -116,7 +116,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 997;
   user-select: none;
   pointer-events: none;
   width: 100%;
