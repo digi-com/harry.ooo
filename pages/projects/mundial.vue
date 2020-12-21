@@ -11,6 +11,7 @@
       <ProjectFilm
         @play-clicked="toggleMundial()"
         film-link="/mundial/mundial-supercut-blur.mp4"
+        film-poster-link="/mundial/mundial-supercut-poster.png"
       />
       <!-- Spacer -->
       <div class="spacer" />

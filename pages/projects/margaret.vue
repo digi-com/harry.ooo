@@ -11,6 +11,7 @@
       <ProjectFilm
         @play-clicked="toggleMargaret()"
         film-link="/margaret/supercut_blur.mp4"
+        film-poster-link="/margaret/margaret-supercut-poster.png"
       />
       <!-- Spacer -->
       <div class="spacer" />

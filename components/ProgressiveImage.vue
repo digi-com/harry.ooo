@@ -79,7 +79,7 @@ export default {
     },
     transitionDuration: {
       type: [Number, String],
-      default: 600
+      default: 700
     },
     classes: {
       type: Object,
@@ -112,35 +112,33 @@ export default {
       return canvas.toDataURL()
     }
   },
-  watch: {
-    src: {
-      handler: 'init'
-    },
-    srcset: {
-      handler: 'init'
-    }
-  },
+  // watch: {
+  //   src: {
+  //     handler: 'init'
+  //   },
+  //   srcset: {
+  //     handler: 'init'
+  //   }
+  // },
   mounted() {
     this.init()
   },
   methods: {
     init() {
-      this.observer = new IntersectionObserver(this.handler)
-      this.observer.observe(this.$el)
-      this.$once('hook:beforeDestroy', () => {
-        this.observer.disconnect()
-      })
+      // this.observer = new IntersectionObserver(this.handler)
+      // this.observer.observe(this.$el)
+      // this.$once('hook:beforeDestroy', () => {
+      //   this.observer.disconnect()
+      // })
       this.loadImg()
     },
-    handler([entry]) {
-      const { $el } = this
-      if (entry.isIntersecting) {
-        // Element is in viewport
-        $el.classList.add(`${NAME}--loading`)
-        $el.classList.add(`${NAME}--animate`)
-        this.observer.disconnect()
-      }
-    },
+    // handler([entry]) {
+    // const { $el } = this
+    // if (entry.isIntersecting) {
+    // Element is in viewport
+    // this.observer.disconnect()
+    // }
+    // },
     loadImg() {
       const { src, srcset } = this
       const { img } = this.$refs
@@ -152,15 +150,15 @@ export default {
     },
     onLoad() {
       const { $el } = this
-      const { img, placeholder } = this.$refs
-      $el.classList.remove(`${NAME}--loading`)
+      const { img } = this.$refs
+      // const { img, placeholder } = this.$refs
       $el.classList.add(`${NAME}--loaded`)
-      if (placeholder) {
-        img.addEventListener('transitionend', function onTransitionEnd() {
-          // placeholder.remove()
-          img.removeEventListener('transitionend', onTransitionEnd)
-        })
-      }
+      // if (placeholder) {
+      //   img.addEventListener('transitionend', function onTransitionEnd() {
+      //     placeholder.remove()
+      //     img.removeEventListener('transitionend', onTransitionEnd)
+      //   })
+      // }
       img.removeEventListener('load', this.onLoad)
     }
   }
@@ -168,12 +166,6 @@ export default {
 </script>
 
 <style>
-.progressive-image img {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-}
-
 .progressive-image-wrapper {
   position: relative;
 }
@@ -211,16 +203,6 @@ export default {
 .progressive-image-wrapper .text-overlay.active .line-two {
   transform: translateY(0);
 }
-
-.progressive-image {
-  display: inline-block;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-.progressive-image img {
-  vertical-align: top;
-}
 .progressive-image__placeholder {
   position: absolute;
   overflow: hidden;
@@ -231,21 +213,27 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* z-index: 3; */
-  /* background: transparent !important; */
+  background-color: #f5f5f7;
 }
-.progressive-image__placeholder img {
-  transform: scale(1.05);
-  filter: blur(10px);
-}
-.progressive-image__img {
-  opacity: 0;
-  transition-property: opacity;
-  transition-timing-function: ease;
-  z-index: 2;
+.progressive-image {
+  display: inline-block;
   position: relative;
+  z-index: 2;
+  width: 100%;
 }
-.progressive-image--loaded .progressive-image__img {
+.progressive-image img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  display: block;
+  opacity: 0;
+  transition-duration: 0.7s !important;
+  transition-property: opacity !important;
+  transition-timing-function: cubic-bezier(0.5, 0, 0, 1) !important;
+}
+.progressive-image--loaded .progressive-image img {
   opacity: 1;
 }
 

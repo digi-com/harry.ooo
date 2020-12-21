@@ -18,6 +18,7 @@
           :controls="false"
           :player-width="960"
           :player-height="480"
+          @ready="autoplayVideo()"
           class="video-modal-player"
         />
       </client-only>
@@ -80,11 +81,15 @@ export default {
   },
   data() {
     return {
-      playing: true,
+      playing: false,
       muted: false
     }
   },
   methods: {
+    autoplayVideo() {
+      this.$refs.player.play()
+      this.playing = true
+    },
     pointerEnter() {
       if (document.querySelector('div#cursor')) {
         document.querySelector('div#cursor').classList.add('view-project')
@@ -134,10 +139,11 @@ export default {
   z-index: 99999999;
 }
 .video-modal-content {
-  grid-column: 2 / 12;
+  grid-column: 1 / 13;
   align-self: center;
   justify-self: center;
   position: relative;
+  max-width: 100%;
 }
 .video-modal-content::after {
   content: '';
@@ -169,16 +175,6 @@ export default {
   border-bottom-color: #fff;
   animation: half-circle-spinner-animation 1s infinite alternate;
 }
-.video-modal-play-button {
-  position: absolute;
-  bottom: 2.5vw;
-  left: 2.5vw;
-}
-.video-modal-mute-button {
-  position: absolute;
-  bottom: 2.5vw;
-  left: 10.46875vw;
-}
 .video-modal-play-button,
 .video-modal-mute-button,
 .video-modal-close-button {
@@ -189,10 +185,80 @@ export default {
   text-transform: uppercase;
   user-select: none;
 }
+.video-modal-play-button {
+  position: absolute;
+  bottom: 2.5vw;
+  left: 2.5vw;
+}
+.video-modal-mute-button {
+  position: absolute;
+  bottom: 2.5vw;
+  left: 10.46875vw;
+}
 .video-modal-close-button {
   position: absolute;
   top: 2.5vw;
   right: 2.5vw;
   z-index: 9;
+}
+
+/* Responsive */
+@media screen and (min-width: 0px) and (max-width: 1279px) {
+  .video-modal {
+    position: fixed;
+    background: black;
+    top: 0;
+    width: 100%;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 0.625vw;
+    z-index: 99999999;
+  }
+  .video-modal-play-button,
+  .video-modal-mute-button,
+  .video-modal-close-button {
+    font-size: 20px;
+    letter-spacing: 0.2px;
+  }
+  .video-modal-play-button {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+  }
+  .video-modal-mute-button {
+    position: absolute;
+    bottom: 24px;
+    left: 120px;
+  }
+  .video-modal-close-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 9;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+}
+@media screen and (min-width: 376px) and (max-width: 480px) {
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+}
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+}
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+}
+@media screen and (min-width: 2561px) and (max-width: 9999px) {
 }
 </style>

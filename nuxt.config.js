@@ -130,7 +130,6 @@ export default {
    ** Build configuration
    */
   build: {
-    transpile: ['vue-100vh', 'gsap'],
-    vendor: ['vue-vimeo-player']
+    transpile: ['vue-100vh', 'gsap']
   }
 }

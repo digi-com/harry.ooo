@@ -11,6 +11,7 @@
           <ProjectFilm
             @play-clicked="toggleMeatRack()"
             film-link="/meat-rack/supercut_blur.mp4"
+            film-poster-link="/meat-rack/meat-rack-supercut-poster.png"
           />
           <div class="bottom-spacer spacer" />
           <Footer />
@@ -527,51 +528,5 @@ export default {
 }
 .index-container {
   width: 100%;
-}
-
-/* Spacer */
-.spacer {
-  background: transparent;
-  width: 100%;
-  height: 15.625vw;
-}
-
-/* Spacer Responsive */
-@media screen and (min-width: 0px) and (max-width: 320px) {
-  .spacer {
-    height: 160px;
-  }
-}
-@media screen and (min-width: 321px) and (max-width: 375px) {
-  .spacer {
-    height: 160px;
-  }
-}
-@media screen and (min-width: 376px) and (max-width: 480px) {
-  .spacer {
-    height: 160px;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 767px) {
-  .spacer {
-    height: 160px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .spacer {
-    height: 160px;
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1279px) {
-}
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
-}
-@media screen and (min-width: 1441px) and (max-width: 1600px) {
-}
-@media screen and (min-width: 1601px) and (max-width: 1920px) {
-}
-@media screen and (min-width: 1921px) and (max-width: 2560px) {
-}
-@media screen and (min-width: 2561px) and (max-width: 9999px) {
 }
 </style>

@@ -11,6 +11,7 @@
       <ProjectFilm
         @play-clicked="toggleMeatRack()"
         film-link="/meat-rack/supercut_blur.mp4"
+        film-poster-link="/meat-rack/meat-rack-supercut-poster.png"
       />
       <!-- Spacer -->
       <div class="spacer" />

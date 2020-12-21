@@ -11,6 +11,7 @@
       <ProjectFilm
         @play-clicked="toggleOchre()"
         film-link="/ochre/supercut_blur.mp4"
+        film-poster-link="/ochre/ochre-supercut-poster.png"
       />
       <!-- Spacer -->
       <div class="spacer" />

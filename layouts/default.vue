@@ -35,8 +35,16 @@
     <div
       style="position: absolute; top: 0; right: 0; width: 0; height: 0; pointer-events: none;"
     >
-      <img src="/cursor.svg" style="opacity: 0;" />
-      <img src="/pointer.svg" style="opacity: 0;" />
+      <img
+        src="/cursor.svg"
+        style="opacity: 0; width: 0px; height: 0px;"
+        alt="Preload cursor."
+      />
+      <img
+        src="/pointer.svg"
+        style="opacity: 0; width: 0px; height: 0px;"
+        alt="Preload pointer."
+      />
     </div>
     <!-- Meat Rack Modal -->
     <VideoModal
@@ -193,7 +201,9 @@ a {
 
 div#cursor {
   width: 2.578125vw;
+  min-width: 33px;
   height: 4.375vw;
+  min-height: 56px;
   background-image: url('/cursor.svg');
   pointer-events: none;
   position: fixed;
@@ -201,7 +211,9 @@ div#cursor {
 }
 div#cursor.view-project {
   width: 3.203125vw;
+  min-width: 41px;
   height: 4.21875vw;
+  min-height: 54px;
   background-image: url('/pointer.svg');
   pointer-events: none;
   position: fixed;

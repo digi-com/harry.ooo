@@ -1,55 +1,50 @@
 <template>
-  <section id="navigation">
+  <header id="navigation">
     <nav>
       <div v-if="home" class="name">
-        <nuxt-link to="/" class="no-hover">Harry Lawson</nuxt-link>
+        <div class="nav-button no-hover">Harry Lawson</div>
       </div>
       <div v-if="!home" class="name">
-        <nuxt-link
-          @mouseenter.native="pointerEnter()"
-          @mouseleave.native="pointerExit()"
-          @click.native="pointerExit()"
+        <div
+          @mouseenter="pointerEnter()"
+          @mouseleave="pointerExit()"
+          @click="goToIndex()"
           to="/"
           class="nav-button"
-          >Harry Lawson</nuxt-link
         >
+          Harry Lawson
+        </div>
       </div>
       <div v-if="projects" class="projects">
-        <nuxt-link to="/projects" class="no-hover">Projects</nuxt-link>
+        <div class="nav-button no-hover">Projects</div>
       </div>
       <div v-if="!projects" class="projects">
-        <nuxt-link
-          @mouseenter.native="pointerEnter()"
-          @mouseleave.native="pointerExit()"
-          @click.native="pointerExit()"
+        <div
+          @mouseenter="pointerEnter()"
+          @mouseleave="pointerExit()"
+          @click="goToProjects()"
           to="/projects"
           class="nav-button"
-          >Projects</nuxt-link
         >
+          Projects
+        </div>
       </div>
       <div v-if="info" class="information">
-        <nuxt-link to="/info" class="no-hover">Info</nuxt-link>
+        <div class="nav-button no-hover">Info</div>
       </div>
       <div v-if="!info" class="information">
-        <nuxt-link
-          @mouseenter.native="pointerEnter()"
-          @mouseleave.native="pointerExit()"
-          @click.native="pointerExit()"
+        <div
+          @mouseenter="pointerEnter()"
+          @mouseleave="pointerExit()"
+          @click="goToInfo()"
           to="/info"
           class="nav-button"
-          >Info</nuxt-link
         >
+          Info
+        </div>
       </div>
     </nav>
-    <NavigationProjectsOverlay
-      v-if="navProjectsVisible"
-      @close-modal="toggleNavProjects()"
-    />
-    <NavigationInfoOverlay
-      v-if="navInfoVisible"
-      @close-modal="toggleNavInfo()"
-    />
-  </section>
+  </header>
 </template>
 
 <script>
@@ -84,6 +79,30 @@ export default {
       }
     },
     pointerExit() {
+      if (document.querySelector('div#cursor')) {
+        document.querySelector('div#cursor').classList.remove('view-project')
+      }
+    },
+    goToIndex() {
+      this.$router.push({
+        path: '/'
+      })
+      if (document.querySelector('div#cursor')) {
+        document.querySelector('div#cursor').classList.remove('view-project')
+      }
+    },
+    goToProjects() {
+      this.$router.push({
+        path: '/projects'
+      })
+      if (document.querySelector('div#cursor')) {
+        document.querySelector('div#cursor').classList.remove('view-project')
+      }
+    },
+    goToInfo() {
+      this.$router.push({
+        path: '/info'
+      })
       if (document.querySelector('div#cursor')) {
         document.querySelector('div#cursor').classList.remove('view-project')
       }

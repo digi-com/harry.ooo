@@ -23,7 +23,14 @@
       Play
     </div>
     <div id="film">
-      <video id="project-feature-video" autoplay muted loop playsinline>
+      <video
+        id="project-feature-video"
+        :poster="filmPosterLink"
+        autoplay
+        muted
+        loop
+        playsinline
+      >
         <source :src="filmLink" type="video/mp4" />
       </video>
     </div>
@@ -34,6 +41,10 @@
 export default {
   props: {
     filmLink: {
+      type: String,
+      required: true
+    },
+    filmPosterLink: {
       type: String,
       required: true
     },
