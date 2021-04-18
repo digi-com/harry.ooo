@@ -38,7 +38,7 @@ export default {
         this.lmS = new LocomotiveScrollConstructor({
           el: document.querySelector('#scroll-container'),
           smooth: true,
-          lerp: 0.04
+          lerp: 0.06
         })
         // Listen for and handle resize events
         window.addEventListener(
