@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -53,9 +52,6 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({
-      toggleMeatRack: 'toggleMeatRack'
-    }),
     smooth() {
       // If touch device, do nothing.
       // If mouse-based device, create lmS.
@@ -101,45 +97,45 @@ export default {
     },
     animate(lmS) {
       // Film reveal
-      gsap.fromTo(
-        '#film',
-        {
-          scaleX: 0.8453947368,
-          ease: 'none'
-        },
-        {
-          scrollTrigger: {
-            id: 'mr-film',
-            trigger: '#film',
-            scroller: '#scroll-container',
-            scrub: true,
-            start: 'top bottom',
-            end: 'bottom bottom'
-          },
-          scaleX: 1,
-          ease: 'none'
-        }
-      )
+      // gsap.fromTo(
+      //   '#film',
+      //   {
+      //     scaleX: 0.8453947368,
+      //     ease: 'none'
+      //   },
+      //   {
+      //     scrollTrigger: {
+      //       id: 'mr-film',
+      //       trigger: '#film',
+      //       scroller: '#scroll-container',
+      //       scrub: true,
+      //       start: 'top bottom',
+      //       end: 'bottom bottom'
+      //     },
+      //     scaleX: 1,
+      //     ease: 'none'
+      //   }
+      // )
     },
     animateNoLms() {
-      gsap.fromTo(
-        '#film',
-        {
-          scaleX: 0.8453947368,
-          ease: 'none'
-        },
-        {
-          scrollTrigger: {
-            id: 'mr-film',
-            trigger: '#film',
-            scrub: true,
-            start: 'top bottom',
-            end: 'bottom bottom'
-          },
-          scaleX: 1,
-          ease: 'none'
-        }
-      )
+      // gsap.fromTo(
+      //   '#film',
+      //   {
+      //     scaleX: 0.8453947368,
+      //     ease: 'none'
+      //   },
+      //   {
+      //     scrollTrigger: {
+      //       id: 'mr-film',
+      //       trigger: '#film',
+      //       scrub: true,
+      //       start: 'top bottom',
+      //       end: 'bottom bottom'
+      //     },
+      //     scaleX: 1,
+      //     ease: 'none'
+      //   }
+      // )
     },
     isTouchDevice() {
       const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ')

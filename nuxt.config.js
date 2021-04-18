@@ -125,7 +125,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['vue-scrollto/nuxt'],
+  modules: ['vue-scrollto/nuxt', '@nuxtjs/robots'],
   /*
    ** Build configuration
    */
