@@ -227,6 +227,7 @@ export default {
   height: auto;
   position: relative;
   z-index: 2;
+  transform: translate3d(0, 0, 999px);
   display: block;
   opacity: 0;
   transition-duration: 0.7s !important;
