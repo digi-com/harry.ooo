@@ -18,7 +18,6 @@
           :controls="false"
           :player-width="960"
           :player-height="480"
-          @ready="autoplayVideo()"
           class="video-modal-player"
         />
       </client-only>
@@ -81,15 +80,11 @@ export default {
   },
   data() {
     return {
-      playing: false,
+      playing: true,
       muted: false
     }
   },
   methods: {
-    autoplayVideo() {
-      this.$refs.player.play()
-      this.playing = true
-    },
     pointerEnter() {
       if (document.querySelector('div#cursor')) {
         document.querySelector('div#cursor').classList.add('view-project')

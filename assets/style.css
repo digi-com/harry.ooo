@@ -84,27 +84,32 @@ nav a:hover,
 
 /* Spacer Responsive */
 @media screen and (min-width: 0px) and (max-width: 320px) {
-  .spacer {
+  .spacer,
+  .bottom-spacer {
     height: 160px;
   }
 }
 @media screen and (min-width: 321px) and (max-width: 375px) {
-  .spacer {
+  .spacer,
+  .bottom-spacer {
     height: 160px;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 480px) {
-  .spacer {
+  .spacer,
+  .bottom-spacer {
     height: 160px;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
-  .spacer {
+  .spacer,
+  .bottom-spacer {
     height: 160px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .spacer {
+  .spacer,
+  .bottom-spacer {
     height: 160px;
   }
 }

@@ -170,7 +170,7 @@ export default {
   position: relative;
 }
 .progressive-image-wrapper .text-overlay {
-  color: white;
+  color: black;
   position: absolute;
   bottom: -1.5625vw;
   transform: translateY(100%);
