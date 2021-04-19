@@ -1,5 +1,5 @@
 export default {
-  mode: 'universal',
+  target: 'static',
   components: true,
   /*
    ** Headers of the page
@@ -101,7 +101,6 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    { src: '~/plugins/vue-tippy', ssr: false },
     { src: '~/plugins/vue-marquee', ssr: false },
     { src: '~/plugins/vue-scroll-to', ssr: false },
     { src: '~/plugins/vue-vimeo-player', ssr: false },
