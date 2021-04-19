@@ -16,8 +16,8 @@
           :autoplay="playing"
           :loop="true"
           :controls="false"
-          :player-width="960"
-          :player-height="480"
+          :player-width="windowWidth - (windowWidth / 100) * 2.5"
+          :player-height="windowHeight - (windowHeight / 100) * 33"
           class="video-modal-player"
         />
       </client-only>
@@ -78,11 +78,36 @@ export default {
       required: true
     }
   },
+  beforeMount() {
+    if (process.browser) {
+      this.windowWidth = window.innerWidth
+      this.windowHeight = window.innerHeight
+    }
+  },
+  watch: {
+    windowWidth(newWidth, oldWidth) {
+      this.txt = `width changed to ${newWidth} from ${oldWidth}`
+    },
+    windowHeight(newHeight, oldHeight) {
+      this.txt = `height changed to ${newHeight} from ${oldHeight}`
+    }
+  },
   data() {
     return {
       playing: true,
-      muted: false
+      muted: false,
+      windowWidth: 0,
+      windowHeight: 0,
+      txt: ''
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
   },
   methods: {
     pointerEnter() {
@@ -116,6 +141,10 @@ export default {
     unmute() {
       this.muted = false
       this.$refs.player.unmute()
+    },
+    onResize() {
+      this.windowWidth = window.innerWidth
+      this.windowHeight = window.innerHeight
     }
   }
 }
@@ -179,21 +208,24 @@ export default {
   letter-spacing: 0.015vw;
   text-transform: uppercase;
   user-select: none;
+  padding: 2.5vw;
 }
 .video-modal-play-button {
   position: absolute;
-  bottom: 2.5vw;
-  left: 2.5vw;
+  bottom: 0;
+  left: 0;
+  width: 8.5vw;
 }
 .video-modal-mute-button {
   position: absolute;
-  bottom: 2.5vw;
-  left: 10.46875vw;
+  bottom: 0;
+  left: 8.5vw;
+  width: 10vw;
 }
 .video-modal-close-button {
   position: absolute;
-  top: 2.5vw;
-  right: 2.5vw;
+  top: 0;
+  right: 0;
   z-index: 9;
 }
 
@@ -215,21 +247,24 @@ export default {
   .video-modal-close-button {
     font-size: 20px;
     letter-spacing: 0.2px;
+    padding: 24px;
   }
   .video-modal-play-button {
     position: absolute;
-    bottom: 24px;
-    left: 24px;
+    bottom: 0;
+    left: 0;
+    width: 100px;
   }
   .video-modal-mute-button {
     position: absolute;
-    bottom: 24px;
-    left: 120px;
+    bottom: 0;
+    left: 100px;
+    width: 120px;
   }
   .video-modal-close-button {
     position: absolute;
-    top: 24px;
-    right: 24px;
+    top: 0;
+    right: 0;
     z-index: 9;
   }
 }
