@@ -78,10 +78,13 @@ export default {
       required: true
     }
   },
-  beforeMount() {
-    if (process.browser) {
-      this.windowWidth = window.innerWidth
-      this.windowHeight = window.innerHeight
+  data() {
+    return {
+      playing: true,
+      muted: false,
+      windowWidth: 0,
+      windowHeight: 0,
+      txt: ''
     }
   },
   watch: {
@@ -92,13 +95,10 @@ export default {
       this.txt = `height changed to ${newHeight} from ${oldHeight}`
     }
   },
-  data() {
-    return {
-      playing: true,
-      muted: false,
-      windowWidth: 0,
-      windowHeight: 0,
-      txt: ''
+  beforeMount() {
+    if (process.browser) {
+      this.windowWidth = window.innerWidth
+      this.windowHeight = window.innerHeight
     }
   },
   mounted() {
